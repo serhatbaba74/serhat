@@ -11,6 +11,10 @@
   ],
   "routes": [
     {
+      "src": "/(.*)\\.(png|jpg|jpeg|svg|gif)",
+      "dest": "/$1.$2"
+    },
+    {
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },
