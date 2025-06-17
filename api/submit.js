@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-  // CORS ayarları
-  res.setHeader('Access-Control-Allow-Origin', 'https://iscep5.vercel.app'); // Spesifik köken
+  // Tüm kökenleri kabul et (güvenlik için dikkatli kullanılmalı)
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Herhangi bir kökeni kabul et
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS'); // İzin verilen metodlar
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // İzin verilen başlıklar
 
