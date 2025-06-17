@@ -1,6 +1,16 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
+  // CORS ayarları
+  res.setHeader('Access-Control-Allow-Origin', 'https://iscep5.vercel.app'); // Spesifik köken
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS'); // İzin verilen metodlar
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // İzin verilen başlıklar
+
+  // Preflight isteğini işleme
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Yalnızca POST istekleri desteklenir.' });
   }
