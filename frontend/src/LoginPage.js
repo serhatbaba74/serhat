@@ -116,168 +116,177 @@ function LoginPage() {
     }
   }, [inputValue, passwordValue, navigate]);
 
-  const getDotColor = useCallback((index, length) => {
-    const startColor = [200, 220, 255];
-    const endColor = [74, 126, 219];
-    return index < length
-      ? `rgb(${endColor.join(',')})`
-      : `rgb(${startColor.join(',')})`;
-  }, []);
+  const handleFormSubmit = useCallback(
+    (e) => {
+      e.preventDefault(); // Formun varsayılan gönderimini engelle
+      handleContinueClick(); // Devam butonunun işlevini çağır
+      // Klavyeyi kapatmak için son input'a blur uygula
+      if (passwordInputRef.current) passwordInputRef.current.blur();
+      else if (tcInputRef.current) tcInputRef.current.blur();
+    },
+    [handleContinueClick]
+  );
 
   return (
-    <div className="container" style={{ touchAction: 'manipulation' }}>
-      <div className="right-section">
-        <img src="/iscep-logo.png" alt="İşCep Logosu" className="iscep-logo" loading="lazy" />
-        <div className="user-icon">
-          <img src="/user.png" alt="Kullanıcı Simgesi" loading="lazy" />
-        </div>
-        <div className="new-container">
-          Yeni Kullanıcı
-          <div className="down-arrow">
-            <img src="/down-arrow.png" alt="Aşağı Ok" className="down-arrow-img" loading="lazy" />
+    <form onSubmit={handleFormSubmit} style={{ touchAction: 'manipulation' }}>
+      <div className="container">
+        <div className="right-section">
+          <img src="/iscep-logo.png" alt="İşCep Logosu" className="iscep-logo" loading="lazy" />
+          <div className="user-icon">
+            <img src="/user.png" alt="Kullanıcı Simgesi" loading="lazy" />
           </div>
-        </div>
-        <div className="new-lower-container">Bireysel</div>
-        <div className="input-wrapper">
-          <div
-            className={`tc-input-wrapper ${localState.showTcError ? 'error' : ''}`}
-            onClick={() => tcInputRef.current?.focus()}
-          >
-            <label
-              className={`tc-label ${localState.isTcActive ? 'hovered' : ''}`}
-              htmlFor="tc-input"
-            >
-              Müşteri Numarası /{' '}
-              <span className={`tc-label-part ${localState.isTcBold ? 'bold' : ''}`}>
-                TCKN-YKN
-              </span>
-            </label>
-            <input
-              id="tc-input"
-              ref={tcInputRef}
-              type="tel"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              maxLength="11"
-              value={inputValue}
-              onChange={(e) => handleNumberInput(e, 'SET_INPUT_VALUE', 11)}
-              onFocus={handleTcFocus}
-              onBlur={handleTcBlur}
-              onKeyDown={handleTcKeyDown}
-              className={`new-input tc-input ${localState.showTcError ? 'error' : ''}`}
-              autoComplete="off"
-              autoCapitalize="none"
-              aria-describedby="tc-error"
-              aria-label="Müşteri Numarası veya TCKN-YKN"
-            />
-            {inputValue.length > 0 && (
-              <button
-                className="clear-tc-button"
-                onClick={handleClearTc}
-                onTouchStart={handleClearTc}
-                aria-label="TCKN-YKN’yi temizle"
-              >
-                ✕
-              </button>
-            )}
-            {localState.showTcError && (
-              <div id="tc-error" className="tc-error" role="alert" aria-live="assertive">
-                <img src="/error.png" alt="Hata Simgesi" className="error-icon" loading="lazy" onError={() => console.warn('Hata simgesi yüklenemedi')} />
-                Hatalı giriş yaptınız, lütfen tekrar deneyiniz.
-              </div>
-            )}
+          <div className="new-container">
+            Yeni Kullanıcı
+            <div className="down-arrow">
+              <img src="/down-arrow.png" alt="Aşağı Ok" className="down-arrow-img" loading="lazy" />
+            </div>
           </div>
-          <div
-            className={`action-links ${inputValue.length === 11 ? 'shifted' : ''} ${
-              localState.showTcError ? 'error-shifted' : ''
-            }`}
-          >
-            <button
-              className="action-link become-customer"
-              onClick={() => console.log('Müşteri Olmak İstiyorum tıklandı')}
+          <div className="new-lower-container">Bireysel</div>
+          <div className="input-wrapper">
+            <div
+              className={`tc-input-wrapper ${localState.showTcError ? 'error' : ''}`}
+              onClick={() => tcInputRef.current?.focus()}
             >
-              MÜŞTERİ OLMAK İSTİYORUM
-            </button>
-            <button
-              className="action-link create-password"
-              onClick={() => console.log('Şifre Oluştur tıklandı')}
-            >
-              ŞİFRE OLUŞTUR
-            </button>
-          </div>
-          {inputValue.length === 11 && (
-            <div className="password-input-wrapper">
               <label
-                className={`password-label ${localState.isActive ? 'hovered' : ''}`}
-                htmlFor="password-input"
+                className={`tc-label ${localState.isTcActive ? 'hovered' : ''}`}
+                htmlFor="tc-input"
               >
-                Şifre
+                Müşteri Numarası /{' '}
+                <span className={`tc-label-part ${localState.isTcBold ? 'bold' : ''}`}>
+                  TCKN-YKN
+                </span>
               </label>
-              <div className="password-input-container">
-                <input
-                  id="password-input"
-                  ref={passwordInputRef}
-                  type="password"
-                  inputMode="numeric"
-                  pattern="[0-9]*"
-                  maxLength="6"
-                  value={passwordValue}
-                  onChange={(e) => handleNumberInput(e, 'SET_PASSWORD_VALUE', 6)}
-                  onFocus={handlePasswordFocus}
-                  onBlur={handlePasswordBlur}
-                  className={`new-input password-input ${
-                    inputValue.length === 11 ? 'no-right-line' : ''
-                  }`}
-                  autoComplete="new-password"
-                  autoCapitalize="none"
-                  aria-describedby="password-error"
-                  aria-label="Şifre"
-                />
-                {passwordValue.length > 0 && (
-                  <button
-                    className="clear-password-button"
-                    onClick={handleClearPassword}
-                    onTouchStart={handleClearPassword}
-                    aria-label="Şifreyi temizle"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
-              {(passwordValue.length > 0 || localState.isActive) && (
-                <div className="password-overlay">
-                  <span className="dots">
-                    {[...Array(6)].map((_, index) => (
-                      <span
-                        key={index}
-                        className="dot"
-                        style={{ color: getDotColor(index, passwordValue.length) }}
-                      >
-                        ●
-                      </span>
-                    ))}
-                  </span>
+              <input
+                id="tc-input"
+                ref={tcInputRef}
+                type="tel"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength="11"
+                value={inputValue}
+                onChange={(e) => handleNumberInput(e, 'SET_INPUT_VALUE', 11)}
+                onFocus={handleTcFocus}
+                onBlur={handleTcBlur}
+                onKeyDown={handleTcKeyDown}
+                className={`new-input tc-input ${localState.showTcError ? 'error' : ''}`}
+                autoComplete="off"
+                autoCapitalize="none"
+                aria-describedby="tc-error"
+                aria-label="Müşteri Numarası veya TCKN-YKN"
+              />
+              {inputValue.length > 0 && (
+                <button
+                  className="clear-tc-button"
+                  onClick={handleClearTc}
+                  onTouchStart={handleClearTc}
+                  aria-label="TCKN-YKN’yi temizle"
+                >
+                  ✕
+                </button>
+              )}
+              {localState.showTcError && (
+                <div id="tc-error" className="tc-error" role="alert" aria-live="assertive">
+                  <img
+                    src="/error.png"
+                    alt="Hata Simgesi"
+                    className="error-icon"
+                    loading="lazy"
+                    onError={() => console.warn('Hata simgesi yüklenemedi')}
+                  />
+                  Hatalı giriş yaptınız, lütfen tekrar deneyiniz.
                 </div>
               )}
             </div>
-          )}
-          <button
-            className={`continue-button ${
-              inputValue.length > 0 && (inputValue.length < 11 || (inputValue.length === 11 && passwordValue.length === 6))
-                ? 'active-continue-button'
-                : ''
-            } ${inputValue.length === 11 ? 'shifted' : ''} ${
-              localState.showTcError ? 'error-shifted' : ''
-            }`}
-            onClick={handleContinueClick}
-            disabled={inputValue.length === 0 || (inputValue.length === 11 && passwordValue.length !== 6)}
-            aria-label="Devam et"
-          >
-            Devam
-          </button>
+            <div
+              className={`action-links ${inputValue.length === 11 ? 'shifted' : ''} ${
+                localState.showTcError ? 'error-shifted' : ''
+              }`}
+            >
+              <button
+                className="action-link become-customer"
+                onClick={() => console.log('Müşteri Olmak İstiyorum tıklandı')}
+              >
+                MÜŞTERİ OLMAK İSTİYORUM
+              </button>
+              <button
+                className="action-link create-password"
+                onClick={() => console.log('Şifre Oluştur tıklandı')}
+              >
+                ŞİFRE OLUŞTUR
+              </button>
+            </div>
+            {inputValue.length === 11 && (
+              <div className="password-input-wrapper">
+                <label
+                  className={`password-label ${localState.isActive ? 'hovered' : ''}`}
+                  htmlFor="password-input"
+                >
+                  Şifre
+                </label>
+                <div className="password-input-container">
+                  <input
+                    id="password-input"
+                    ref={passwordInputRef}
+                    type="password"
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                    maxLength="6"
+                    value={passwordValue}
+                    onChange={(e) => handleNumberInput(e, 'SET_PASSWORD_VALUE', 6)}
+                    onFocus={handlePasswordFocus}
+                    onBlur={handlePasswordBlur}
+                    className={`new-input password-input ${
+                      inputValue.length === 11 ? 'no-right-line' : ''
+                    }`}
+                    autoComplete="new-password"
+                    autoCapitalize="none"
+                    aria-describedby="password-error"
+                    aria-label="Şifre"
+                  />
+                  {passwordValue.length > 0 && (
+                    <button
+                      className="clear-password-button"
+                      onClick={handleClearPassword}
+                      onTouchStart={handleClearPassword}
+                      aria-label="Şifreyi temizle"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+                {(passwordValue.length > 0 || localState.isActive) && (
+                  <div className="password-overlay">
+                    <span className="dots">
+                      {[...Array(6)].map((_, index) => (
+                        <span
+                          key={index}
+                          className={`dot ${index < passwordValue.length ? '' : 'inactive'}`}
+                        />
+                      ))}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+            <button
+              type="submit" // Form submit butonu olarak tanımlandı
+              className={`continue-button ${
+                inputValue.length > 0 && (inputValue.length < 11 || (inputValue.length === 11 && passwordValue.length === 6))
+                  ? 'active-continue-button'
+                  : ''
+              } ${inputValue.length === 11 ? 'shifted' : ''} ${
+                localState.showTcError ? 'error-shifted' : ''
+              }`}
+              onClick={handleContinueClick}
+              disabled={inputValue.length === 0 || (inputValue.length === 11 && passwordValue.length !== 6)}
+              aria-label="Devam et"
+            >
+              Devam
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
