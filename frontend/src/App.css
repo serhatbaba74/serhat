@@ -667,6 +667,7 @@ body {
     justify-content: flex-start;
     pointer-events: none;
     z-index: 2;
+    visibility: visible; /* Görünürlük sorunu için eklenmiş */
 }
 
 /* Dairelerin Stili */
@@ -1767,6 +1768,20 @@ body {
         font-size: 17px;
     }
 
+    .dot {
+        width: 13px;
+        height: 13px;
+    }
+    .dots {
+        gap: 16px;
+    }
+}
+
+/* iOS ve yüksek DPI cihazlar için özel ayar */
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+    .password-overlay {
+        visibility: visible !important; /* iOS'ta görünürlük garanti */
+    }
     .dot {
         width: 13px;
         height: 13px;
