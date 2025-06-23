@@ -676,7 +676,7 @@ body {
 }
 
 .dot {
-    font-size: 25px; /* Orijinal boyut */
+    font-size: 25px; /* Masaüstü ve 768px üzeri için orijinal boyut */
     display: inline-block;
     line-height: 1; /* Satır yüksekliği sorunlarını önler */
 }
@@ -1052,7 +1052,7 @@ body {
         padding: 2px 0;
         z-index: 2;
         opacity: 1;
-        transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in-out;
+        transition: top 0.1s ease-in-out, font-size: 0.1s ease-in-out, color: 0.1s ease-in-out;
         display: flex;
         align-items: center;
         -webkit-font-smoothing: antialiased;
@@ -1334,6 +1334,11 @@ body {
         width: 100%;
         max-width: 300px;
         top: 260px;
+    }
+
+    /* Mobil cihazlar için noktalar */
+    .dot {
+        font-size: 32px; /* Mobil cihazlarda 7px büyüdü (25px + 7px) */
     }
 }
 
@@ -1725,7 +1730,7 @@ body {
     }
 
     .dot {
-        font-size: 20px; /* Yüksek DPI cihazlarda noktaları biraz küçült */
+        font-size: 18px; /* Yüksek DPI mobil cihazlarda noktaları daha küçük yap */
     }
 }
 
