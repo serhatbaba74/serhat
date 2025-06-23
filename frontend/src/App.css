@@ -672,13 +672,23 @@ body {
 /* Dairelerin Stili */
 .dots {
     display: flex;
-    gap: 18px;
+    gap: 18px; /* Noktalar arası sabit boşluk */
+    align-items: center;
 }
 
+/* Dot stilini yuvarlak daire olarak tanımla */
 .dot {
-    font-size: 25px; /* Masaüstü ve 768px üzeri için orijinal boyut */
+    width: 12px;
+    height: 12px;
+    background-color: rgb(74, 126, 219); /* İlk görseldeki mavi renk */
+    border-radius: 50%;
     display: inline-block;
-    line-height: 1; /* Satır yüksekliği sorunlarını önler */
+    transition: background-color 0.2s; /* Renk geçişi için */
+}
+
+/* Boş noktalar için stil (aktif olmayanlar) */
+.dot.inactive {
+    background-color: rgb(200, 220, 255); /* İlk görseldeki açık mavi renk */
 }
 
 /* Action Links (Müşteri Olmak İstiyorum ve Şifre Oluştur) */
@@ -1052,7 +1062,7 @@ body {
         padding: 2px 0;
         z-index: 2;
         opacity: 1;
-transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in-out;
+        transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in-out;
         display: flex;
         align-items: center;
         -webkit-font-smoothing: antialiased;
@@ -1338,7 +1348,11 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
 
     /* Mobil cihazlar için noktalar */
     .dot {
-        font-size: 32px; /* Mobil cihazlarda 7px büyüdü (25px + 7px) */
+        width: 14px;
+        height: 14px;
+    }
+    .dots {
+        gap: 16px;
     }
 }
 
@@ -1455,6 +1469,14 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
         max-width: 220px;
         top: calc(20vh + 160px);
     }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 14px;
+    }
 }
 
 /* Orta boy Android cihazlar (örn. Samsung Galaxy S23/S24, Huawei P60, Oppo Find X, 481-600px, portre modu) */
@@ -1570,6 +1592,14 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
         max-width: 240px;
         top: calc(22vh + 170px);
     }
+
+    .dot {
+        width: 13px;
+        height: 13px;
+    }
+    .dots {
+        gap: 15px;
+    }
 }
 
 /* Büyük ekranlı Android cihazlar (örn. Samsung Galaxy S23 Ultra, Huawei Mate, Oppo Find X Pro, 601-767px) */
@@ -1681,9 +1711,17 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
         max-width: 260px;
         top: calc(25vh + 180px);
     }
+
+    .dot {
+        width: 14px;
+        height: 14px;
+    }
+    .dots {
+        gap: 18px;
+    }
 }
 
-/* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, Huawei P60 Pro, Oppo Find X) */
+/* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, iPhone 14 Pro) */
 @media only screen and (max-width: 767px) and (min-resolution: 2dppx) {
     .new-input {
         font-size: 17px;
@@ -1730,7 +1768,22 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
     }
 
     .dot {
-        font-size: 18px; /* Yüksek DPI mobil cihazlarda noktaları daha küçük yap */
+        width: 13px;
+        height: 13px;
+    }
+    .dots {
+        gap: 16px;
+    }
+}
+
+/* Samsung S23 Ultra gibi ultra yüksek DPI cihazlar */
+@media only screen and (max-width: 767px) and (min-resolution: 3dppx) {
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 14px;
     }
 }
 
@@ -1758,9 +1811,9 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
     }
 
     .new-lower-container {
-        top: 14vh;
         width: 100%;
         max-width: 340px;
+        top: 14vh;
     }
 
     .iscep-logo {
@@ -1859,5 +1912,13 @@ transition: top 0.1s ease-in-out, font-size 0.1s ease-in-out, color 0.1s ease-in
         font-size: 16px;
         max-width: 220px;
         top: calc(20vh + 160px);
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 14px;
     }
 }
