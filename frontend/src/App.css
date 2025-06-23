@@ -676,7 +676,7 @@ body {
 }
 
 .dot {
-    font-size: 1.2rem; /* Temel boyut (~19px, 16px kök varsayılarak) */
+    font-size: 25px; /* Orijinal boyut */
     display: inline-block;
     line-height: 1; /* Satır yüksekliği sorunlarını önler */
 }
@@ -1725,7 +1725,7 @@ body {
     }
 
     .dot {
-        font-size: 1rem; /* Yüksek DPI için daha küçük (~16px) */
+        font-size: 20px; /* Yüksek DPI cihazlarda noktaları biraz küçült */
     }
 }
 
