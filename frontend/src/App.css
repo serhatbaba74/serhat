@@ -662,19 +662,22 @@ body {
     left: 16px;
     width: calc(100% - 32px);
     height: 24px;
-    display: flex;
+    display: flex !important; /* Görünürlüğü zorla */
     align-items: center;
     justify-content: flex-start;
     pointer-events: none;
-    z-index: 2;
-    visibility: visible; /* Görünürlük sorunu için eklenmiş */
+    z-index: 10; /* Diğer katmanların üstüne çıkması için */
+    visibility: visible !important; /* Üretimde gizlenmeyi önle */
+    opacity: 1 !important; /* Opaklık garanti */
+    background: transparent; /* Arka planı şeffaf tut */
 }
 
 /* Dairelerin Stili */
 .dots {
-    display: flex;
+    display: flex !important; /* Görünürlüğü zorla */
     gap: 18px; /* Noktalar arası sabit boşluk */
     align-items: center;
+    min-height: 24px; /* Minimum yükseklik garanti */
 }
 
 /* Dot stilini yuvarlak daire olarak tanımla */
@@ -683,7 +686,7 @@ body {
     height: 12px;
     background-color: rgb(74, 126, 219); /* İlk görseldeki mavi renk */
     border-radius: 50%;
-    display: inline-block;
+    display: inline-block !important; /* Görünürlüğü zorla */
     transition: background-color 0.2s; /* Renk geçişi için */
 }
 
@@ -1781,6 +1784,7 @@ body {
 @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
     .password-overlay {
         visibility: visible !important; /* iOS'ta görünürlük garanti */
+        display: flex !important; /* Görünürlüğü zorla */
     }
     .dot {
         width: 13px;
