@@ -1246,7 +1246,7 @@ body {
     .action-links {
         position: absolute;
         top: 85px;
-        left: 50%;
+        left: 48%;
         transform: translateX(-50%);
         width: 300px; /* Input ile aynı genişlik */
         display: flex;
@@ -1420,6 +1420,7 @@ body {
 
     .action-links {
         width: 100%;
+        left: 48%;
         max-width: 300px; /* Input ile aynı genişlik */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
@@ -1535,6 +1536,7 @@ body {
     .action-links {
         width: 100%;
         max-width: 340px; /* Input ile aynı genişlik */
+        left: 48%;
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
         align-items: center;
@@ -1649,6 +1651,7 @@ body {
     .action-links {
         width: 100%;
         max-width: 360px; /* Input ile aynı genişlik */
+        left: 48%;
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
         align-items: center;
@@ -1707,6 +1710,7 @@ body {
 
     .action-links {
         width: 100%;
+        left: 48%;
         max-width: 360px; /* Input ile aynı genişlik */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
@@ -1821,6 +1825,7 @@ body {
 
     .action-links {
         width: 100%;
+        left: 48%;
         max-width: 340px; /* Input ile aynı genişlik */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
