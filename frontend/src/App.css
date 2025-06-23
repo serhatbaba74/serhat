@@ -281,7 +281,7 @@ body {
 
 /* Telefon Doğrulama Ekranındaki İşCep Logosu */
 .right-section .iscep-logo.iscep-logo-phone {
-    top: 30px !important;
+    top: 40px !important; /* Telefon doğrulama ekranında logo 10px aşağı alındı */
 }
 
 /* User.png Görseli Stili (Daire Kapsayıcı) */
@@ -690,6 +690,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 3;
+    flex-wrap: nowrap;
 }
 
 .action-links.shifted {
@@ -715,6 +716,7 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .action-link:hover {
@@ -732,8 +734,8 @@ body {
     max-width: 350px;
     padding: 1.1rem;
     color: #FFF;
-    background-color: #4d89bb; /* Başlangıç rengi */
-    opacity: 0.6; /* Soluk görünüm */
+    background-color: #4d89bb;
+    opacity: 0.6;
     border: none;
     border-radius: 12px;
     font-size: 1rem;
@@ -748,7 +750,7 @@ body {
 }
 
 .continue-button:disabled {
-    background-color: #4d89bb; /* Devre dışı renk */
+    background-color: #4d89bb;
     opacity: 0.6;
     cursor: not-allowed;
 }
@@ -770,19 +772,19 @@ body {
 
 /* Aktif buton (TCKN girişi başladığında veya şifre tamamlandığında) */
 .continue-button.active-continue-button {
-    background-color: #3A8CCF; /* Açık mavi renk */
-    opacity: 1; /* Tam opak */
+    background-color: #3A8CCF;
+    opacity: 1;
 }
 
 /* Hover durumu */
 .continue-button:hover {
-    background-color: #427ba8; /* Hover rengi */
-    opacity: 0.8; /* Hafif soluk */
+    background-color: #427ba8;
+    opacity: 0.8;
 }
 
 /* Aktif butonun hover durumu */
 .continue-button.active-continue-button:hover {
-    background-color: #2C6FAE; /* Mevcut hover rengi */
+    background-color: #2C6FAE;
     opacity: 1;
 }
 
@@ -809,10 +811,10 @@ body {
     max-width: 350px;
     padding: 1.1rem;
     color: #FFF;
-    background-color: #4d89bb; /* Başlangıç rengi */
-    opacity: 0.6; /* Soluk görünüm */
+    background-color: #4d89bb;
+    opacity: 0.6;
     border: none;
-    border-radius: 12px; /* Devam butonuyla aynı */
+    border-radius: 12px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
@@ -831,20 +833,20 @@ body {
 
 /* Telefon numarası girişi başladığında renk değişimi */
 .button-phone.active-continue-button {
-    background-color: #3A8CCF; /* Açık mavi, Devam butonuyla aynı */
+    background-color: #3A8CCF;
     opacity: 1;
 }
 
 /* Aktif butonun hover durumu */
 .button-phone.active-continue-button:hover {
-    background-color: #2C6FAE; /* Devam butonuyla aynı */
+    background-color: #2C6FAE;
     opacity: 1;
 }
 
 /* Tıklama (active) durumu */
 .button-phone.active-continue-button:active {
     background-color: #3A8CCF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Devam butonuyla aynı */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Devre dışı durumu */
@@ -977,29 +979,29 @@ body {
 .bekleme-iscep-logo {
     width: 100px;
     height: 100px;
-    margin-bottom: 20px; /* İş Bankası logosu ile arasına mesafe */
-    margin-top: -50px; /* Yukarı kaydırma */
+    margin-bottom: 20px;
+    margin-top: -50px;
 }
 
 .bekleme-isbank-logo {
     width: 120px;
     height: auto;
-    margin-bottom: 40px; /* Yeni metin ile arasına mesafe */
-    margin-top: -20px; /* Yukarı kaydırma, iscep-logo ile mesafe korunacak */
+    margin-bottom: 40px;
+    margin-top: -20px;
 }
 
 .waiting-message {
-    color: #FFFFFF; /* .new-container ile uyumlu beyaz metin */
-    font-size: 19.2px; /* .new-container ile aynı font boyutu */
-    font-weight: 500; /* .new-container ile aynı kalınlık */
+    color: #FFFFFF;
+    font-size: 19.2px;
+    font-weight: 500;
     text-align: center;
-    margin-top: 20px; /* Logo ile mesafe artırıldı */
-    max-width: 300px; /* Metnin çok geniş olmaması için */
-    margin-top: -30px; /* Yukarı kaydırma */
+    margin-top: 20px;
+    max-width: 300px;
+    margin-top: -30px;
 }
 
-/* Mobil Görünüm */
-@media (max-width: 768px) {
+/* Genel Mobil Görünüm (768px ve altı, Android cihazlar dahil) */
+@media only screen and (max-width: 768px) {
     .left-section {
         display: none;
     }
@@ -1086,14 +1088,14 @@ body {
     /* Doğrula Butonu Kapsayıcı Mobil Stili */
     .verify-button-container {
         position: relative;
-        margin-top: 10px; /* Mobilde butonu yukarı taşımak için */
+        margin-top: 10px;
     }
 
     .bekleme-iscep-logo {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 15vh; /* Yukarı kaydırma */
+        top: 15vh;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1102,14 +1104,14 @@ body {
         width: 50px;
         height: auto;
         position: absolute;
-        top: calc(25vh + 70px); /* Yukarı kaydırma */
+        top: calc(25vh + 70px);
         left: 50%;
         transform: translateX(-50%);
     }
 
     .waiting-message {
         position: absolute;
-        top: calc(25vh + 180px); /* isbank-logo'nun altına mesafe */
+        top: calc(25vh + 180px);
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -1202,8 +1204,8 @@ body {
 
     /* Mobil için Devam Butonu Ayarları */
     .continue-button {
-        width: 90%;
-        max-width: 320px;
+        width: 85%;
+        max-width: 280px;
         font-size: 0.95rem;
         padding: 1rem;
     }
@@ -1222,9 +1224,528 @@ body {
 
     /* Mobil için Doğrula Butonu Ayarları */
     .button-phone {
-        width: 90%;
-        max-width: 320px;
+        width: 85%;
+        max-width: 280px;
         font-size: 0.95rem;
         padding: 1rem;
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    /* Telefon Inputu ve Hata Mesajı Ayarları */
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+    }
+
+    /* Action Links Mobil Görünüm */
+    .action-links {
+        width: 90%;
+        max-width: 280px;
+        justify-content: flex-start; /* Butonları sola yaklaştır */
+        gap: 20px; /* Butonlar arası mesafe */
+    }
+
+    .action-link {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    /* İşCep Logosu ve User Icon */
+    .iscep-logo {
+        top: 35px; /* Logo 15px aşağı alındı (20px + 15px) */
+        width: 80px;
+        height: 80px;
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı (40px + 15px) */
+    }
+
+    .user-icon {
+        top: 160px; /* User icon 10px daha aşağı alındı (150px + 10px) */
+        width: 60px;
+        height: 60px;
+    }
+
+    .user-icon img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Samsung, Huawei, Oppo gibi Android cihazlar için özel media query'ler */
+/* Küçük ekranlı Android cihazlar (örn. Samsung Galaxy A serisi, Huawei P40, Oppo Reno, 360-480px, portre modu) */
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        max-width: 300px;
+        top: 320px;
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 300px;
+        font-size: 18px;
+        top: 230px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 300px;
+        top: 260px;
+    }
+
+    .iscep-logo {
+        width: 80px;
+        height: 80px;
+        top: 45px; /* Logo 15px aşağı alındı (30px + 15px) */
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+    }
+
+    .user-icon {
+        top: 150px; /* User icon 10px daha aşağı alındı (140px + 10px) */
+        width: 60px;
+        height: 60px;
+    }
+
+    .user-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 85%;
+        max-width: 280px;
+        font-size: 0.9rem;
+        padding: 0.9rem;
+    }
+
+    .button-phone {
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+    }
+
+    .action-links {
+        width: 100%;
+        max-width: 280px;
+        font-size: 11px;
+        justify-content: flex-start; /* Butonları sola yaklaştır */
+        gap: 20px; /* Butonlar arası mesafe */
+    }
+
+    .action-link {
+        font-size: 11px;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .bekleme-iscep-logo {
+        width: 100px;
+        height: 100px;
+        top: 10vh;
+    }
+
+    .bekleme-isbank-logo {
+        width: 40px;
+        top: calc(20vh + 60px);
+    }
+
+    .waiting-message {
+        font-size: 16px;
+        max-width: 220px;
+        top: calc(20vh + 160px);
+    }
+}
+
+/* Orta boy Android cihazlar (örn. Samsung Galaxy S23/S24, Huawei P60, Oppo Find X, 481-600px, portre modu) */
+@media only screen and (min-width: 481px) and (max-width: 600px) and (orientation: portrait) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        max-width: 340px;
+        top: 330px;
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 340px;
+        font-size: 20px;
+        top: 240px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 340px;
+        top: 270px;
+    }
+
+    .iscep-logo {
+        width: 90px;
+        height: 90px;
+        top: 40px; /* Logo 15px aşağı alındı (25px + 15px) */
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+    }
+
+    .user-icon {
+        top: 160px; /* User icon 10px daha aşağı alındı (150px + 10px) */
+        width: 70px;
+        height: 70px;
+    }
+
+    .user-icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 85%;
+        max-width: 280px;
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .button-phone {
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+    }
+
+    .action-links {
+        width: 100%;
+        max-width: 280px;
+        font-size: 12px;
+        justify-content: flex-start; /* Butonları sola yaklaştır */
+        gap: 20px; /* Butonlar arası mesafe */
+    }
+
+    .action-link {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .bekleme-iscep-logo {
+        width: 110px;
+        height: 110px;
+        top: 12vh;
+    }
+
+    .bekleme-isbank-logo {
+        width: 45px;
+        top: calc(22vh + 65px);
+    }
+
+    .waiting-message {
+        font-size: 17px;
+        max-width: 240px;
+        top: calc(22vh + 170px);
+    }
+}
+
+/* Büyük ekranlı Android cihazlar (örn. Samsung Galaxy S23 Ultra, Huawei Mate, Oppo Find X Pro, 601-767px) */
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        max-width: 360px;
+        top: 340px;
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 360px;
+        font-size: 22px;
+        top: 250px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 360px;
+        top: 280px;
+    }
+
+    .iscep-logo {
+        width: 100px;
+        height: 100px;
+        top: 35px; /* Logo 15px aşağı alındı (20px + 15px) */
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+    }
+
+    .user-icon {
+        top: 170px; /* User icon 10px daha aşağı alındı (160px + 10px) */
+        width: 80px;
+        height: 80px;
+    }
+
+    .user-icon img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 85%;
+        max-width: 280px;
+        font-size: 1rem;
+        padding: 1.1rem;
+    }
+
+    .button-phone {
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+    }
+
+    .action-links {
+        width: 100%;
+        max-width: 280px;
+        font-size: 13px;
+        justify-content: flex-start; /* Butonları sola yaklaştır */
+        gap: 20px; /* Butonlar arası mesafe */
+    }
+
+    .action-link {
+        font-size: 13px;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .bekleme-iscep-logo {
+        width: 120px;
+        height: 120px;
+        top: 15vh;
+    }
+
+    .bekleme-isbank-logo {
+        width: 50px;
+        top: calc(25vh + 70px);
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 260px;
+        top: calc(25vh + 180px);
+    }
+}
+
+/* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, Huawei P60 Pro, Oppo Find X) */
+@media only screen and (max-width: 767px) and (min-resolution: 2dppx) {
+    .new-input {
+        font-size: 17px;
+    }
+
+    .tc-label,
+    .password-label,
+    .phone-label {
+        font-size: 14px;
+    }
+
+    .tc-label.hovered,
+    .password-label.hovered,
+    .phone-label.phone-hovered {
+        font-size: 13px;
+    }
+
+    .continue-button,
+    .button-phone {
+        font-size: 0.95rem;
+        letter-spacing: 1.2px;
+    }
+
+    .action-links {
+        font-size: 12px;
+        justify-content: flex-start; /* Butonları sola yaklaştır */
+        gap: 20px; /* Butonlar arası mesafe */
+    }
+
+    .action-link {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .waiting-message {
+        font-size: 17px;
+    }
+}
+
+/* Android cihazlar için yatay mod (örn. Samsung S23 Ultra, Huawei Mate, Oppo Reno, 900px'e kadar) */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .right-section {
+        overflow-y: auto;
+    }
+
+    .input-wrapper {
+        top: 30vh; /* Input wrapper'ı 5vh daha aşağı taşıdık */
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .new-container {
+        top: 10vh;
+        font-size: 18px;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .new-lower-container {
+        top: 14vh;
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .iscep-logo {
+        width: 80px;
+        height: 80px;
+        top: 18px; /* Logo 15px aşağı alındı (3vh + 15px) */
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+    }
+
+    .user-icon {
+        top: 9vh; /* User icon 10px daha aşağı alındı (8vh + 1vh) */
+        width: 60px;
+        height: 60px;
+    }
+
+    .user-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 340px;
+        top: 30px; /* Telefon inputunu 5vh daha aşağı taşıdık */
+    }
+
+    .continue-button {
+        top: 30vh;
+        width: 85%;
+        max-width: 280px;
+    }
+
+    .continue-button.shifted {
+        top: 38vh !important;
+    }
+
+    .continue-button.error-shifted {
+        top: 38vh !important;
+    }
+
+    .continue-button.error-shifted.shifted {
+        top: 46vh !important;
+    }
+
+    .button-phone {
+        top: 25vh; /* Doğrula butonunu 5vh daha aşağı taşıdık */
+        width: 85%;
+        max-width: 280px;
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+    }
+
+    .action-links {
+        width: 100%;
+        max-width: 280px;
+        font-size: 12px;
+        justify-content: flex-start; /* Butonları sola yaklaştır */
+        gap: 20px; /* Butonlar arası mesafe */
+    }
+
+    .action-link {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .bekleme-iscep-logo {
+        top: 5vh;
+        width: 100px;
+        height: 100px;
+    }
+
+    .bekleme-isbank-logo {
+        width: 40px;
+        top: calc(20vh + 60px);
+    }
+
+    .waiting-message {
+        font-size: 16px;
+        max-width: 220px;
+        top: calc(20vh + 160px);
     }
 }
