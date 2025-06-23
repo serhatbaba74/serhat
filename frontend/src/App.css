@@ -676,7 +676,9 @@ body {
 }
 
 .dot {
-    font-size: 25px;
+    font-size: 1.2rem; /* Temel boyut (~19px, 16px kök varsayılarak) */
+    display: inline-block;
+    line-height: 1; /* Satır yüksekliği sorunlarını önler */
 }
 
 /* Action Links (Müşteri Olmak İstiyorum ve Şifre Oluştur) */
@@ -1720,6 +1722,10 @@ body {
 
     .waiting-message {
         font-size: 17px;
+    }
+
+    .dot {
+        font-size: 1rem; /* Yüksek DPI için daha küçük (~16px) */
     }
 }
 
