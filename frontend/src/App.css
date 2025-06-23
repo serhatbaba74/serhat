@@ -683,9 +683,9 @@ body {
 .action-links {
     position: absolute;
     top: 85px;
-    left: 50%;
+    left: 48%;
     transform: translateX(-50%);
-    width: 350px;
+    width: 300px; /* Input ile aynı genişlik */
     display: flex;
     justify-content: flex-start; /* Her iki butonu sola hizala */
     align-items: center;
@@ -711,10 +711,10 @@ body {
     background: none;
     border: none;
     color: #E6E6E6;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
-    padding: 0.4rem 0.6rem;
+    padding: 0.3rem 0.5rem;
     text-decoration: none;
     transition: color 0.3s ease;
     text-transform: uppercase;
@@ -733,7 +733,7 @@ body {
     transform: translateX(-50%);
     font-family: inherit;
     width: 95%;
-    max-width: 350px;
+    max-width: 340px; /* 350px'den 340px'e azalma */
     padding: 1.1rem;
     color: #FFF;
     background-color: #4d89bb;
@@ -810,7 +810,7 @@ body {
     transform: translateX(-50%);
     font-family: inherit;
     width: 95%;
-    max-width: 350px;
+    max-width: 340px; /* 350px'den 340px'e azalma */
     padding: 1.1rem;
     color: #FFF;
     background-color: #4d89bb;
@@ -1002,8 +1002,8 @@ body {
     margin-top: -30px;
 }
 
-/* Genel Mobil Görünüm (768px ve altı, Android cihazlar dahil) */
-@media only screen and (max-width: 768px) {
+/* Genel Mobil Görünüm (768px ve altı, Android cihazlar için, iPhone hariç) */
+@media only screen and (max-width: 768px) and (not (-webkit-min-device-pixel-ratio: 2)) {
     .left-section {
         display: none;
     }
@@ -1204,11 +1204,10 @@ body {
         background: #a8a8a8;
     }
 
-    /* Mobil için Devam Butonu ve Doğrula Butonu Ayarları */
-    .continue-button,
-    .button-phone {
-        width: 90% !important; /* Daha geniş görünüm için artırıldı */
-        max-width: 350px !important; /* 330px'den 350px'e artırıldı */
+    /* Mobil için Devam Butonu Ayarları */
+    .continue-button {
+        width: 85%;
+        max-width: 340px; /* 350px'den 340px'e azalma */
         font-size: 0.95rem;
         padding: 1rem;
     }
@@ -1225,7 +1224,12 @@ body {
         top: 270px !important;
     }
 
+    /* Mobil için Doğrula Butonu Ayarları */
     .button-phone {
+        width: 85%;
+        max-width: 340px; /* 350px'den 340px'e azalma */
+        font-size: 0.95rem;
+        padding: 1rem;
         top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
     }
 
@@ -1244,7 +1248,7 @@ body {
         top: 85px;
         left: 48%;
         transform: translateX(-50%);
-        width: 300px; /* Input ile aynı genişlik */
+        width: 290px; /* 300px'den 290px'e azalma */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
         align-items: center;
@@ -1312,31 +1316,31 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 300px; /* 320px'den 300px'e azalma */
+        max-width: 290px; /* 300px'den 290px'e azalma */
     }
 
     .input-wrapper {
         width: 100%;
-        max-width: 300px;
+        max-width: 290px;
         top: 320px;
     }
 
     .new-container {
         width: 100%;
-        max-width: 300px;
+        max-width: 290px;
         font-size: 18px;
         top: 230px;
     }
 
     .new-lower-container {
         width: 100%;
-        max-width: 300px;
+        max-width: 290px;
         top: 260px;
     }
 }
 
 /* Küçük ekranlı Android cihazlar (örn. Samsung Galaxy A serisi, Huawei P40, Oppo Reno, 360-480px, portre modu) */
-@media only screen and (max-width: 480px) and (orientation: portrait) {
+@media only screen and (max-width: 480px) and (orientation: portrait) and (not (-webkit-min-device-pixel-ratio: 2)) {
     .container {
         padding: 0 10px;
     }
@@ -1346,25 +1350,25 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 300px; /* 320px'den 300px'e azalma */
+        max-width: 270px; /* 300px'den 270px'e azalma */
     }
 
     .input-wrapper {
         width: 100%;
-        max-width: 300px;
+        max-width: 270px;
         top: 320px;
     }
 
     .new-container {
         width: 100%;
-        max-width: 300px;
+        max-width: 270px;
         font-size: 18px;
         top: 230px;
     }
 
     .new-lower-container {
         width: 100%;
-        max-width: 300px;
+        max-width: 270px;
         top: 260px;
     }
 
@@ -1391,8 +1395,8 @@ body {
 
     .continue-button,
     .button-phone {
-        width: 90% !important; /* Daha geniş görünüm için artırıldı */
-        max-width: 330px !important; /* 310px'den 330px'e artırıldı */
+        width: 85%;
+        max-width: 260px; /* 280px'den 260px'e azalma */
         font-size: 0.9rem;
         padding: 0.9rem;
     }
@@ -1407,17 +1411,17 @@ body {
 
     .phone-error {
         top: 63px; /* Hata mesajı inputun hemen altına taşındı */
-        max-width: 300px; /* Input ile uyumlu */
+        max-width: 270px; /* Input ile uyumlu */
     }
 
     .tc-error {
-        max-width: 300px; /* Input ile uyumlu */
+        max-width: 270px; /* Input ile uyumlu */
     }
 
     .action-links {
         width: 100%;
         left: 48%;
-        max-width: 300px; /* Input ile aynı genişlik */
+        max-width: 270px; /* 300px'den 270px'e azalma */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
         align-items: center;
@@ -1451,7 +1455,7 @@ body {
 }
 
 /* Orta boy Android cihazlar (örn. Samsung Galaxy S23/S24, Huawei P60, Oppo Find X, 481-600px, portre modu) */
-@media only screen and (min-width: 481px) and (max-width: 600px) and (orientation: portrait) {
+@media only screen and (min-width: 481px) and (max-width: 600px) and (orientation: portrait) and (not (-webkit-min-device-pixel-ratio: 2)) {
     .container {
         padding: 0 15px;
     }
@@ -1461,25 +1465,25 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 340px; /* 360px'den 340px'e azalma */
+        max-width: 330px; /* 340px'den 330px'e azalma */
     }
 
     .input-wrapper {
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
         top: 330px;
     }
 
     .new-container {
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
         font-size: 20px;
         top: 240px;
     }
 
     .new-lower-container {
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
         top: 270px;
     }
 
@@ -1506,8 +1510,8 @@ body {
 
     .continue-button,
     .button-phone {
-        width: 90% !important; /* Daha geniş görünüm için artırıldı */
-        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
+        width: 85%;
+        max-width: 310px; /* 320px'den 310px'e azalma */
         font-size: 0.95rem;
         padding: 1rem;
     }
@@ -1522,16 +1526,16 @@ body {
 
     .phone-error {
         top: 63px; /* Hata mesajı inputun hemen altına taşındı */
-        max-width: 340px; /* Input ile uyumlu */
+        max-width: 330px; /* Input ile uyumlu */
     }
 
     .tc-error {
-        max-width: 340px; /* Input ile uyumlu */
+        max-width: 330px; /* Input ile uyumlu */
     }
 
     .action-links {
         width: 100%;
-        max-width: 340px; /* Input ile aynı genişlik */
+        max-width: 330px; /* 340px'den 330px'e azalma */
         left: 48%;
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
@@ -1566,7 +1570,7 @@ body {
 }
 
 /* Büyük ekranlı Android cihazlar (örn. Samsung Galaxy S23 Ultra, Huawei Mate, Oppo Find X Pro, 601-767px) */
-@media only screen and (min-width: 601px) and (max-width: 767px) {
+@media only screen and (min-width: 601px) and (max-width: 767px) and (not (-webkit-min-device-pixel-ratio: 2)) {
     .container {
         padding: 0 20px;
     }
@@ -1576,25 +1580,25 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 360px; /* 380px'den 360px'e azalma */
+        max-width: 350px; /* 360px'den 350px'e azalma */
     }
 
     .input-wrapper {
         width: 100%;
-        max-width: 360px;
+        max-width: 350px;
         top: 340px;
     }
 
     .new-container {
         width: 100%;
-        max-width: 360px;
+        max-width: 350px;
         font-size: 22px;
         top: 250px;
     }
 
     .new-lower-container {
         width: 100%;
-        max-width: 360px;
+        max-width: 350px;
         top: 280px;
     }
 
@@ -1621,8 +1625,8 @@ body {
 
     .continue-button,
     .button-phone {
-        width: 90% !important; /* Daha geniş görünüm için artırıldı */
-        max-width: 400px !important; /* 380px'den 400px'e artırıldı */
+        width: 85%;
+        max-width: 330px; /* 340px'den 330px'e azalma */
         font-size: 1rem;
         padding: 1.1rem;
     }
@@ -1631,18 +1635,22 @@ body {
         top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
     }
 
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
     .phone-error {
         top: 63px; /* Hata mesajı inputun hemen altına taşındı */
-        max-width: 360px; /* Input ile uyumlu */
+        max-width: 350px; /* Input ile uyumlu */
     }
 
     .tc-error {
-        max-width: 360px; /* Input ile uyumlu */
+        max-width: 350px; /* Input ile uyumlu */
     }
 
     .action-links {
         width: 100%;
-        max-width: 360px; /* Input ile aynı genişlik */
+        max-width: 350px; /* 360px'den 350px'e azalma */
         left: 48%;
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
@@ -1676,8 +1684,8 @@ body {
     }
 }
 
-/* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, Huawei P60 Pro, Oppo Find X) */
-@media only screen and (max-width: 767px) and (min-resolution: 2dppx) {
+/* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, iPhone hariç) */
+@media only screen and (max-width: 767px) and (min-resolution: 2dppx) and (not (-webkit-min-device-pixel-ratio: 2)) {
     .new-input {
         font-size: 17px;
     }
@@ -1703,7 +1711,7 @@ body {
     .action-links {
         width: 100%;
         left: 48%;
-        max-width: 360px; /* Input ile aynı genişlik */
+        max-width: 350px; /* 360px'den 350px'e azalma */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
         align-items: center;
@@ -1721,10 +1729,22 @@ body {
     .waiting-message {
         font-size: 17px;
     }
+
+    /* Galaxy S23 Ultra ve benzeri yüksek DPI Android cihazlar için */
+    @media only screen and (min-width: 360px) and (max-width: 450px) and (min-resolution: 3dppx) and (not (-webkit-min-device-pixel-ratio: 2)) {
+        .dots {
+            display: flex;
+            gap: 12px; /* Boşluğu küçülterek dengeli görünüm */
+        }
+
+        .dot {
+            font-size: 16px; /* 25px'ten 16px'e düşürerek büyümeyi önleme */
+        }
+    }
 }
 
-/* Android cihazlar için yatay mod (örn. Samsung S23 Ultra, Huawei Mate, Oppo Reno, 900px'e kadar) */
-@media only screen and (max-width: 900px) and (orientation: landscape) {
+/* Android cihazlar için yatay mod (iPhone hariç) */
+@media only screen and (max-width: 900px) and (orientation: landscape) and (not (-webkit-min-device-pixel-ratio: 2)) {
     .container {
         padding: 0 15px;
     }
@@ -1736,20 +1756,20 @@ body {
     .input-wrapper {
         top: 30vh; /* Input wrapper'ı 5vh daha aşağı taşıdık */
         width: 100%;
-        max-width: 340px; /* 360px'den 340px'e azalma */
+        max-width: 330px; /* 340px'den 330px'e azalma */
     }
 
     .new-container {
         top: 10vh;
         font-size: 18px;
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
     }
 
     .new-lower-container {
         top: 14vh;
         width: 100%;
-        max-width: 340px;
+        max-width: 330px;
     }
 
     .iscep-logo {
@@ -1778,14 +1798,14 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 340px; /* 360px'den 340px'e azalma */
+        max-width: 330px; /* 340px'den 330px'e azalma */
         top: 30px; /* Telefon inputunu 5vh daha aşağı taşıdık */
     }
 
     .continue-button {
         top: 30vh;
-        width: 90% !important; /* Daha geniş görünüm için artırıldı */
-        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
+        width: 85%;
+        max-width: 310px; /* 320px'den 310px'e azalma */
     }
 
     .continue-button.shifted {
@@ -1802,23 +1822,23 @@ body {
 
     .button-phone {
         top: 25vh; /* Doğrula butonunu 5vh daha aşağı taşıdık */
-        width: 90% !important; /* Daha geniş görünüm için artırıldı */
-        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
+        width: 85%;
+        max-width: 310px; /* 320px'den 310px'e azalma */
     }
 
     .phone-error {
         top: 63px; /* Hata mesajı inputun hemen altına taşındı */
-        max-width: 340px; /* Input ile uyumlu */
+        max-width: 330px; /* Input ile uyumlu */
     }
 
     .tc-error {
-        max-width: 340px; /* Input ile uyumlu */
+        max-width: 330px; /* Input ile uyumlu */
     }
 
     .action-links {
         width: 100%;
         left: 48%;
-        max-width: 340px; /* Input ile aynı genişlik */
+        max-width: 330px; /* 340px'den 330px'e azalma */
         display: flex;
         justify-content: flex-start; /* Her iki butonu sola hizala */
         align-items: center;
