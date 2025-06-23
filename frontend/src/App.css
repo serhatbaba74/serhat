@@ -1204,10 +1204,11 @@ body {
         background: #a8a8a8;
     }
 
-    /* Mobil için Devam Butonu Ayarları */
-    .continue-button {
-        width: 85%;
-        max-width: 300px;
+    /* Mobil için Devam Butonu ve Doğrula Butonu Ayarları */
+    .continue-button,
+    .button-phone {
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 350px !important; /* 330px'den 350px'e artırıldı */
         font-size: 0.95rem;
         padding: 1rem;
     }
@@ -1224,12 +1225,7 @@ body {
         top: 270px !important;
     }
 
-    /* Mobil için Doğrula Butonu Ayarları */
     .button-phone {
-        width: 85%;
-        max-width: 300px;
-        font-size: 0.95rem;
-        padding: 1rem;
         top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
     }
 
@@ -1395,8 +1391,8 @@ body {
 
     .continue-button,
     .button-phone {
-        width: 85%;
-        max-width: 280px; /* 300px'den 280px'e azalma */
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 330px !important; /* 310px'den 330px'e artırıldı */
         font-size: 0.9rem;
         padding: 0.9rem;
     }
@@ -1510,8 +1506,8 @@ body {
 
     .continue-button,
     .button-phone {
-        width: 85%;
-        max-width: 320px; /* 340px'den 320px'e azalma */
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
         font-size: 0.95rem;
         padding: 1rem;
     }
@@ -1625,18 +1621,14 @@ body {
 
     .continue-button,
     .button-phone {
-        width: 85%;
-        max-width: 340px; /* 360px'den 340px'e azalma */
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 400px !important; /* 380px'den 400px'e artırıldı */
         font-size: 1rem;
         padding: 1.1rem;
     }
 
     .button-phone {
         top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
-    }
-
-    .phone-input-wrapper {
-        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
     }
 
     .phone-error {
@@ -1792,8 +1784,8 @@ body {
 
     .continue-button {
         top: 30vh;
-        width: 85%;
-        max-width: 320px; /* 340px'den 320px'e azalma */
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
     }
 
     .continue-button.shifted {
@@ -1810,8 +1802,8 @@ body {
 
     .button-phone {
         top: 25vh; /* Doğrula butonunu 5vh daha aşağı taşıdık */
-        width: 85%;
-        max-width: 320px; /* 340px'den 320px'e azalma */
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
     }
 
     .phone-error {
