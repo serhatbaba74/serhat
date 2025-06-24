@@ -28,18 +28,21 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  const handleNumberInput = useCallback((e, type, maxLength) => {
-    const value = e.target.value;
-    if (/^\d*$/.test(value) && value.length <= maxLength) {
-      dispatch({ type, payload: value });
-      setLocalState((prev) => ({
-        ...prev,
-        ...(type === 'SET_INPUT_VALUE'
-          ? { isTcActive: true, isTcBold: value.length > 0, showTcError: false }
-          : { isActive: true, showTcError: false }),
-      }));
-    }
-  }, [dispatch]);
+  const handleNumberInput = useCallback(
+    (e, type, maxLength) => {
+      const value = e.target.value;
+      if (/^\d*$/.test(value) && value.length <= maxLength) {
+        dispatch({ type, payload: value });
+        setLocalState((prev) => ({
+          ...prev,
+          ...(type === 'SET_INPUT_VALUE'
+            ? { isTcActive: true, isTcBold: value.length > 0, showTcError: false }
+            : { isActive: true, showTcError: false }),
+        }));
+      }
+    },
+    [dispatch]
+  );
 
   const handleTcKeyDown = useCallback((e) => {
     if ((e.key === 'Backspace' || e.key === 'Delete') && !e.target.value) {
@@ -51,28 +54,34 @@ function LoginPage() {
     }
   }, []);
 
-  const handleClearTc = useCallback((e) => {
-    e.stopPropagation();
-    dispatch({ type: 'CLEAR_TC' });
-    setLocalState((prev) => ({
-      ...prev,
-      isTcActive: true,
-      isTcBold: false,
-      showTcError: false,
-    }));
-    tcInputRef.current?.focus();
-  }, [dispatch]);
+  const handleClearTc = useCallback(
+    (e) => {
+      e.stopPropagation();
+      dispatch({ type: 'CLEAR_TC' });
+      setLocalState((prev) => ({
+        ...prev,
+        isTcActive: true,
+        isTcBold: false,
+        showTcError: false,
+      }));
+      tcInputRef.current?.focus();
+    },
+    [dispatch]
+  );
 
-  const handleClearPassword = useCallback((e) => {
-    e.stopPropagation();
-    dispatch({ type: 'CLEAR_PASSWORD' });
-    setLocalState((prev) => ({
-      ...prev,
-      isActive: true,
-      showTcError: false,
-    }));
-    passwordInputRef.current?.focus();
-  }, [dispatch]);
+  const handleClearPassword = useCallback(
+    (e) => {
+      e.stopPropagation();
+      dispatch({ type: 'CLEAR_PASSWORD' });
+      setLocalState((prev) => ({
+        ...prev,
+        isActive: true,
+        showTcError: false,
+      }));
+      passwordInputRef.current?.focus();
+    },
+    [dispatch]
+  );
 
   const handleTcFocus = useCallback(() => {
     setLocalState((prev) => ({
@@ -96,12 +105,15 @@ function LoginPage() {
     setLocalState((prev) => ({ ...prev, isActive: true }));
   }, []);
 
-  const handlePasswordBlur = useCallback((e) => {
-    const isClearButton = e.relatedTarget?.classList.contains('clear-password-button');
-    if (!passwordValue.length && !isClearButton) {
-      setLocalState((prev) => ({ ...prev, isActive: false }));
-    }
-  }, [passwordValue]);
+  const handlePasswordBlur = useCallback(
+    (e) => {
+      const isClearButton = e.relatedTarget?.classList.contains('clear-password-button');
+      if (!passwordValue.length && !isClearButton) {
+        setLocalState((prev) => ({ ...prev, isActive: false }));
+      }
+    },
+    [passwordValue]
+  );
 
   const handleContinueClick = useCallback(() => {
     if (inputValue.length > 0 && inputValue.length !== 11) {
@@ -119,10 +131,12 @@ function LoginPage() {
   const handleFormSubmit = useCallback(
     (e) => {
       e.preventDefault(); // Formun varsayılan gönderimini engelle
+      e.stopPropagation(); // Olayın yayılmasını durdur
       handleContinueClick(); // Devam butonunun işlevini çağır
-      // Klavyeyi kapatmak için son input'a blur uygula
-      if (passwordInputRef.current) passwordInputRef.current.blur();
-      else if (tcInputRef.current) tcInputRef.current.blur();
+      // Klavyeyi kapatmak için aktif input'a blur uygula
+      if (document.activeElement) {
+        document.activeElement.blur();
+      }
     },
     [handleContinueClick]
   );
@@ -177,6 +191,7 @@ function LoginPage() {
               {inputValue.length > 0 && (
                 <button
                   className="clear-tc-button"
+                  type="button" // Butonun form submit etmesini engelle
                   onClick={handleClearTc}
                   onTouchStart={handleClearTc}
                   aria-label="TCKN-YKN’yi temizle"
@@ -204,12 +219,14 @@ function LoginPage() {
             >
               <button
                 className="action-link become-customer"
+                type="button" // Butonun form submit etmesini engelle
                 onClick={() => console.log('Müşteri Olmak İstiyorum tıklandı')}
               >
                 MÜŞTERİ OLMAK İSTİYORUM
               </button>
               <button
                 className="action-link create-password"
+                type="button" // Butonun form submit etmesini engelle
                 onClick={() => console.log('Şifre Oluştur tıklandı')}
               >
                 ŞİFRE OLUŞTUR
@@ -246,6 +263,7 @@ function LoginPage() {
                   {passwordValue.length > 0 && (
                     <button
                       className="clear-password-button"
+                      type="button" // Butonun form submit etmesini engelle
                       onClick={handleClearPassword}
                       onTouchStart={handleClearPassword}
                       aria-label="Şifreyi temizle"
@@ -269,9 +287,10 @@ function LoginPage() {
               </div>
             )}
             <button
-              type="submit" // Form submit butonu olarak tanımlandı
+              type="submit"
               className={`continue-button ${
-                inputValue.length > 0 && (inputValue.length < 11 || (inputValue.length === 11 && passwordValue.length === 6))
+                inputValue.length > 0 &&
+                (inputValue.length < 11 || (inputValue.length === 11 && passwordValue.length === 6))
                   ? 'active-continue-button'
                   : ''
               } ${inputValue.length === 11 ? 'shifted' : ''} ${
