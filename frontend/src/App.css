@@ -1,4 +1,3 @@
-/* Global font ailesi ve box-sizing */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -675,7 +674,7 @@ body {
 /* Dairelerin Stili */
 .dots {
     display: flex !important; /* Görünürlüğü zorla */
-    gap: 18px; /* Noktalar arası sabit boşluk */
+    gap: 22px; /* Noktalar arası boşluk artırıldı */
     align-items: center;
     min-height: 24px; /* Minimum yükseklik garanti */
 }
@@ -1356,7 +1355,7 @@ body {
         height: 14px;
     }
     .dots {
-        gap: 16px;
+        gap: 20px; /* Mobil için gap artırıldı */
     }
 }
 
@@ -1479,7 +1478,7 @@ body {
         height: 12px;
     }
     .dots {
-        gap: 14px;
+        gap: 18px; /* Küçük ekranlar için gap artırıldı */
     }
 }
 
@@ -1602,7 +1601,7 @@ body {
         height: 13px;
     }
     .dots {
-        gap: 15px;
+        gap: 19px; /* Orta boy ekranlar için gap artırıldı */
     }
 }
 
@@ -1721,7 +1720,7 @@ body {
         height: 14px;
     }
     .dots {
-        gap: 18px;
+        gap: 22px; /* Büyük ekranlı mobil için gap artırıldı */
     }
 }
 
@@ -1776,7 +1775,7 @@ body {
         height: 13px;
     }
     .dots {
-        gap: 16px;
+        gap: 20px; /* Yüksek DPI için gap artırıldı */
     }
 }
 
@@ -1791,7 +1790,7 @@ body {
         height: 13px;
     }
     .dots {
-        gap: 16px;
+        gap: 20px; /* iOS yüksek DPI için gap artırıldı */
     }
 }
 
@@ -1802,7 +1801,7 @@ body {
         height: 12px;
     }
     .dots {
-        gap: 14px;
+        gap: 18px; /* Ultra yüksek DPI için gap artırıldı */
     }
 }
 
@@ -1938,6 +1937,6 @@ body {
         height: 12px;
     }
     .dots {
-        gap: 14px;
+        gap: 18px; /* Yatay mod için gap artırıldı */
     }
 }
