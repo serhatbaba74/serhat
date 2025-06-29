@@ -1301,17 +1301,17 @@ body {
 
     /* İşCep Logosu ve User Icon */
     .iscep-logo {
-        top: 28px; /* 2px yukarı kaydırıldı */
+        top: 23px; /* 2px yukarı kaydırıldı */
         width: 80px;
         height: 80px;
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 145px !important; /* Sabit 145px, !important eklendi */
+        top: 145px !important; /* Sabit 145px, !important ile */
         width: 72px;
         height: 72px;
     }
@@ -1414,15 +1414,15 @@ body {
     .iscep-logo {
         width: 80px;
         height: 80px;
-        top: 38px; /* 2px yukarı kaydırıldı */
+        top: 33px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 145px !important; /* Sabit 145px, !important eklendi */
+        top: 145px !important; /* Sabit 145px, !important ile */
         width: 72px;
         height: 72px;
     }
@@ -1556,15 +1556,15 @@ body {
     .iscep-logo {
         width: 90px;
         height: 90px;
-        top: 33px; /* 2px yukarı kaydırıldı */
+        top: 28px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 145px !important; /* Sabit 145px, !important eklendi */
+        top: 145px !important; /* Sabit 145px, !important ile */
         width: 82px;
         height: 82px;
     }
@@ -1698,15 +1698,15 @@ body {
     .iscep-logo {
         width: 100px;
         height: 100px;
-        top: 28px; /* 2px yukarı kaydırıldı */
+        top: 23px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 145px !important; /* Sabit 145px, !important eklendi */
+        top: 145px !important; /* Sabit 145px, !important ile */
         width: 92px;
         height: 92px;
     }
@@ -1970,15 +1970,15 @@ body {
     .iscep-logo {
         width: 80px;
         height: 80px;
-        top: 11px; /* 2px yukarı kaydırıldı */
+        top: 6px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 145px !important; /* Sabit 145px, !important eklendi */
+        top: 145px !important; /* Sabit 145px, !important ile */
         width: 72px;
         height: 72px;
     }
