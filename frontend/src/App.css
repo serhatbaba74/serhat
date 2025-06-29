@@ -1301,24 +1301,24 @@ body {
 
     /* İşCep Logosu ve User Icon */
     .iscep-logo {
-        top: 35px; /* Logo 15px aşağı alındı (20px + 15px) */
+        top: 28px; /* 2px yukarı kaydırıldı */
         width: 80px;
         height: 80px;
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı (40px + 15px) */
+        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 156px; /* 1px yukarı kaydırıldı */
-        width: 70px;
-        height: 70px;
+        top: 145px !important; /* Sabit 145px, !important eklendi */
+        width: 72px;
+        height: 72px;
     }
 
     .user-icon img {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
     }
 
     /* Input ve Kapsayıcı Genişlikleri */
@@ -1414,22 +1414,22 @@ body {
     .iscep-logo {
         width: 80px;
         height: 80px;
-        top: 45px; /* Logo 15px aşağı alındı (30px + 15px) */
+        top: 38px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 151px; /* 1px yukarı kaydırıldı */
-        width: 70px;
-        height: 70px;
+        top: 145px !important; /* Sabit 145px, !important eklendi */
+        width: 72px;
+        height: 72px;
     }
 
     .user-icon img {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
     }
 
     .continue-button,
@@ -1531,7 +1531,7 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 340px; /* 320px'den 340px'e artırıldı */
+        max-width: 340px; /* 360px'den 340px'e azalma */
     }
 
     .input-wrapper {
@@ -1556,22 +1556,22 @@ body {
     .iscep-logo {
         width: 90px;
         height: 90px;
-        top: 40px; /* Logo 15px aşağı alındı (25px + 15px) */
+        top: 33px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 161px; /* 1px yukarı kaydırıldı */
-        width: 80px;
-        height: 80px;
+        top: 145px !important; /* Sabit 145px, !important eklendi */
+        width: 82px;
+        height: 82px;
     }
 
     .user-icon img {
-        width: 45px;
-        height: 45px;
+        width: 47px;
+        height: 47px;
     }
 
     .continue-button,
@@ -1698,22 +1698,22 @@ body {
     .iscep-logo {
         width: 100px;
         height: 100px;
-        top: 35px; /* Logo 15px aşağı alındı (20px + 15px) */
+        top: 28px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 171px; /* 1px yukarı kaydırıldı */
-        width: 90px;
-        height: 90px;
+        top: 145px !important; /* Sabit 145px, !important eklendi */
+        width: 92px;
+        height: 92px;
     }
 
     .user-icon img {
-        width: 50px;
-        height: 50px;
+        width: 52px;
+        height: 52px;
     }
 
     .continue-button,
@@ -1970,22 +1970,22 @@ body {
     .iscep-logo {
         width: 80px;
         height: 80px;
-        top: 18px; /* Logo 15px aşağı alındı (3vh + 15px) */
+        top: 11px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 55px !important; /* Telefon doğrulama ekranında logo 15px aşağı alındı */
+        top: 48px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
     }
 
     .user-icon {
-        top: 8.6vh; /* 0.1vh yukarı kaydırıldı */
-        width: 70px;
-        height: 70px;
+        top: 145px !important; /* Sabit 145px, !important eklendi */
+        width: 72px;
+        height: 72px;
     }
 
     .user-icon img {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
     }
 
     .new-input,
@@ -2075,7 +2075,7 @@ body {
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
     .down-arrow {
-        width: 20px;    
+        width: 20px;
         height: 20px;
         background-color: rgba(255, 255, 255, 0.3);
         border-radius: 6px;
