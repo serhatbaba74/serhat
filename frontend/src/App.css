@@ -280,7 +280,7 @@ body {
 
 /* Telefon Doğrulama Ekranındaki İşCep Logosu */
 .right-section .iscep-logo.iscep-logo-phone {
-    top: 40px !important; /* Telefon doğrulama ekranında logo 10px aşağı alındı */
+    top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
 }
 
 /* User.png Görseli Stili (Daire Kapsayıcı) */
@@ -1301,13 +1301,13 @@ body {
 
     /* İşCep Logosu ve User Icon */
     .iscep-logo {
-        top: 23px; /* 2px yukarı kaydırıldı */
+        top: 20px !important; /* Sabit 20px, !important ile */
         width: 80px;
         height: 80px;
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
     }
 
     .user-icon {
@@ -1412,13 +1412,13 @@ body {
     }
 
     .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
         width: 80px;
         height: 80px;
-        top: 33px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
     }
 
     .user-icon {
@@ -1554,13 +1554,13 @@ body {
     }
 
     .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
         width: 90px;
         height: 90px;
-        top: 28px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
     }
 
     .user-icon {
@@ -1679,7 +1679,7 @@ body {
     .input-wrapper {
         width: 100%;
         max-width: 360px;
-        top: 340px;
+        top: 320px;
     }
 
     .new-container {
@@ -1696,13 +1696,13 @@ body {
     }
 
     .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
         width: 100px;
         height: 100px;
-        top: 23px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
     }
 
     .user-icon {
@@ -1758,7 +1758,7 @@ body {
     .bekleme-iscep-logo {
         width: 120px;
         height: 120px;
-        top: 15vh;
+        top: 12vh;
     }
 
     .bekleme-isbank-logo {
@@ -1968,13 +1968,13 @@ body {
     }
 
     .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
         width: 80px;
         height: 80px;
-        top: 6px; /* 2px yukarı kaydırıldı */
     }
 
     .right-section .iscep-logo.iscep-logo-phone {
-        top: 43px !important; /* Telefon doğrulama ekranında logo 2px yukarı kaydırıldı */
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
     }
 
     .user-icon {
