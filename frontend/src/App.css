@@ -1311,14 +1311,14 @@ body {
     }
 
     .user-icon {
-        top: 160px; /* User icon 10px daha aşağı alındı (150px + 10px) */
-        width: 60px;
-        height: 60px;
+        top: 156px; /* 1px yukarı kaydırıldı */
+        width: 70px;
+        height: 70px;
     }
 
     .user-icon img {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
     }
 
     /* Input ve Kapsayıcı Genişlikleri */
@@ -1346,7 +1346,26 @@ body {
     .new-lower-container {
         width: 100%;
         max-width: 300px;
-        top: 260px;
+        top: 250px;
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
     }
 
     /* Mobil cihazlar için noktalar */
@@ -1389,7 +1408,7 @@ body {
     .new-lower-container {
         width: 100%;
         max-width: 300px;
-        top: 260px;
+        top: 250px;
     }
 
     .iscep-logo {
@@ -1403,14 +1422,14 @@ body {
     }
 
     .user-icon {
-        top: 150px; /* User icon 10px daha aşağı alındı (140px + 10px) */
-        width: 60px;
-        height: 60px;
+        top: 151px; /* 1px yukarı kaydırıldı */
+        width: 70px;
+        height: 70px;
     }
 
     .user-icon img {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
     }
 
     .continue-button,
@@ -1480,6 +1499,25 @@ body {
     .dots {
         gap: 18px; /* Küçük ekranlar için gap artırıldı */
     }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Orta boy Android cihazlar (örn. Samsung Galaxy S23/S24, Huawei P60, Oppo Find X, 481-600px, portre modu) */
@@ -1493,26 +1531,26 @@ body {
     .password-input-wrapper,
     .phone-input-wrapper {
         width: 100%;
-        max-width: 340px; /* 360px'den 340px'e azalma */
+        max-width: 340px; /* 320px'den 340px'e artırıldı */
     }
 
     .input-wrapper {
         width: 100%;
         max-width: 340px;
-        top: 330px;
+        top: 320px;
     }
 
     .new-container {
         width: 100%;
         max-width: 340px;
-        font-size: 20px;
-        top: 240px;
+        font-size: 18px;
+        top: 230px;
     }
 
     .new-lower-container {
         width: 100%;
         max-width: 340px;
-        top: 270px;
+        top: 250px;
     }
 
     .iscep-logo {
@@ -1526,14 +1564,14 @@ body {
     }
 
     .user-icon {
-        top: 160px; /* User icon 10px daha aşağı alındı (150px + 10px) */
-        width: 70px;
-        height: 70px;
+        top: 161px; /* 1px yukarı kaydırıldı */
+        width: 80px;
+        height: 80px;
     }
 
     .user-icon img {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 
     .continue-button,
@@ -1603,6 +1641,25 @@ body {
     .dots {
         gap: 19px; /* Orta boy ekranlar için gap artırıldı */
     }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Büyük ekranlı Android cihazlar (örn. Samsung Galaxy S23 Ultra, Huawei Mate, Oppo Find X Pro, 601-767px) */
@@ -1635,7 +1692,7 @@ body {
     .new-lower-container {
         width: 100%;
         max-width: 360px;
-        top: 280px;
+        top: 250px;
     }
 
     .iscep-logo {
@@ -1649,14 +1706,14 @@ body {
     }
 
     .user-icon {
-        top: 170px; /* User icon 10px daha aşağı alındı (160px + 10px) */
-        width: 80px;
-        height: 80px;
+        top: 171px; /* 1px yukarı kaydırıldı */
+        width: 90px;
+        height: 90px;
     }
 
     .user-icon img {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
     }
 
     .continue-button,
@@ -1722,6 +1779,25 @@ body {
     .dots {
         gap: 22px; /* Büyük ekranlı mobil için gap artırıldı */
     }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, iPhone 14 Pro) */
@@ -1777,6 +1853,25 @@ body {
     .dots {
         gap: 20px; /* Yüksek DPI için gap artırıldı */
     }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* iOS ve yüksek DPI cihazlar için özel ayar */
@@ -1792,6 +1887,25 @@ body {
     .dots {
         gap: 20px; /* iOS yüksek DPI için gap artırıldı */
     }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 /* Samsung S23 Ultra gibi ultra yüksek DPI cihazlar */
@@ -1802,6 +1916,25 @@ body {
     }
     .dots {
         gap: 18px; /* Ultra yüksek DPI için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -1822,16 +1955,16 @@ body {
     }
 
     .new-container {
-        top: 10vh;
-        font-size: 18px;
         width: 100%;
         max-width: 340px;
+        font-size: 18px;
+        top: 230px;
     }
 
     .new-lower-container {
         width: 100%;
         max-width: 340px;
-        top: 14vh;
+        top: 250px;
     }
 
     .iscep-logo {
@@ -1845,14 +1978,14 @@ body {
     }
 
     .user-icon {
-        top: 9vh; /* User icon 10px daha aşağı alındı (8vh + 1vh) */
-        width: 60px;
-        height: 60px;
+        top: 8.6vh; /* 0.1vh yukarı kaydırıldı */
+        width: 70px;
+        height: 70px;
     }
 
     .user-icon img {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
     }
 
     .new-input,
@@ -1938,5 +2071,24 @@ body {
     }
     .dots {
         gap: 18px; /* Yatay mod için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;    
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
     }
 }
