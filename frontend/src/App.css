@@ -272,12 +272,12 @@ body {
 
 /* İşCep Logosu Stili */
 .iscep-logo {
-    position: absolute;
-    top: 2vh !important; /* Daha da yukarı alındı ve !important eklendi */
-    left: 50%;
-    transform: translateX(-50%);
     width: 100px;
     height: 100px;
+    position: absolute;
+    top: 2vh !important; /* En üstte kalacak */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Telefon Doğrulama Ekranındaki İşCep Logosu */
@@ -990,7 +990,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Merkeze hizalama */
+    justify-content: flex-start; /* Üstten başlayacak */
     height: auto; /* Dinamik yükseklik */
     width: 100%;
     position: relative;
@@ -1002,7 +1002,7 @@ body {
     height: 100px;
     margin-bottom: 30px;
     position: absolute;
-    top: 2vh !important; /* Daha da yukarı alındı ve !important eklendi */
+    top: 2vh !important; /* En üstte kalacak */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1010,9 +1010,9 @@ body {
 .bekleme-check-logo {
     width: 60px !important; /* Boyut artırıldı ve !important eklendi */
     height: 60px !important;
-    margin-bottom: 20px; /* Yazı ile mesafe */
+    margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
     position: absolute;
-    top: 25vh !important; /* Yukarı alındı ve !important eklendi */
+    top: 20vh !important; /* Yazının üstünde */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1027,7 +1027,7 @@ body {
     padding: 0 15px; /* Yanlara daha fazla ekleme */
     white-space: normal; /* Satır kırılmasını doğal bırak */
     position: relative; /* Mutlak pozisyondan çıkarıldı */
-    margin-top: 20px; /* Check.png ile mesafe */
+    margin-top: 100px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
 }
 
 /* Yükleme Ekranı Overlay */
@@ -1188,7 +1188,7 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 5vh !important; /* Daha da yukarı alındı ve !important eklendi */
+        top: 5vh !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1196,9 +1196,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 20px; /* Yazı ile mesafe */
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 25vh !important; /* Yukarı alındı ve !important eklendi */
+        top: 20vh !important; /* Yazının üstünde */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1213,7 +1213,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 20px; /* Check.png ile mesafe */
+        margin-top: 100px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1557,7 +1557,7 @@ body {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 5vh !important; /* Daha da yukarı alındı ve !important eklendi */
+        top: 5vh !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1565,9 +1565,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Küçük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 20px; /* Yazı ile mesafe */
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 25vh !important; /* Yukarı alındı ve !important eklendi */
+        top: 20vh !important; /* Yazının üstünde */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1582,7 +1582,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 20px; /* Check.png ile mesafe */
+        margin-top: 100px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
     }
 
     .dot {
@@ -1714,7 +1714,7 @@ body {
         width: 110px;
         height: 110px;
         position: absolute;
-        top: 5vh !important; /* Daha da yukarı alındı ve !important eklendi */
+        top: 5vh !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1722,9 +1722,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Orta ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 20px; /* Yazı ile mesafe */
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 25vh !important; /* Yukarı alındı ve !important eklendi */
+        top: 20vh !important; /* Yazının üstünde */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1739,7 +1739,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 20px; /* Check.png ile mesafe */
+        margin-top: 100px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
     }
 
     .dot {
@@ -1867,7 +1867,7 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 5vh !important; /* Daha da yukarı alındı ve !important eklendi */
+        top: 5vh !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1875,9 +1875,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Büyük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 20px; /* Yazı ile mesafe */
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 25vh !important; /* Yukarı alındı ve !important eklendi */
+        top: 20vh !important; /* Yazının üstünde */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1892,7 +1892,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 20px; /* Check.png ile mesafe */
+        margin-top: 100px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
     }
 
     .dot {
@@ -2182,7 +2182,7 @@ body {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 5vh !important; /* Daha da yukarı alındı ve !important eklendi */
+        top: 5vh !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2190,9 +2190,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Yatay mod için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 20px; /* Yazı ile mesafe */
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 25vh !important; /* Yukarı alındı ve !important eklendi */
+        top: 20vh !important; /* Yazının üstünde */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2207,7 +2207,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 20px; /* Check.png ile mesafe */
+        margin-top: 100px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
     }
 
     .dot {
@@ -2237,4 +2237,3 @@ body {
         height: 20px;
     }
 }
-
