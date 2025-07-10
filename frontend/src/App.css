@@ -1,3 +1,4 @@
+```css
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -1005,7 +1006,7 @@ body {
     width: 80px; /* Boyut küçültüldü */
     height: 80px; /* Boyut küçültüldü */
     position: absolute;
-    top: 0 !important; /* Üstte sabit */
+    top: 50px !important; /* Logo biraz aşağıya alındı */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001; /* Diğer katmanların üstünde */
@@ -1016,7 +1017,7 @@ body {
     height: 60px !important;
     margin-bottom: 30px; /* Yazı ile mesafe */
     position: absolute;
-    top: 20vh !important; /* Sabit tut */
+    top: 20vh !important; /* Sabit tut, değişmedi */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1196,7 +1197,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1570,7 +1571,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1732,7 +1733,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1890,7 +1891,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2003,7 +2004,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2067,7 +2068,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2129,7 +2130,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2283,7 +2284,7 @@ body {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 0 !important; /* Üstte sabit */
+        top: 50px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
