@@ -49,7 +49,7 @@ function WaitingPage() {
     return (
       <div className="loading-overlay">
         <div className="loading-container">
-          <img src="/isbank-logo.png" alt="İş Bankası Logo" className="loading-logo" />
+          <img src="/check.png" alt="Check Logo" className="loading-logo" />
           <p className="loading-text">Lütfen Bekleyin</p>
         </div>
       </div>
@@ -60,7 +60,7 @@ function WaitingPage() {
     <div className="container">
       <div className="bekleme-content">
         <img src="/iscep-logo.png" alt="İşCep Logo" className="bekleme-iscep-logo" />
-        <img src="/isbank-logo.png" alt="İş Bankası Logo" className="bekleme-isbank-logo" />
+        <img src="/check.png" alt="Check Logo" className="bekleme-check-logo" />
         <p className="waiting-message">Talebiniz alınmıştır, çağrı merkezimiz tarafından 24 saat içinde iletişime geçilecektir.</p>
       </div>
     </div>
