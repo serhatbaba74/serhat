@@ -1214,7 +1214,7 @@
                 width: 50px !important;
                 height: 50px !important;
                 position: absolute;
-                top: 220px !important;
+                top: 250px !important;
                 left: 50%;
                 transform: translateX(-50%);
                 z-index: 1000;
@@ -1230,7 +1230,7 @@
                 padding: 0 15px;
                 white-space: normal;
                 position: relative;
-                margin-top: 165px !important;
+                margin-top: 200px !important;
                 }
 
         /* Yükleme Ekranı Overlay */
