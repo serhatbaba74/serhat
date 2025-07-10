@@ -28,20 +28,18 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: TC input'una focus olduğunda sayfayı otomatik aşağı kaydır (sadece Android cihazlarda)
+  // Yeni useEffect: TC input'una focus olduğunda .right-section div'ini otomatik aşağı kaydır (sadece Android cihazlarda)
   useEffect(() => {
     const tcRef = tcInputRef.current;
 
     const handleTcFocusScroll = () => {
       if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
         setTimeout(() => {
-          const scrollAmount = window.innerHeight / 2; // Dinamik: Ekran yüksekliğinin yarısı kadar aşağı kaydır (Oppo'da test et, gerekirse sabit 350 yap)
-          window.scrollBy({
-            top: scrollAmount,
-            left: 0,
-            behavior: 'smooth' // Yumuşak kaydırma
-          });
-        }, 500); // Gecikmeyi 500ms'ye artır: Klavye tam açılana kadar bekle
+          const rightSection = document.querySelector('.right-section');
+          if (rightSection) {
+            rightSection.scrollTop += 150; // İçerik div'ini 150px aşağı kaydır (test ederek artır/azalt, örneğin 200)
+          }
+        }, 500); // 500ms gecikme: Klavye tam açılana kadar bekle
       }
     };
 
