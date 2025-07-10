@@ -28,42 +28,6 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni eklenen useEffect: Klavye açıldığında (input focus) butonu otomatik scroll ile görünür yap
-  useEffect(() => {
-    const tcRef = tcInputRef.current;
-    const pwRef = passwordInputRef.current;
-
-    const handleInputFocus = () => {
-      setTimeout(() => {
-        const button = document.querySelector('.continue-button');
-        if (button) {
-          button.scrollIntoView({
-            behavior: 'smooth', // Yumuşak kaydırma
-            block: 'end', // Butonu ekranın altına getir
-            inline: 'center' // Yatay merkezle
-          });
-        }
-      }, 300); // 300ms gecikme: Klavye açılış animasyonunu bekle (cihaza göre 200-500ms ayarlayın)
-    };
-
-    // TC ve Şifre input'larına focus event ekle
-    if (tcRef) {
-      tcRef.addEventListener('focus', handleInputFocus);
-    }
-    if (pwRef) {
-      pwRef.addEventListener('focus', handleInputFocus);
-    }
-
-    return () => {
-      if (tcRef) {
-        tcRef.removeEventListener('focus', handleInputFocus);
-      }
-      if (pwRef) {
-        pwRef.removeEventListener('focus', handleInputFocus);
-      }
-    };
-  }, []);
-
   const handleNumberInput = useCallback(
     (e, type, maxLength) => {
       const value = e.target.value;
