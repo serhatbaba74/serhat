@@ -1,3 +1,4 @@
+```css
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -1000,11 +1001,10 @@ body {
     margin-top: -50px;
 }
 
-.bekleme-isbank-logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 40px;
-    margin-top: -20px;
+.bekleme-check-logo {
+    width: 40px; /* Görsel boyutunu küçülttük */
+    height: 40px;
+    margin-bottom: 10px; /* Yazı ile arasında boşluk */
 }
 
 .waiting-message {
@@ -1012,9 +1012,71 @@ body {
     font-size: 19.2px;
     font-weight: 500;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 0;
     max-width: 300px;
-    margin-top: -30px;
+}
+
+/* Yükleme Ekranı Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #00509E, #0066CC);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Yükleme Kapsayıcısı */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Yükleme Logosu */
+.loading-logo {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #007BFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loading-logo img {
+    width: 60%;
+    height: auto;
+}
+
+/* Logo için Pulse Efekti */
+.loading-logo::before {
+    content: '';
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite ease-out;
+    z-index: -1;
+}
+
+/* Yükleme Metni */
+.loading-text {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-align: center;
 }
 
 /* Genel Mobil Görünüm (768px ve altı, Android cihazlar dahil) */
@@ -1117,9 +1179,9 @@ body {
         transform: translateX(-50%);
     }
 
-    .bekleme-isbank-logo {
-        width: 50px;
-        height: auto;
+    .bekleme-check-logo {
+        width: 32px; /* Mobil için daha küçük boyut */
+        height: 32px;
         position: absolute;
         top: calc(25vh + 70px);
         left: 50%;
@@ -1128,7 +1190,7 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: calc(25vh + 180px);
+        top: calc(25vh + 120px); /* Görselin altına hizalandı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -1481,15 +1543,16 @@ body {
         top: 10vh;
     }
 
-    .bekleme-isbank-logo {
-        width: 40px;
+    .bekleme-check-logo {
+        width: 28px; /* Daha küçük ekranlar için boyut */
+        height: 28px;
         top: calc(20vh + 60px);
     }
 
     .waiting-message {
         font-size: 16px;
         max-width: 220px;
-        top: calc(20vh + 160px);
+        top: calc(20vh + 100px);
     }
 
     .dot {
@@ -1623,15 +1686,16 @@ body {
         top: 12vh;
     }
 
-    .bekleme-isbank-logo {
-        width: 45px;
+    .bekleme-check-logo {
+        width: 30px;
+        height: 30px;
         top: calc(22vh + 65px);
     }
 
     .waiting-message {
         font-size: 17px;
         max-width: 240px;
-        top: calc(22vh + 170px);
+        top: calc(22vh + 110px);
     }
 
     .dot {
@@ -1761,15 +1825,16 @@ body {
         top: 12vh;
     }
 
-    .bekleme-isbank-logo {
-        width: 50px;
+    .bekleme-check-logo {
+        width: 32px;
+        height: 32px;
         top: calc(25vh + 70px);
     }
 
     .waiting-message {
         font-size: 18px;
         max-width: 260px;
-        top: calc(25vh + 180px);
+        top: calc(25vh + 120px);
     }
 
     .dot {
@@ -2049,20 +2114,21 @@ body {
     }
 
     .bekleme-iscep-logo {
-        top: 5vh;
         width: 100px;
         height: 100px;
+        top: 5vh;
     }
 
-    .bekleme-isbank-logo {
-        width: 40px;
+    .bekleme-check-logo {
+        width: 28px;
+        height: 28px;
         top: calc(20vh + 60px);
     }
 
     .waiting-message {
         font-size: 16px;
         max-width: 220px;
-        top: calc(20vh + 160px);
+        top: calc(20vh + 100px);
     }
 
     .dot {
