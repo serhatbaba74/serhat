@@ -174,7 +174,7 @@ body {
 /* Linkler */
 .links-container {
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     width: 100%;
     margin: 20px 0;
 }
@@ -1198,6 +1198,7 @@ body {
         position: relative;
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
         box-sizing: border-box; /* Padding'in yüksekliği etkilemesini önle */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1230,7 +1231,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1572,6 +1573,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1597,7 +1599,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
@@ -1727,6 +1729,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1752,7 +1755,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
@@ -1878,6 +1881,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1903,7 +1907,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
@@ -1980,11 +1984,12 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2044,11 +2049,12 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2110,6 +2116,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2135,7 +2142,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2270,6 +2277,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2295,7 +2303,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
