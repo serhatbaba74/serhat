@@ -28,24 +28,36 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: VirtualKeyboard API ile klavye sorununu çöz (sadece Android)
+  // Yeni useEffect: Klavye açıldığında keyboard yüksekliğini hesapla ve padding ekle (sadece Android)
   useEffect(() => {
-    if (!/Android/i.test(navigator.userAgent) || !('virtualKeyboard' in navigator)) return; // Sadece Android ve destekli tarayıcılarda uygula
+    if (!/Android/i.test(navigator.userAgent)) return; // Sadece Android için uygula
 
-    const vk = navigator.virtualKeyboard;
-    vk.overlaysContent = true; // Klavye viewport'u resize etmesin, üstüne gelsin
+    let initialHeight = window.innerHeight;
+    let keyboardHeight = 0;
 
-    const handleGeometryChange = () => {
-      const button = document.querySelector('.continue-button');
-      if (button && vk.boundingRect.height > 0) { // Klavye açıkken
-        button.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Butonu klavye üstüne getir
+    const handleResize = () => {
+      const newHeight = window.innerHeight;
+      if (newHeight < initialHeight) {
+        // Klavye açıldı
+        keyboardHeight = initialHeight - newHeight;
+        const rightSection = document.querySelector('.right-section');
+        if (rightSection) {
+          rightSection.style.paddingBottom = `${keyboardHeight + 50}px`; // Keyboard yüksekliği + ekstra boşluk (buton için 50px ekledim)
+        }
+      } else {
+        // Klavye kapandı
+        const rightSection = document.querySelector('.right-section');
+        if (rightSection) {
+          rightSection.style.paddingBottom = '0px';
+        }
+        initialHeight = newHeight; // Yeni initial'i güncelle
       }
     };
 
-    vk.addEventListener('geometrychange', handleGeometryChange);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      vk.removeEventListener('geometrychange', handleGeometryChange);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
