@@ -35,12 +35,13 @@ function LoginPage() {
     const handleTcFocusScroll = () => {
       if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
         setTimeout(() => {
+          const scrollAmount = window.innerHeight / 2; // Dinamik: Ekran yüksekliğinin yarısı kadar aşağı kaydır (Oppo'da test et, gerekirse sabit 350 yap)
           window.scrollBy({
-            top: 350, // Aşağı kaydırma miktarı (px) - Oppo'da test ederek artır/azalt (örneğin 100-200)
+            top: scrollAmount,
             left: 0,
             behavior: 'smooth' // Yumuşak kaydırma
           });
-        }, 300); // 300ms gecikme: Klavye açılışını bekle (Android animasyonu için)
+        }, 500); // Gecikmeyi 500ms'ye artır: Klavye tam açılana kadar bekle
       }
     };
 
