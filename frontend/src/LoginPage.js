@@ -28,33 +28,36 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: TC input'una focus olduğunda .right-section'ı otomatik aşağı kaydır (sadece Android cihazlarda)
+  // Yeni useEffect: Klavye açıldığında keyboard yüksekliğini hesapla ve padding ekle (sadece Android)
   useEffect(() => {
-    const tcRef = tcInputRef.current;
+    if (!/Android/i.test(navigator.userAgent)) return; // Sadece Android için uygula
 
-    const handleTcFocusScroll = () => {
-      if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
-        setTimeout(() => {
-          console.log('Scroll tetiklendi - Android algılandı'); // Test için konsola yaz (sonra kaldır)
-          const rightSection = document.querySelector('.right-section');
-          const button = document.querySelector('.continue-button');
-          if (rightSection && button) {
-            const buttonTop = button.getBoundingClientRect().top; // Butonun konumunu hesapla
-            const scrollAmount = buttonTop - (window.innerHeight / 2) + 150; // Butonu ekran ortasına getir + ekstra
-            rightSection.scrollTop += scrollAmount; // İçerik div'ini kaydır
-          }
-        }, 600); // Gecikmeyi 600ms'ye artır: Klavye tam açılana kadar bekle
+    let initialHeight = window.innerHeight;
+    let keyboardHeight = 0;
+
+    const handleResize = () => {
+      const newHeight = window.innerHeight;
+      if (newHeight < initialHeight) {
+        // Klavye açıldı
+        keyboardHeight = initialHeight - newHeight;
+        const rightSection = document.querySelector('.right-section');
+        if (rightSection) {
+          rightSection.style.paddingBottom = `${keyboardHeight + 20}px`; // Keyboard yüksekliği + ekstra boşluk
+        }
+      } else {
+        // Klavye kapandı
+        const rightSection = document.querySelector('.right-section');
+        if (rightSection) {
+          rightSection.style.paddingBottom = '0px';
+        }
+        initialHeight = newHeight; // Yeni initial'i güncelle
       }
     };
 
-    if (tcRef) {
-      tcRef.addEventListener('focus', handleTcFocusScroll);
-    }
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      if (tcRef) {
-        tcRef.removeEventListener('focus', handleTcFocusScroll);
-      }
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
