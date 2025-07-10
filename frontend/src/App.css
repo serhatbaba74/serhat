@@ -996,7 +996,7 @@ body {
     width: 100%;
     position: relative;
     padding: 0; /* Dikey mesafeyi sıfırla, İscepin üstte kalması için */
-    margin-top: 120px; /* İscepin üstte kalması için içeriği aşağı kaydır */
+    margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
 }
 
 .bekleme-iscep-logo {
@@ -1004,10 +1004,10 @@ body {
     height: 100px;
     margin-bottom: 30px;
     position: absolute;
-    top: 0 !important; /* Diğer sayfalardaki gibi üstte */
+    top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1000; /* En üstte kalmasını garanti et */
+    z-index: 1001; /* Diğer katmanların üstünde */
 }
 
 .bekleme-check-logo {
@@ -1187,14 +1187,18 @@ body {
         margin-top: 10px;
     }
 
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
     .bekleme-iscep-logo {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 0 !important; /* Diğer sayfalardaki gibi üstte */
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* En üstte kalmasını garanti et */
+        z-index: 1001; /* Diğer katmanların üstünde */
     }
 
     .bekleme-check-logo {
@@ -1557,14 +1561,18 @@ body {
         padding: 0.3rem 0.4rem;
     }
 
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
     .bekleme-iscep-logo {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 0 !important; /* Diğer sayfalardaki gibi üstte */
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* En üstte kalmasını garanti et */
+        z-index: 1001; /* Diğer katmanların üstünde */
     }
 
     .bekleme-check-logo {
@@ -1715,14 +1723,18 @@ body {
         padding: 0.3rem 0.5rem;
     }
 
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
     .bekleme-iscep-logo {
         width: 110px;
         height: 110px;
         position: absolute;
-        top: 0 !important; /* Diğer sayfalardaki gibi üstte */
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* En üstte kalmasını garanti et */
+        z-index: 1001; /* Diğer katmanların üstünde */
     }
 
     .bekleme-check-logo {
@@ -1869,14 +1881,18 @@ body {
         padding: 0.4rem 0.6rem;
     }
 
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
     .bekleme-iscep-logo {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 0 !important; /* Diğer sayfalardaki gibi üstte */
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* En üstte kalmasını garanti et */
+        z-index: 1001; /* Diğer katmanların üstünde */
     }
 
     .bekleme-check-logo {
@@ -1978,6 +1994,30 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
     }
 
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
+    .bekleme-iscep-logo {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        position: absolute;
+        top: 20vh !important; /* Azıcık aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .dot {
         width: 13px;
         height: 13px;
@@ -2017,6 +2057,30 @@ body {
         max-width: 320px; /* Satır uzunluğu artırıldı */
         padding: 0 15px; /* Yanlara daha fazla ekleme */
     }
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
+    .bekleme-iscep-logo {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        position: absolute;
+        top: 20vh !important; /* Azıcık aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .dot {
         width: 13px;
         height: 13px;
@@ -2053,6 +2117,30 @@ body {
     }
     .dots {
         gap: 18px; /* Ultra yüksek DPI için gap artırıldı */
+    }
+
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
+    .bekleme-iscep-logo {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        position: absolute;
+        top: 20vh !important; /* Azıcık aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2185,14 +2273,18 @@ body {
         padding: 0.3rem 0.5rem;
     }
 
+    .bekleme-content {
+        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    }
+
     .bekleme-iscep-logo {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 0 !important; /* Diğer sayfalardaki gibi üstte */
+        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000; /* En üstte kalmasını garanti et */
+        z-index: 1001; /* Diğer katmanların üstünde */
     }
 
     .bekleme-check-logo {
@@ -2245,3 +2337,4 @@ body {
         height: 20px;
     }
 }
+
