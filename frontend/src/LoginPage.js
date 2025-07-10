@@ -28,36 +28,24 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: Klavye açıldığında keyboard yüksekliğini hesapla ve padding ekle (sadece Android)
+  // Yeni useEffect: VirtualKeyboard API ile klavye sorununu çöz (sadece Android)
   useEffect(() => {
-    if (!/Android/i.test(navigator.userAgent)) return; // Sadece Android için uygula
+    if (!/Android/i.test(navigator.userAgent) || !('virtualKeyboard' in navigator)) return; // Sadece Android ve destekli tarayıcılarda uygula
 
-    let initialHeight = window.innerHeight;
-    let keyboardHeight = 0;
+    const vk = navigator.virtualKeyboard;
+    vk.overlaysContent = true; // Klavye viewport'u resize etmesin, üstüne gelsin
 
-    const handleResize = () => {
-      const newHeight = window.innerHeight;
-      if (newHeight < initialHeight) {
-        // Klavye açıldı
-        keyboardHeight = initialHeight - newHeight;
-        const rightSection = document.querySelector('.right-section');
-        if (rightSection) {
-          rightSection.style.paddingBottom = `${keyboardHeight + 20}px`; // Keyboard yüksekliği + ekstra boşluk
-        }
-      } else {
-        // Klavye kapandı
-        const rightSection = document.querySelector('.right-section');
-        if (rightSection) {
-          rightSection.style.paddingBottom = '0px';
-        }
-        initialHeight = newHeight; // Yeni initial'i güncelle
+    const handleGeometryChange = () => {
+      const button = document.querySelector('.continue-button');
+      if (button && vk.boundingRect.height > 0) { // Klavye açıkken
+        button.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Butonu klavye üstüne getir
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    vk.addEventListener('geometrychange', handleGeometryChange);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      vk.removeEventListener('geometrychange', handleGeometryChange);
     };
   }, []);
 
