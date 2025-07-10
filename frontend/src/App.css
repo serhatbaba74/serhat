@@ -1230,7 +1230,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 180px !important; /* Değiştirildi */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -2326,13 +2326,3 @@ body {
     }
 }
 
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0;
-    }
-}
