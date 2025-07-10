@@ -47,10 +47,10 @@ function WaitingPage() {
 
   if (isLoading && isMobile) {
     return (
-      <div className="loading-overlay">
-        <div className="loading-container">
-          <img src="/check.png" alt="Check Logo" className="loading-logo" />
-          <p className="loading-text">Lütfen Bekleyin</p>
+      <div className="waiting-overlay">
+        <div className="waiting-container">
+          <img src="/check.png" alt="Check Logo" className="waiting-logo" />
+          <p className="waiting-text">Lütfen Bekleyin</p>
         </div>
       </div>
     );
