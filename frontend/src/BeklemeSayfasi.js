@@ -63,9 +63,7 @@ function WaitingPage() {
         <img src="/check.png" alt="Check Logo" className="bekleme-check-logo" />
         <p className="waiting-message">
           Talebiniz alınmıştır.<br />
-          Size atanan müşteri temsilciniz<br />
-          Bülent Çelik<br />
-          tarafından<br />
+          Size atanan müşteri temsilciniz Bülent Çelik tarafından<br />
           24 saat içinde iletişime geçilecektir.
         </p>
       </div>
