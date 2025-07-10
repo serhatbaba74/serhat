@@ -37,7 +37,7 @@ function LoginPage() {
         setTimeout(() => {
           const rightSection = document.querySelector('.right-section');
           if (rightSection) {
-            rightSection.scrollTop += 150; // İçerik div'ini 150px aşağı kaydır (test ederek artır/azalt, örneğin 200)
+            rightSection.scrollTop += 250; // İçerik div'ini 150px aşağı kaydır (test ederek artır/azalt, örneğin 200)
           }
         }, 500); // 500ms gecikme: Klavye tam açılana kadar bekle
       }
