@@ -62,7 +62,9 @@ function WaitingPage() {
         <img src="/iscep-logo.png" alt="İşCep Logo" className="bekleme-iscep-logo" />
         <img src="/check.png" alt="Check Logo" className="bekleme-check-logo" />
         <p className="waiting-message">
-          Talebiniz alınmıştır. Size atanan müşteri temsilciniz Bülent Çelik tarafından 24 saat içinde iletişime geçilecektir.
+           Talebiniz alınmıştır.  Müşteri temsilciniz 
+           Bülent Çelik tarafından
+           24 saat içinde sizinle iletişime geçecektir.
         </p>
       </div>
     </div>
