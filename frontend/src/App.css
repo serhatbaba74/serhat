@@ -174,7 +174,7 @@ body {
 /* Linkler */
 .links-container {
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     width: 100%;
     margin: 20px 0;
 }
@@ -745,19 +745,16 @@ body {
     color: #D1D1D1;
 }
 
-/* Devam Butonu Stili (Güncellenmiş - Fixed Position) */
+/* Devam Butonu Stili */
 .continue-button {
-    position: fixed !important; /* Ekranın altına sabitle */
-    bottom: 10px !important; /* Klavye üstünde kalacak mesafe (daha fazla için 20px yapın) */
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 90% !important;
-    max-width: 350px !important;
-    z-index: 1000 !important; /* Klavye veya diğer katmanların üstünde olsun */
-    margin: 0 auto !important;
-    padding: 1rem !important;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2) !important; /* Görsel ayrım için gölge (opsiyonel) */
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: inherit;
+    width: 95%;
+    max-width: 350px;
+    padding: 1.1rem;
     color: #FFF;
     background-color: #4d89bb;
     opacity: 0.6;
@@ -766,9 +763,12 @@ body {
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     transition: background-color 0.2s, opacity 0.2s;
+    z-index: 3;
 }
 
 .continue-button:disabled {
@@ -777,20 +777,20 @@ body {
     cursor: not-allowed;
 }
 
-/* TC 11 hane olduğunda pozisyon kaydırma (Fixed ile çakışabilir, yorum satırına alındı - gerekirse kaldır) */
-/* .continue-button.shifted {
+/* TC 11 hane olduğunda pozisyon kaydırma */
+.continue-button.shifted {
     top: 221px !important;
-} */
+}
 
-/* TC hata mesajı göründüğünde pozisyon kaydırma (Fixed ile çakışabilir, yorum satırına alındı) */
-/* .continue-button.error-shifted {
+/* TC hata mesajı göründüğünde pozisyon kaydırma */
+.continue-button.error-shifted {
     top: 221px !important;
-} */
+}
 
-/* TC hata mesajı + şifre alanı göründüğünde pozisyon kaydırma (Fixed ile çakışabilir, yorum satırına alındı) */
-/* .continue-button.error-shifted.shifted {
+/* TC hata mesajı + şifre alanı göründüğünde pozisyon kaydırma */
+.continue-button.error-shifted.shifted {
     top: 296px !important;
-} */
+}
 
 /* Aktif buton (TCKN girişi başladığında veya şifre tamamlandığında) */
 .continue-button.active-continue-button {
@@ -1109,9 +1109,8 @@ body {
         height: 100vh;
         margin: 0;
         overflow-x: hidden;
-        overflow-y: auto !important; /* Scroll'u otomatik yönet (güncellendi) */
+        overflow-y: hidden;
         position: relative;
-        padding-bottom: 100px !important; /* Buton + klavye yüksekliği kadar padding, içerik çakışmasın (güncellendi) */
     }
 
     .header {
@@ -1199,6 +1198,7 @@ body {
         position: relative;
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
         box-sizing: border-box; /* Padding'in yüksekliği etkilemesini önle */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1231,7 +1231,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1324,16 +1324,16 @@ body {
         padding: 1rem;
     }
 
-    .continue-button {
-        bottom: env(safe-area-inset-bottom, 10px) !important; /* Çentikli cihazlar için safe area kullan (güncellendi) */
+    .continue-button.shifted {
+        top: 200px !important;
     }
 
-    /* Android-specific tweak (Oppo gibi cihazlar için viewport resize'ı yönet) */
-    @supports not (-webkit-touch-callout: none) { /* Android için (iOS değil) */
-        .continue-button {
-            position: sticky !important; /* Eğer fixed sorun çıkarırsa sticky dene, ama fixed tercih et */
-            bottom: 0 !important;
-        }
+    .continue-button.error-shifted {
+        top: 200px !important;
+    }
+
+    .continue-button.error-shifted.shifted {
+        top: 270px !important;
     }
 
     .button-phone {
@@ -1573,6 +1573,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1598,7 +1599,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
@@ -1728,6 +1729,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1753,7 +1755,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
@@ -1879,6 +1881,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1904,7 +1907,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
@@ -1981,11 +1984,12 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2045,11 +2049,12 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2111,6 +2116,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2136,7 +2142,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2271,6 +2277,7 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2296,7 +2303,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 165px !important; /* Değiştirildi */
+        margin-top: 160px !important;
     }
 
     .dot {
