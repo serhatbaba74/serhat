@@ -1204,7 +1204,7 @@
             width: 80px; /* Boyut korunuyor */
             height: 80px; /* Boyut korunuyor */
             position: absolute;
-            top: 60px !important; /* Logo biraz daha aşağıya alındı (50px -> 80px) */
+            top: 10px !important; /* Logo biraz daha aşağıya alındı (50px -> 80px) */
             left: 50%;
             transform: translateX(-50%);
             z-index: 1001; /* Diğer katmanların üstünde */
