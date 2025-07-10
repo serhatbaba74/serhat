@@ -1214,7 +1214,7 @@ body {
         width: 50px !important; /* Mobil için boyut korunuyor */
         height: 50px !important;
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000; /* İşCep logosunun altında kalsın */
@@ -1230,7 +1230,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 260px; /* check.png ile mesafe azaltıldı (280px -> 260px) */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı (230px -> 280px) */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1589,7 +1589,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1604,7 +1604,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 260px; /* check.png ile mesafe azaltıldı (280px -> 260px) */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -1751,7 +1751,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1766,7 +1766,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 260px; /* check.png ile mesafe azaltıldı (280px -> 260px) */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -1909,7 +1909,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1924,7 +1924,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 260px; /* check.png ile mesafe azaltıldı (280px -> 260px) */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -2022,7 +2022,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2086,7 +2086,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2148,7 +2148,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2302,7 +2302,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 240px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir, mesafe azaltıldı */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2317,7 +2317,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 260px; /* check.png ile mesafe azaltıldı (280px -> 260px) */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
