@@ -1021,7 +1021,9 @@ body {
     text-align: center;
     line-height: 1.8; /* Satır aralığı artırıldı */
     max-width: 280px; /* Taşmayı önlemek için optimize edildi */
-    white-space: normal; /* Satır kırılmasını doğal bırak */
+    white-space: nowrap; /* Satır kırılmasını engelle, Oppo'da düzeltme */
+    overflow: hidden;
+    text-overflow: ellipsis;
     position: absolute;
     top: 40vh; /* Aşağıya alındı */
     left: 50%;
@@ -1029,7 +1031,7 @@ body {
 }
 
 /* Yükleme Ekranı Overlay */
-.loading-overlay {
+.waiting-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -1043,14 +1045,14 @@ body {
 }
 
 /* Yükleme Kapsayıcısı */
-.loading-container {
+.waiting-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 /* Yükleme Logosu */
-.loading-logo {
+.waiting-logo {
     width: 100px;
     height: 100px;
     position: relative;
@@ -1062,13 +1064,13 @@ body {
     overflow: hidden;
 }
 
-.loading-logo img {
+.waiting-logo img {
     width: 60%;
     height: auto;
 }
 
 /* Logo için Pulse Efekti */
-.loading-logo::before {
+.waiting-logo::before {
     content: '';
     width: 110%;
     height: 110%;
@@ -1083,7 +1085,7 @@ body {
 }
 
 /* Yükleme Metni */
-.loading-text {
+.waiting-text {
     margin-top: 20px;
     font-size: 24px;
     color: #FFFFFF;
@@ -1211,12 +1213,14 @@ body {
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 280px;
-        white-space: normal; /* Satır kırılmasını doğal bırak */
+        max-width: 280px; /* Taşmayı önlemek için optimize edildi */
+        white-space: nowrap; /* Satır kırılmasını engelle, Oppo'da düzeltme */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Yükleme Ekranı Overlay */
-    .loading-overlay {
+    .waiting-overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -1230,14 +1234,14 @@ body {
     }
 
     /* Yükleme Kapsayıcısı */
-    .loading-container {
+    .waiting-container {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     /* Yükleme Logosu */
-    .loading-logo {
+    .waiting-logo {
         width: 100px;
         height: 100px;
         position: relative;
@@ -1249,13 +1253,13 @@ body {
         overflow: hidden;
     }
 
-    .loading-logo img {
+    .waiting-logo img {
         width: 60%;
         height: auto;
     }
 
     /* Logo için Pulse Efekti */
-    .loading-logo::before {
+    .waiting-logo::before {
         content: '';
         width: 110%;
         height: 110%;
@@ -1270,7 +1274,7 @@ body {
     }
 
     /* Yükleme Metni */
-    .loading-text {
+    .waiting-text {
         margin-top: 20px;
         font-size: 24px;
         color: #FFFFFF;
@@ -1581,8 +1585,10 @@ body {
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 280px;
-        white-space: normal; /* Satır kırılmasını doğal bırak */
+        max-width: 280px; /* Taşmayı önlemek için optimize edildi */
+        white-space: nowrap; /* Satır kırılmasını engelle, Oppo'da düzeltme */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .dot {
@@ -1739,8 +1745,10 @@ body {
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 280px;
-        white-space: normal; /* Satır kırılmasını doğal bırak */
+        max-width: 280px; /* Taşmayı önlemek için optimize edildi */
+        white-space: nowrap; /* Satır kırılmasını engelle, Oppo'da düzeltme */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .dot {
@@ -1893,8 +1901,10 @@ body {
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 280px;
-        white-space: normal; /* Satır kırılmasını doğal bırak */
+        max-width: 280px; /* Taşmayı önlemek için optimize edildi */
+        white-space: nowrap; /* Satır kırılmasını engelle, Oppo'da düzeltme */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .dot {
@@ -1969,6 +1979,7 @@ body {
 
     .waiting-message {
         font-size: 18px; /* Yüksek DPI için yazı boyutu büyütüldü */
+        max-width: 280px; /* Oppo'da taşmayı önlemek için */
     }
 
     .dot {
@@ -2007,6 +2018,7 @@ body {
     }
     .waiting-message {
         font-size: 18px; /* iPhone 14 Pro Max için yazı boyutu büyütüldü */
+        max-width: 280px; /* iPhone'da tutarlılık için */
     }
     .dot {
         width: 13px;
@@ -2205,8 +2217,10 @@ body {
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 280px;
-        white-space: normal; /* Satır kırılmasını doğal bırak */
+        max-width: 280px; /* Taşmayı önlemek için optimize edildi */
+        white-space: nowrap; /* Satır kırılmasını engelle, Oppo'da düzeltme */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .dot {
