@@ -29,6 +29,7 @@ body {
     position: relative;
     align-items: flex-start; /* En üstten hizalama için */
     justify-content: center; /* Yatay hizalama için */
+    overflow: hidden; /* Alt kapsayıcıların taşmasını önle */
 }
 
 /* Sol Bölüm - Banner (Tamamen Sabit) */
@@ -74,6 +75,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     background-color: transparent;
+    position: relative; /* Alt elemanlar için referans */
 }
 
 /* Logo Stili - Sadece masaüstünde görünecek */
@@ -995,16 +997,15 @@ body {
     height: auto; /* Dinamik yükseklik */
     width: 100%;
     position: relative;
-    padding: 0; /* Dikey mesafeyi sıfırla, İscepin üstte kalması için */
-    margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+    padding-top: 150px; /* İçeriği aşağı kaydır, logoyu üstte tut */
+    box-sizing: border-box; /* Padding'in yüksekliği etkilemesini önle */
 }
 
 .bekleme-iscep-logo {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 30px;
+    width: 80px; /* Boyut küçültüldü */
+    height: 80px; /* Boyut küçültüldü */
     position: absolute;
-    top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+    top: 0 !important; /* Üstte sabit */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001; /* Diğer katmanların üstünde */
@@ -1013,9 +1014,9 @@ body {
 .bekleme-check-logo {
     width: 60px !important; /* Boyut artırıldı ve !important eklendi */
     height: 60px !important;
-    margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+    margin-bottom: 30px; /* Yazı ile mesafe */
     position: absolute;
-    top: 20vh !important; /* Azıcık aşağıya alındı */
+    top: 20vh !important; /* Sabit tut */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1027,10 +1028,10 @@ body {
     text-align: center;
     line-height: 1.6; /* Satır aralığı optimize edildi */
     max-width: 320px; /* Satır uzunluğu artırıldı */
-    padding: 0 15px; /* Yanlara daha fazla ekleme */
+    padding: 0 15px; /* Yanlara ekleme */
     white-space: normal; /* Satır kırılmasını doğal bırak */
     position: relative; /* Mutlak pozisyondan çıkarıldı */
-    margin-top: 230px; /* Yazıyı aşağıya kaydır, check.png ile mesafe korundu */
+    margin-top: 230px; /* Sabit tut */
 }
 
 /* Yükleme Ekranı Overlay */
@@ -1188,14 +1189,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 120px;
-        height: 120px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1204,9 +1205,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1218,10 +1219,10 @@ body {
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
         max-width: 320px; /* Satır uzunluğu artırıldı */
-        padding: 0 15px; /* Yanlara daha fazla ekleme */
+        padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Yazıyı aşağıya kaydır, check.png ile mesafe korundu */
+        margin-top: 230px; /* Sabit tut */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1562,14 +1563,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 100px;
-        height: 100px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1578,9 +1579,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Küçük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1592,10 +1593,10 @@ body {
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
         max-width: 320px; /* Satır uzunluğu artırıldı */
-        padding: 0 15px; /* Yanlara daha fazla ekleme */
+        padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Yazıyı aşağıya kaydır, check.png ile mesafe korundu */
+        margin-top: 230px; /* Sabit tut */
     }
 
     .dot {
@@ -1724,14 +1725,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 110px;
-        height: 110px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1740,9 +1741,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Orta ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1754,10 +1755,10 @@ body {
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
         max-width: 320px; /* Satır uzunluğu artırıldı */
-        padding: 0 15px; /* Yanlara daha fazla ekleme */
+        padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Yazıyı aşağıya kaydır, check.png ile mesafe korundu */
+        margin-top: 230px; /* Sabit tut */
     }
 
     .dot {
@@ -1882,14 +1883,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 120px;
-        height: 120px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1898,9 +1899,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Büyük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1912,10 +1913,10 @@ body {
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
         max-width: 320px; /* Satır uzunluğu artırıldı */
-        padding: 0 15px; /* Yanlara daha fazla ekleme */
+        padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Yazıyı aşağıya kaydır, check.png ile mesafe korundu */
+        margin-top: 230px; /* Sabit tut */
     }
 
     .dot {
@@ -1995,14 +1996,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 120px;
-        height: 120px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2011,9 +2012,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2057,15 +2058,16 @@ body {
         max-width: 320px; /* Satır uzunluğu artırıldı */
         padding: 0 15px; /* Yanlara daha fazla ekleme */
     }
+
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 120px;
-        height: 120px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2074,9 +2076,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2120,14 +2122,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 120px;
-        height: 120px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2136,9 +2138,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2274,14 +2276,14 @@ body {
     }
 
     .bekleme-content {
-        margin-top: 150px; /* İscepin üstte kalması için içeriği daha fazla aşağı kaydır */
+        padding-top: 150px; /* İçeriği aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
-        width: 100px;
-        height: 100px;
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: -50px !important; /* Daha belirgin şekilde yukarı alındı */
+        top: 0 !important; /* Üstte sabit */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2290,9 +2292,9 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Yatay mod için boyutu artırdık ve !important eklendi */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
+        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Azıcık aşağıya alındı */
+        top: 20vh !important; /* Sabit tut */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2304,10 +2306,10 @@ body {
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
         max-width: 320px; /* Satır uzunluğu artırıldı */
-        padding: 0 15px; /* Yanlara daha fazla ekleme */
+        padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Yazıyı aşağıya kaydır, check.png ile mesafe korundu */
+        margin-top: 230px; /* Sabit tut */
     }
 
     .dot {
