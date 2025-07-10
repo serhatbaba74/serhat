@@ -1189,40 +1189,48 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Üstten başlayacak */
+        height: auto; /* Dinamik yükseklik */
+        width: 100%;
+        position: relative;
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        box-sizing: border-box; /* Padding'in yüksekliği etkilemesini önle */
     }
 
     .bekleme-iscep-logo {
-        width: 80px; /* Boyut küçültüldü */
-        height: 80px; /* Boyut küçültüldü */
+        width: 80px; /* Boyut korunuyor */
+        height: 80px; /* Boyut korunuyor */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz daha aşağıya alındı (50px -> 80px) */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
     }
 
     .bekleme-check-logo {
-        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        width: 50px !important; /* Mobil için boyut korunuyor */
         height: 50px !important;
-        margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1000; /* İşCep logosunun altında kalsın */
     }
 
     .waiting-message {
         color: #FFFFFF;
-        font-size: 18px; /* Yazı boyutu büyütüldü */
+        font-size: 18px; /* Yazı boyutu korunuyor */
         font-weight: 500;
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
-        max-width: 320px; /* Satır uzunluğu artırıldı */
+        max-width: 320px; /* Satır uzunluğu korunuyor */
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Sabit tut */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı (230px -> 280px) */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1563,14 +1571,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1581,7 +1589,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1596,7 +1604,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Sabit tut */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -1725,14 +1733,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1743,7 +1751,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1758,7 +1766,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Sabit tut */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -1883,14 +1891,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -1901,7 +1909,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1916,7 +1924,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Sabit tut */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -1996,14 +2004,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2014,7 +2022,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2060,14 +2068,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2078,7 +2086,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2122,14 +2130,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2140,7 +2148,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2276,14 +2284,14 @@ body {
     }
 
     .bekleme-content {
-        padding-top: 150px; /* İçeriği aşağı kaydır */
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
     }
 
     .bekleme-iscep-logo {
         width: 80px; /* Boyut küçültüldü */
         height: 80px; /* Boyut küçültüldü */
         position: absolute;
-        top: 50px !important; /* Logo biraz aşağıya alındı */
+        top: 80px !important; /* Logo biraz aşağıya alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1001; /* Diğer katmanların üstünde */
@@ -2294,7 +2302,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile mesafe */
         position: absolute;
-        top: 20vh !important; /* Sabit tut */
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2309,7 +2317,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 230px; /* Sabit tut */
+        margin-top: 280px; /* check.png ile mesafe için artırıldı */
     }
 
     .dot {
@@ -2339,4 +2347,3 @@ body {
         height: 20px;
     }
 }
-
