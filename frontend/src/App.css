@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -27,7 +28,7 @@ body {
     height: 100vh;
     width: 100%;
     position: relative;
-    align-items: center; /* Dikey hizalama için */
+    align-items: flex-start; /* En üstten hizalama için */
     justify-content: center; /* Yatay hizalama için */
 }
 
@@ -278,6 +279,7 @@ body {
     top: 0 !important; /* En üstte kalacak */
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000; /* En üstte kalmasını garanti et */
 }
 
 /* Telefon Doğrulama Ekranındaki İşCep Logosu */
@@ -995,6 +997,7 @@ body {
     width: 100%;
     position: relative;
     padding: 20px 0; /* Dikey mesafe eklemek için */
+    margin-top: 100px; /* İscepin üstte kalması için içeriği aşağı kaydır */
 }
 
 .bekleme-iscep-logo {
@@ -1005,6 +1008,7 @@ body {
     top: 0 !important; /* En üstte kalacak */
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1000; /* En üstte kalmasını garanti et */
 }
 
 .bekleme-check-logo {
@@ -1191,6 +1195,7 @@ body {
         top: 0 !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1000; /* En üstte kalmasını garanti et */
     }
 
     .bekleme-check-logo {
@@ -1560,6 +1565,7 @@ body {
         top: 0 !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1000; /* En üstte kalmasını garanti et */
     }
 
     .bekleme-check-logo {
@@ -1717,6 +1723,7 @@ body {
         top: 0 !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1000; /* En üstte kalmasını garanti et */
     }
 
     .bekleme-check-logo {
@@ -1870,6 +1877,7 @@ body {
         top: 0 !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1000; /* En üstte kalmasını garanti et */
     }
 
     .bekleme-check-logo {
@@ -2185,6 +2193,7 @@ body {
         top: 0 !important; /* En üstte kalacak */
         left: 50%;
         transform: translateX(-50%);
+        z-index: 1000; /* En üstte kalmasını garanti et */
     }
 
     .bekleme-check-logo {
@@ -2237,3 +2246,4 @@ body {
         height: 20px;
     }
 }
+
