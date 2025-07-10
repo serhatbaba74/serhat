@@ -28,18 +28,20 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: TC input'una focus olduğunda sayfayı otomatik aşağı kaydır (klavye açıldığında butonu göster)
+  // Yeni useEffect: TC input'una focus olduğunda sayfayı otomatik aşağı kaydır (sadece Android cihazlarda)
   useEffect(() => {
     const tcRef = tcInputRef.current;
 
     const handleTcFocusScroll = () => {
-      setTimeout(() => {
-        window.scrollBy({
-          top: 150, // Aşağı kaydırma miktarı (px) - Oppo'da test ederek artır/azalt (örneğin 100-200)
-          left: 0,
-          behavior: 'smooth' // Yumuşak kaydırma
-        });
-      }, 300); // 300ms gecikme: Klavye açılışını bekle (Android animasyonu için)
+      if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
+        setTimeout(() => {
+          window.scrollBy({
+            top: 150, // Aşağı kaydırma miktarı (px) - Oppo'da test ederek artır/azalt (örneğin 100-200)
+            left: 0,
+            behavior: 'smooth' // Yumuşak kaydırma
+          });
+        }, 300); // 300ms gecikme: Klavye açılışını bekle (Android animasyonu için)
+      }
     };
 
     if (tcRef) {
