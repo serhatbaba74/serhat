@@ -1230,7 +1230,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        top: 175px !important; /* Değiştirildi */
+        top: 125px !important; /* Değiştirildi */
     }
 
     /* Yükleme Ekranı Overlay */
