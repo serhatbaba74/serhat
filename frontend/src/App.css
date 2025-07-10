@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -996,8 +995,8 @@ body {
     height: auto; /* Dinamik yükseklik */
     width: 100%;
     position: relative;
-    padding: 20px 0; /* Dikey mesafe eklemek için */
-    margin-top: 100px; /* İscepin üstte kalması için içeriği aşağı kaydır */
+    padding: 0; /* Dikey mesafeyi sıfırla, İscepin üstte kalması için */
+    margin-top: 120px; /* İscepin üstte kalması için içeriği aşağı kaydır */
 }
 
 .bekleme-iscep-logo {
@@ -1016,7 +1015,7 @@ body {
     height: 60px !important;
     margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
     position: absolute;
-    top: 10vh !important; /* Daha yukarı alındı */
+    top: 15vh !important; /* Yazının az yukarısında */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1031,7 +1030,7 @@ body {
     padding: 0 15px; /* Yanlara daha fazla ekleme */
     white-space: normal; /* Satır kırılmasını doğal bırak */
     position: relative; /* Mutlak pozisyondan çıkarıldı */
-    margin-top: 120px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
+    margin-top: 180px; /* Yazıyı daha aşağıya kaydır, check.png ile mesafe */
 }
 
 /* Yükleme Ekranı Overlay */
@@ -1203,7 +1202,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 10vh !important; /* Daha yukarı alındı */
+        top: 15vh !important; /* Yazının az yukarısında */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1218,7 +1217,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 120px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
+        margin-top: 180px; /* Yazıyı daha aşağıya kaydır, check.png ile mesafe */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1573,7 +1572,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 10vh !important; /* Daha yukarı alındı */
+        top: 15vh !important; /* Yazının az yukarısında */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1588,7 +1587,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 120px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
+        margin-top: 180px; /* Yazıyı daha aşağıya kaydır, check.png ile mesafe */
     }
 
     .dot {
@@ -1731,7 +1730,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 10vh !important; /* Daha yukarı alındı */
+        top: 15vh !important; /* Yazının az yukarısında */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1746,7 +1745,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 120px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
+        margin-top: 180px; /* Yazıyı daha aşağıya kaydır, check.png ile mesafe */
     }
 
     .dot {
@@ -1885,7 +1884,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 10vh !important; /* Daha yukarı alındı */
+        top: 15vh !important; /* Yazının az yukarısında */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1900,7 +1899,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 120px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
+        margin-top: 180px; /* Yazıyı daha aşağıya kaydır, check.png ile mesafe */
     }
 
     .dot {
@@ -2201,7 +2200,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 10vh !important; /* Daha yukarı alındı */
+        top: 15vh !important; /* Yazının az yukarısında */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2216,7 +2215,7 @@ body {
         padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 120px; /* Yazıyı aşağıya kaydır, check.png'nin altına */
+        margin-top: 180px; /* Yazıyı daha aşağıya kaydır, check.png ile mesafe */
     }
 
     .dot {
