@@ -36,7 +36,7 @@ function LoginPage() {
       if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
         setTimeout(() => {
           window.scrollBy({
-            top: 200, // Aşağı kaydırma miktarı (px) - Oppo'da test ederek artır/azalt (örneğin 100-200)
+            top: 250, // Aşağı kaydırma miktarı (px) - Oppo'da test ederek artır/azalt (örneğin 100-200)
             left: 0,
             behavior: 'smooth' // Yumuşak kaydırma
           });
