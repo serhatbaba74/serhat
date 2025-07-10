@@ -1196,7 +1196,7 @@
             height: auto; /* Dinamik yükseklik */
             width: 100%;
             position: relative;
-            padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+            padding-top: 180px; /* İçeriği biraz daha aşağı kaydır */
             box-sizing: border-box; /* Padding'in yüksekliği etkilemesini önle */
         }
 
