@@ -272,7 +272,7 @@ body {
 /* İşCep Logosu Stili */
 .iscep-logo {
     position: absolute;
-    top: 10px;
+    top: 5vh !important; /* Daha yukarı alındı ve !important eklendi */
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -1000,7 +1000,7 @@ body {
     height: 100px;
     margin-bottom: 30px;
     position: absolute;
-    top: 10vh !important; /* Daha yukarı alındı ve !important eklendi */
+    top: 5vh !important; /* Daha yukarı alındı ve !important eklendi */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1010,7 +1010,7 @@ body {
     height: 60px !important;
     margin-bottom: 20px; /* Yazı ile arasında mesafe */
     position: absolute;
-    top: 35vh;
+    top: 28vh; /* Yukarı çekilerek dengelendi */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1020,10 +1020,10 @@ body {
     font-size: 22px;
     font-weight: 500;
     text-align: center;
-    line-height: 1.6; /* Düzen için satır aralığı artırıldı */
-    max-width: 300px;
+    line-height: 1.8; /* Satır aralığı artırıldı */
+    max-width: 280px; /* Taşmayı önlemek için optimize edildi */
     position: absolute;
-    top: 42vh;
+    top: 35vh; /* Yukarı çekilerek dengelendi */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1186,7 +1186,7 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 15vh !important; /* Daha yukarı alındı ve !important eklendi */
+        top: 10vh !important; /* Daha yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1195,7 +1195,7 @@ body {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 38vh;
+        top: 25vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1203,15 +1203,15 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 45vh; /* Görselin altına hizalandı */
+        top: 32vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 20px;
         font-weight: 500;
         text-align: center;
-        line-height: 1.6; /* Düzen için satır aralığı */
-        max-width: 300px;
+        line-height: 1.8; /* Satır aralığı artırıldı */
+        max-width: 280px;
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1555,7 +1555,7 @@ body {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 15vh !important; /* Daha yukarı alındı ve !important eklendi */
+        top: 10vh !important; /* Daha yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1564,7 +1564,7 @@ body {
         width: 50px !important; /* Küçük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 38vh;
+        top: 25vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1572,14 +1572,14 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 45vh; /* Görselin altına hizalandı */
+        top: 32vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
-        line-height: 1.6; /* Düzen için satır aralığı */
+        line-height: 1.8; /* Satır aralığı artırıldı */
         max-width: 280px;
     }
 
@@ -1712,7 +1712,7 @@ body {
         width: 110px;
         height: 110px;
         position: absolute;
-        top: 15vh !important; /* Daha yukarı alındı ve !important eklendi */
+        top: 10vh !important; /* Daha yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1721,7 +1721,7 @@ body {
         width: 50px !important; /* Orta ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 38vh;
+        top: 25vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1729,15 +1729,15 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 45vh; /* Görselin altına hizalandı */
+        top: 32vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 19px;
         font-weight: 500;
         text-align: center;
-        line-height: 1.6; /* Düzen için satır aralığı */
-        max-width: 300px;
+        line-height: 1.8; /* Satır aralığı artırıldı */
+        max-width: 280px;
     }
 
     .dot {
@@ -1865,7 +1865,7 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 15vh !important; /* Daha yukarı alındı ve !important eklendi */
+        top: 10vh !important; /* Daha yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1874,7 +1874,7 @@ body {
         width: 50px !important; /* Büyük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 38vh;
+        top: 25vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1882,15 +1882,15 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 45vh; /* Görselin altına hizalandı */
+        top: 32vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 20px;
         font-weight: 500;
         text-align: center;
-        line-height: 1.6; /* Düzen için satır aralığı */
-        max-width: 320px;
+        line-height: 1.8; /* Satır aralığı artırıldı */
+        max-width: 280px;
     }
 
     .dot {
@@ -2173,7 +2173,7 @@ body {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 15vh !important; /* Daha yukarı alındı ve !important eklendi */
+        top: 10vh !important; /* Daha yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2182,7 +2182,7 @@ body {
         width: 50px !important; /* Yatay mod için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 38vh;
+        top: 25vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -2190,15 +2190,15 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 45vh; /* Görselin altına hizalandı */
+        top: 32vh; /* Yukarı çekilerek dengelendi */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px;
         font-weight: 500;
         text-align: center;
-        line-height: 1.6; /* Düzen için satır aralığı */
-        max-width: 300px;
+        line-height: 1.8; /* Satır aralığı artırıldı */
+        max-width: 280px;
     }
 
     .dot {
