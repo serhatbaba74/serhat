@@ -174,7 +174,7 @@ body {
 /* Linkler */
 .links-container {
     display: flex;
-    justify-content: space-between;
+   justify-content: space-between;
     width: 100%;
     margin: 20px 0;
 }
@@ -1230,7 +1230,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1597,7 +1597,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -1752,7 +1752,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -1903,7 +1903,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -1980,7 +1980,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .bekleme-content {
@@ -2044,7 +2044,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .bekleme-content {
@@ -2135,7 +2135,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2295,7 +2295,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -2326,3 +2326,13 @@ body {
     }
 }
 
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
