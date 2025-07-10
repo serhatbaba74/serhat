@@ -1012,7 +1012,7 @@ body {
     height: 60px !important;
     margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
     position: absolute;
-    top: 15vh !important; /* Yazının az yukarısında */
+    top: 10vh !important; /* Daha yukarı alındı */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1198,7 +1198,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 15vh !important; /* Yazının az yukarısında */
+        top: 10vh !important; /* Daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1567,7 +1567,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 15vh !important; /* Yazının az yukarısında */
+        top: 10vh !important; /* Daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1724,7 +1724,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 15vh !important; /* Yazının az yukarısında */
+        top: 10vh !important; /* Daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1877,7 +1877,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 15vh !important; /* Yazının az yukarısında */
+        top: 10vh !important; /* Daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -2192,7 +2192,7 @@ body {
         height: 50px !important;
         margin-bottom: 30px; /* Yazı ile daha fazla mesafe */
         position: absolute;
-        top: 15vh !important; /* Yazının az yukarısında */
+        top: 10vh !important; /* Daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
     }
