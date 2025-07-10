@@ -1016,11 +1016,12 @@ body {
 
 .waiting-message {
     color: #FFFFFF;
-    font-size: 16px; /* Samsung ve Oppo için küçültüldü */
+    font-size: 18px; /* Yazı boyutu büyütüldü */
     font-weight: 500;
     text-align: center;
     line-height: 1.8; /* Satır aralığı artırıldı */
-    max-width: 260px; /* Taşmayı önlemek için optimize edildi */
+    max-width: 280px; /* Taşmayı önlemek için optimize edildi */
+    white-space: normal; /* Satır kırılmasını doğal bırak */
     position: absolute;
     top: 40vh; /* Aşağıya alındı */
     left: 50%;
@@ -1206,11 +1207,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
-        font-size: 16px; /* Samsung ve Oppo için küçültüldü */
+        font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 260px;
+        max-width: 280px;
+        white-space: normal; /* Satır kırılmasını doğal bırak */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1575,11 +1577,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
-        font-size: 16px; /* Samsung ve Oppo için küçültüldü */
+        font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 260px;
+        max-width: 280px;
+        white-space: normal; /* Satır kırılmasını doğal bırak */
     }
 
     .dot {
@@ -1732,11 +1735,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
-        font-size: 16px; /* Samsung ve Oppo için küçültüldü */
+        font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 260px;
+        max-width: 280px;
+        white-space: normal; /* Satır kırılmasını doğal bırak */
     }
 
     .dot {
@@ -1885,11 +1889,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
-        font-size: 16px; /* Samsung ve Oppo için küçültüldü */
+        font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 260px;
+        max-width: 280px;
+        white-space: normal; /* Satır kırılmasını doğal bırak */
     }
 
     .dot {
@@ -1963,7 +1968,7 @@ body {
     }
 
     .waiting-message {
-        font-size: 16px; /* Yüksek DPI için küçültüldü */
+        font-size: 18px; /* Yüksek DPI için yazı boyutu büyütüldü */
     }
 
     .dot {
@@ -2001,7 +2006,7 @@ body {
         display: flex !important; /* Görünürlüğü zorla */
     }
     .waiting-message {
-        font-size: 16px; /* iPhone 14 Pro Max için küçültüldü */
+        font-size: 18px; /* iPhone 14 Pro Max için yazı boyutu büyütüldü */
     }
     .dot {
         width: 13px;
@@ -2196,11 +2201,12 @@ body {
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
-        font-size: 16px; /* Samsung ve Oppo için küçültüldü */
+        font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.8; /* Satır aralığı artırıldı */
-        max-width: 260px;
+        max-width: 280px;
+        white-space: normal; /* Satır kırılmasını doğal bırak */
     }
 
     .dot {
