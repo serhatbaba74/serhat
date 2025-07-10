@@ -992,28 +992,39 @@ body {
     justify-content: center;
     height: 100vh;
     width: 100%;
+    position: relative;
 }
 
 .bekleme-iscep-logo {
     width: 100px;
     height: 100px;
-    margin-bottom: 20px;
-    margin-top: -50px;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .bekleme-check-logo {
-    width: 40px; /* Görsel boyutunu küçülttük */
-    height: 40px;
-    margin-bottom: 10px; /* Yazı ile arasında boşluk */
+    width: 48px; /* Görsel boyutunu artırdık */
+    height: 48px;
+    margin-bottom: 20px; /* Yazı ile arasında daha fazla mesafe */
+    position: absolute;
+    top: 35vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .waiting-message {
     color: #FFFFFF;
-    font-size: 19.2px;
+    font-size: 22px; /* Yazı boyutunu artırdık */
     font-weight: 500;
     text-align: center;
-    margin-top: 0;
-    max-width: 300px;
+    max-width: 350px;
+    position: absolute;
+    top: 42vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Yükleme Ekranı Overlay */
@@ -1174,30 +1185,31 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 15vh;
+        top: 20vh;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .bekleme-check-logo {
-        width: 32px; /* Mobil için daha küçük boyut */
-        height: 32px;
+        width: 40px; /* Mobil için boyutu artırdık */
+        height: 40px;
         position: absolute;
-        top: calc(25vh + 70px);
+        top: 38vh;
         left: 50%;
         transform: translateX(-50%);
+        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
         position: absolute;
-        top: calc(25vh + 120px); /* Görselin altına hizalandı */
+        top: 45vh; /* Görselin altına hizalandı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
-        font-size: 19.2px;
+        font-size: 20px; /* Yazı boyutunu artırdık */
         font-weight: 500;
         text-align: center;
-        max-width: 250px;
+        max-width: 300px;
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1540,19 +1552,20 @@ body {
     .bekleme-iscep-logo {
         width: 100px;
         height: 100px;
-        top: 10vh;
+        top: 20vh;
     }
 
     .bekleme-check-logo {
-        width: 28px; /* Daha küçük ekranlar için boyut */
-        height: 28px;
-        top: calc(20vh + 60px);
+        width: 36px; /* Küçük ekranlar için boyutu artırdık */
+        height: 36px;
+        top: 38vh;
+        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        font-size: 16px;
-        max-width: 220px;
-        top: calc(20vh + 100px);
+        font-size: 18px; /* Yazı boyutunu artırdık */
+        max-width: 280px;
+        top: 45vh;
     }
 
     .dot {
@@ -1683,19 +1696,20 @@ body {
     .bekleme-iscep-logo {
         width: 110px;
         height: 110px;
-        top: 12vh;
+        top: 20vh;
     }
 
     .bekleme-check-logo {
-        width: 30px;
-        height: 30px;
-        top: calc(22vh + 65px);
+        width: 38px; /* Orta ekranlar için boyutu artırdık */
+        height: 38px;
+        top: 38vh;
+        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        font-size: 17px;
-        max-width: 240px;
-        top: calc(22vh + 110px);
+        font-size: 19px; /* Yazı boyutunu artırdık */
+        max-width: 300px;
+        top: 45vh;
     }
 
     .dot {
@@ -1822,19 +1836,20 @@ body {
     .bekleme-iscep-logo {
         width: 120px;
         height: 120px;
-        top: 12vh;
+        top: 20vh;
     }
 
     .bekleme-check-logo {
-        width: 32px;
-        height: 32px;
-        top: calc(25vh + 70px);
+        width: 40px; /* Büyük ekranlar için boyutu artırdık */
+        height: 40px;
+        top: 38vh;
+        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        font-size: 18px;
-        max-width: 260px;
-        top: calc(25vh + 120px);
+        font-size: 20px; /* Yazı boyutunu artırdık */
+        max-width: 320px;
+        top: 45vh;
     }
 
     .dot {
@@ -1908,7 +1923,7 @@ body {
     }
 
     .waiting-message {
-        font-size: 17px;
+        font-size: 20px; /* Yüksek DPI için yazı boyutunu koruduk */
     }
 
     .dot {
@@ -2116,19 +2131,20 @@ body {
     .bekleme-iscep-logo {
         width: 100px;
         height: 100px;
-        top: 5vh;
+        top: 20vh;
     }
 
     .bekleme-check-logo {
-        width: 28px;
-        height: 28px;
-        top: calc(20vh + 60px);
+        width: 36px; /* Yatay mod için boyutu artırdık */
+        height: 36px;
+        top: 38vh;
+        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        font-size: 16px;
-        max-width: 220px;
-        top: calc(20vh + 100px);
+        font-size: 18px; /* Yazı boyutunu artırdık */
+        max-width: 300px;
+        top: 45vh;
     }
 
     .dot {
