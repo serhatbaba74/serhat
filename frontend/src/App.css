@@ -1004,7 +1004,7 @@ body {
     height: 100px;
     margin-bottom: 30px;
     position: absolute;
-    top: 0 !important; /* En üstte kalacak */
+    top: -10px !important; /* Biraz daha yukarı alındı */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000; /* En üstte kalmasını garanti et */
@@ -1191,7 +1191,7 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 0 !important; /* En üstte kalacak */
+        top: -10px !important; /* Biraz daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000; /* En üstte kalmasını garanti et */
@@ -1561,7 +1561,7 @@ body {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 0 !important; /* En üstte kalacak */
+        top: -10px !important; /* Biraz daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000; /* En üstte kalmasını garanti et */
@@ -1719,7 +1719,7 @@ body {
         width: 110px;
         height: 110px;
         position: absolute;
-        top: 0 !important; /* En üstte kalacak */
+        top: -10px !important; /* Biraz daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000; /* En üstte kalmasını garanti et */
@@ -1873,7 +1873,7 @@ body {
         width: 120px;
         height: 120px;
         position: absolute;
-        top: 0 !important; /* En üstte kalacak */
+        top: -10px !important; /* Biraz daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000; /* En üstte kalmasını garanti et */
@@ -2189,7 +2189,7 @@ body {
         width: 100px;
         height: 100px;
         position: absolute;
-        top: 0 !important; /* En üstte kalacak */
+        top: -10px !important; /* Biraz daha yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         z-index: 1000; /* En üstte kalmasını garanti et */
