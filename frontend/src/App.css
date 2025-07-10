@@ -27,6 +27,8 @@ body {
     height: 100vh;
     width: 100%;
     position: relative;
+    align-items: center; /* Dikey hizalama için */
+    justify-content: center; /* Yatay hizalama için */
 }
 
 /* Sol Bölüm - Banner (Tamamen Sabit) */
@@ -988,10 +990,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: center; /* Merkeze hizalama */
+    height: auto; /* Dinamik yükseklik */
     width: 100%;
     position: relative;
+    padding: 20px 0; /* Dikey mesafe eklemek için */
 }
 
 .bekleme-iscep-logo {
@@ -1007,7 +1010,7 @@ body {
 .bekleme-check-logo {
     width: 60px !important; /* Boyut artırıldı ve !important eklendi */
     height: 60px !important;
-    margin-bottom: 20px; /* Yazı ile arasında mesafe */
+    margin-bottom: 20px; /* Yazı ile mesafe */
     position: absolute;
     top: 25vh !important; /* Yukarı alındı ve !important eklendi */
     left: 50%;
@@ -1020,13 +1023,11 @@ body {
     font-weight: 500;
     text-align: center;
     line-height: 1.6; /* Satır aralığı optimize edildi */
-    max-width: 300px; /* Satır uzunluğu artırıldı */
-    padding: 0 10px; /* Yanlara ekleme yapıldı */
+    max-width: 320px; /* Satır uzunluğu artırıldı */
+    padding: 0 15px; /* Yanlara daha fazla ekleme */
     white-space: normal; /* Satır kırılmasını doğal bırak */
-    position: absolute;
-    top: 30vh; /* Yukarı alındı */
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative; /* Mutlak pozisyondan çıkarıldı */
+    margin-top: 20px; /* Check.png ile mesafe */
 }
 
 /* Yükleme Ekranı Overlay */
@@ -1195,26 +1196,24 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
+        margin-bottom: 20px; /* Yazı ile mesafe */
         position: absolute;
         top: 25vh !important; /* Yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        position: absolute;
-        top: 30vh; /* Yukarı alındı */
-        left: 50%;
-        transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
+        position: relative; /* Mutlak pozisyondan çıkarıldı */
+        margin-top: 20px; /* Check.png ile mesafe */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1566,26 +1565,24 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Küçük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
+        margin-bottom: 20px; /* Yazı ile mesafe */
         position: absolute;
         top: 25vh !important; /* Yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        position: absolute;
-        top: 30vh; /* Yukarı alındı */
-        left: 50%;
-        transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
+        position: relative; /* Mutlak pozisyondan çıkarıldı */
+        margin-top: 20px; /* Check.png ile mesafe */
     }
 
     .dot {
@@ -1725,26 +1722,24 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Orta ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
+        margin-bottom: 20px; /* Yazı ile mesafe */
         position: absolute;
         top: 25vh !important; /* Yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        position: absolute;
-        top: 30vh; /* Yukarı alındı */
-        left: 50%;
-        transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
+        position: relative; /* Mutlak pozisyondan çıkarıldı */
+        margin-top: 20px; /* Check.png ile mesafe */
     }
 
     .dot {
@@ -1880,26 +1875,24 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Büyük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
+        margin-bottom: 20px; /* Yazı ile mesafe */
         position: absolute;
         top: 25vh !important; /* Yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        position: absolute;
-        top: 30vh; /* Yukarı alındı */
-        left: 50%;
-        transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
+        position: relative; /* Mutlak pozisyondan çıkarıldı */
+        margin-top: 20px; /* Check.png ile mesafe */
     }
 
     .dot {
@@ -1974,8 +1967,8 @@ body {
 
     .waiting-message {
         font-size: 18px; /* Yüksek DPI için yazı boyutu büyütüldü */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
     }
 
     .dot {
@@ -2014,8 +2007,8 @@ body {
     }
     .waiting-message {
         font-size: 18px; /* iPhone 14 Pro Max için yazı boyutu büyütüldü */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
     }
     .dot {
         width: 13px;
@@ -2197,26 +2190,24 @@ body {
     .bekleme-check-logo {
         width: 50px !important; /* Yatay mod için boyutu artırdık ve !important eklendi */
         height: 50px !important;
+        margin-bottom: 20px; /* Yazı ile mesafe */
         position: absolute;
         top: 25vh !important; /* Yukarı alındı ve !important eklendi */
         left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 15px; /* Yazı ile arasında mesafe */
     }
 
     .waiting-message {
-        position: absolute;
-        top: 30vh; /* Yukarı alındı */
-        left: 50%;
-        transform: translateX(-50%);
         color: #FFFFFF;
         font-size: 18px; /* Yazı boyutu büyütüldü */
         font-weight: 500;
         text-align: center;
         line-height: 1.6; /* Satır aralığı optimize edildi */
-        max-width: 300px; /* Satır uzunluğu artırıldı */
-        padding: 0 10px; /* Yanlara ekleme yapıldı */
+        max-width: 320px; /* Satır uzunluğu artırıldı */
+        padding: 0 15px; /* Yanlara daha fazla ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
+        position: relative; /* Mutlak pozisyondan çıkarıldı */
+        margin-top: 20px; /* Check.png ile mesafe */
     }
 
     .dot {
