@@ -1009,7 +1009,7 @@ body {
     height: 60px !important;
     margin-bottom: 20px; /* Yazı ile arasında mesafe */
     position: absolute;
-    top: 35vh; /* Aşağıya alındı */
+    top: 30vh; /* Yukarı alındı */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1023,7 +1023,7 @@ body {
     max-width: 280px; /* Taşmayı önlemek için optimize edildi */
     white-space: normal; /* Satır kırılmasını doğal bırak */
     position: absolute;
-    top: 40vh; /* Aşağıya alındı */
+    top: 35vh; /* Yukarı alındı */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1195,7 +1195,7 @@ body {
         width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 35vh; /* Aşağıya alındı */
+        top: 30vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1203,7 +1203,7 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 40vh; /* Aşağıya alındı */
+        top: 35vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -1565,7 +1565,7 @@ body {
         width: 50px !important; /* Küçük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 35vh; /* Aşağıya alındı */
+        top: 30vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1573,7 +1573,7 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 40vh; /* Aşağıya alındı */
+        top: 35vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -1723,7 +1723,7 @@ body {
         width: 50px !important; /* Orta ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 35vh; /* Aşağıya alındı */
+        top: 30vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1731,7 +1731,7 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 40vh; /* Aşağıya alındı */
+        top: 35vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -1877,7 +1877,7 @@ body {
         width: 50px !important; /* Büyük ekranlar için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 35vh; /* Aşağıya alındı */
+        top: 30vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -1885,7 +1885,7 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 40vh; /* Aşağıya alındı */
+        top: 35vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -2191,7 +2191,7 @@ body {
         width: 50px !important; /* Yatay mod için boyutu artırdık ve !important eklendi */
         height: 50px !important;
         position: absolute;
-        top: 35vh; /* Aşağıya alındı */
+        top: 30vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         margin-bottom: 15px; /* Yazı ile arasında mesafe */
@@ -2199,7 +2199,7 @@ body {
 
     .waiting-message {
         position: absolute;
-        top: 40vh; /* Aşağıya alındı */
+        top: 35vh; /* Yukarı alındı */
         left: 50%;
         transform: translateX(-50%);
         color: #FFFFFF;
@@ -2238,3 +2238,4 @@ body {
         height: 20px;
     }
 }
+
