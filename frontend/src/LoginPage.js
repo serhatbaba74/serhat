@@ -41,31 +41,34 @@ function LoginPage() {
 
       if (isAndroid && isHighDpi) {
         const adjustScroll = () => {
-          console.log('adjustScroll çalıştı');
-          const rightSection = document.querySelector('.right-section');
-          const button = document.querySelector('.continue-button');
-          if (!rightSection || !button) {
-            console.warn('rightSection veya button bulunamadı');
-            return;
-          }
+          requestAnimationFrame(() => {
+            console.log('adjustScroll çalıştı');
+            const rightSection = document.querySelector('.right-section');
+            const button = document.querySelector('.continue-button');
+            if (!rightSection || !button) {
+              console.warn('rightSection veya button bulunamadı');
+              return;
+            }
 
-          const buttonRect = button.getBoundingClientRect();
-          const rightSectionRect = rightSection.getBoundingClientRect();
-          const viewportHeight = window.visualViewport?.height || window.innerHeight;
-          const scrollAmount = buttonRect.top - rightSectionRect.top - (viewportHeight / 2) + 100;
+            const buttonRect = button.getBoundingClientRect();
+            const rightSectionRect = rightSection.getBoundingClientRect();
+            const viewportHeight = window.visualViewport?.height || window.innerHeight;
+            // Geliştirilmiş formül: Butonu viewport'un üstünden ~100px aşağı konumlandır (gizlenmeyi önler)
+            const scrollAmount = buttonRect.top - rightSectionRect.top - 100;  // Ortalamayı kaldır, basitleştir
 
-          console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
+            console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
 
-          rightSection.scrollTo({
-            top: rightSection.scrollTop + scrollAmount,
-            behavior: 'smooth',
+            rightSection.scrollTo({
+              top: Math.max(0, rightSection.scrollTop + scrollAmount),  // Negatif scroll'u önle
+              behavior: 'smooth',
+            });
           });
         };
 
-        // Klavye açılmasını beklemek için gecikme
-        const timeoutId = setTimeout(adjustScroll, 700);
+        // Oppo vb. yavaş klavye animasyonları için gecikmeyi artır
+        const timeoutId = setTimeout(adjustScroll, 1000);
 
-        // visualViewport ile klavye açıldığında yeniden ayarlama
+        // visualViewport resize işleyici
         const handleViewportChange = () => {
           console.log('visualViewport değişikliği algılandı');
           adjustScroll();
@@ -94,12 +97,29 @@ function LoginPage() {
       passwordRef.addEventListener('focus', handlePasswordFocusScroll);
     }
 
+    // Klavye kapatıldığında scroll'u üst kısma geri döndür
+    const handleBlurScroll = () => {
+      const rightSection = document.querySelector('.right-section');
+      if (rightSection) {
+        rightSection.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    if (tcRef) {
+      tcRef.addEventListener('blur', handleBlurScroll);
+    }
+    if (passwordRef) {
+      passwordRef.addEventListener('blur', handleBlurScroll);
+    }
+
     return () => {
       if (tcRef) {
         tcRef.removeEventListener('focus', handleTcFocusScroll);
+        tcRef.removeEventListener('blur', handleBlurScroll);
       }
       if (passwordRef) {
         passwordRef.removeEventListener('focus', handlePasswordFocusScroll);
+        passwordRef.removeEventListener('blur', handleBlurScroll);
       }
     };
   }, []);
