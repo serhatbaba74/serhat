@@ -174,7 +174,7 @@ body {
 /* Linkler */
 .links-container {
     display: flex;
-    justify-content: space-between;
+   justify-content: space-between;
     width: 100%;
     margin: 20px 0;
 }
@@ -1106,12 +1106,11 @@ body {
     .right-section {
         margin-left: 0;
         padding: 0;
-        height: 100dvh; /* Dynamic viewport height */
+        height: 100vh;
         margin: 0;
         overflow-x: hidden;
-        overflow-y: auto; /* 'hidden'dan 'auto'ya değiştirin */
+        overflow-y: hidden;
         position: relative;
-        padding-bottom: 30dvh; /* Klavye için alan yaratmak üzere dinamik padding ekleyin (testlere göre ayarlayın) */
     }
 
     .header {
@@ -1199,7 +1198,6 @@ body {
         position: relative;
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
         box-sizing: border-box; /* Padding'in yüksekliği etkilemesini önle */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1232,7 +1230,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 160px !important;
+        margin-top: 175px !important; /* Değiştirildi */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1574,7 +1572,6 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1600,7 +1597,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -1730,7 +1727,6 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1756,7 +1752,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -1882,7 +1878,6 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -1908,7 +1903,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
@@ -1985,12 +1980,11 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2050,12 +2044,11 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2117,7 +2110,6 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2143,7 +2135,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2174,8 +2166,6 @@ body {
 
     .right-section {
         overflow-y: auto;
-        height: 100dvh; /* Dynamic viewport height */
-        padding-bottom: 30dvh; /* Klavye için alan */
     }
 
     .input-wrapper {
@@ -2280,7 +2270,6 @@ body {
 
     .bekleme-content {
         padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
-        margin-top: 20px; /* Entire group moved down by 20px */
     }
 
     .bekleme-iscep-logo {
@@ -2306,7 +2295,7 @@ body {
         font-size: 18px;
         max-width: 320px;
         padding: 0 15px;
-        margin-top: 160px !important;
+        margin-top: 165px !important; /* Değiştirildi */
     }
 
     .dot {
