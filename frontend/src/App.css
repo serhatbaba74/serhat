@@ -1112,6 +1112,12 @@ body {
         overflow-y: auto; /* 'hidden'dan 'auto'ya değiştirin */
         position: relative;
         padding-bottom: 30dvh; /* Klavye için alan yaratmak üzere dinamik padding ekleyin (testlere göre ayarlayın) */
+        -ms-overflow-style: none;  /* IE ve Edge için scrollbar gizle */
+        scrollbar-width: none;  /* Firefox için scrollbar gizle */
+    }
+
+    .right-section::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Android tarayıcıları için scrollbar gizle */
     }
 
     .header {
@@ -1298,22 +1304,14 @@ body {
         text-align: center;
     }
 
-    /* Scrollbar Stili */
+    /* Scrollbar Stili (Mevcut, ama gizleme için override edeceğiz) */
     .right-section::-webkit-scrollbar {
-        width: 6px;
+        display: none; /* Scrollbar'ı gizle */
     }
 
-    .right-section::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-
-    .right-section::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-        border-radius: 4px;
-    }
-
-    .right-section::-webkit-scrollbar-thumb:hover {
-        background: #a8a8a8;
+    .right-section {
+        -ms-overflow-style: none;  /* IE ve Edge */
+        scrollbar-width: none;  /* Firefox */
     }
 
     /* Mobil için Devam Butonu ve Doğrula Butonu Ayarları */
@@ -2176,6 +2174,12 @@ body {
         overflow-y: auto;
         height: 100dvh; /* Dynamic viewport height */
         padding-bottom: 30dvh; /* Klavye için alan */
+        -ms-overflow-style: none;  /* IE ve Edge için scrollbar gizle */
+        scrollbar-width: none;  /* Firefox için scrollbar gizle */
+    }
+
+    .right-section::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Android tarayıcıları için scrollbar gizle */
     }
 
     .input-wrapper {
