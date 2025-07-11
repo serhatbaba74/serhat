@@ -1106,12 +1106,12 @@ body {
     .right-section {
         margin-left: 0;
         padding: 0;
-        height: 100vh;
+        height: 100dvh; /* Dynamic viewport height için güncellendi */
         margin: 0;
         overflow-x: hidden;
-        overflow-y: auto; /* 'hidden'dan 'auto'ya değiştirin */
+        overflow-y: auto;
         position: relative;
-        padding-bottom: 200px; /* Klavye için alan yaratmak üzere padding ekleyin (testlere göre ayarlayın) */
+        padding-bottom: 30dvh; /* Klavye için dinamik padding (yüzde olarak, testlere göre ayarlayın) */
     }
 
     .header {
@@ -1323,31 +1323,37 @@ body {
         max-width: 350px !important; /* 330px'den 350px'e artırıldı */
         font-size: 0.95rem;
         padding: 1rem;
+        position: relative; /* Absolute'dan relative'e değiştir */
+        top: auto;
+        margin-top: 20px; /* Margin ile konumlandır */
     }
 
     .continue-button.shifted {
-        top: 200px !important;
+        margin-top: 20px !important; /* Shifted durumlar için margin ayarı (test edin) */
     }
 
     .continue-button.error-shifted {
-        top: 200px !important;
+        margin-top: 20px !important;
     }
 
     .continue-button.error-shifted.shifted {
-        top: 270px !important;
+        margin-top: 20px !important;
     }
 
     .button-phone {
-        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 20px;
     }
 
     /* Telefon Inputu ve Hata Mesajı Ayarları */
     .phone-input-wrapper {
-        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 30px; /* Top yerine margin */
     }
 
     .phone-error {
-        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        top: auto;
+        margin-top: 63px; /* Top yerine margin (test edin) */
     }
 
     /* Action Links Mobil Görünüm */
@@ -1428,9 +1434,9 @@ body {
     }
 
     .input-wrapper {
-        width: 100%;
-        max-width: 300px;
-        top: 320px;
+        position: relative; /* Absolute'dan relative'e değiştir */
+        top: auto;
+        margin-top: 320px; /* Top yerine margin ile konumlandır */
     }
 
     .new-container {
@@ -1490,9 +1496,9 @@ body {
     }
 
     .input-wrapper {
-        width: 100%;
-        max-width: 300px;
-        top: 320px;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 320px;
     }
 
     .new-container {
@@ -1535,18 +1541,24 @@ body {
         max-width: 330px !important; /* 310px'den 330px'e artırıldı */
         font-size: 0.9rem;
         padding: 0.9rem;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 20px;
     }
 
     .button-phone {
-        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 20px;
     }
 
     .phone-input-wrapper {
-        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 30px;
     }
 
     .phone-error {
-        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        top: auto;
+        margin-top: 63px;
         max-width: 300px; /* Input ile uyumlu */
     }
 
@@ -1646,9 +1658,9 @@ body {
     }
 
     .input-wrapper {
-        width: 100%;
-        max-width: 340px;
-        top: 320px;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 320px;
     }
 
     .new-container {
@@ -1691,18 +1703,24 @@ body {
         max-width: 380px !important; /* 360px'den 380px'e artırıldı */
         font-size: 0.95rem;
         padding: 1rem;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 20px;
     }
 
     .button-phone {
-        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 20px;
     }
 
     .phone-input-wrapper {
-        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 30px;
     }
 
     .phone-error {
-        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        top: auto;
+        margin-top: 63px;
         max-width: 340px; /* Input ile uyumlu */
     }
 
@@ -1802,9 +1820,9 @@ body {
     }
 
     .input-wrapper {
-        width: 100%;
-        max-width: 360px;
-        top: 320px;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 320px;
     }
 
     .new-container {
@@ -1847,14 +1865,19 @@ body {
         max-width: 400px !important; /* 380px'den 400px'e artırıldı */
         font-size: 1rem;
         padding: 1.1rem;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 20px;
     }
 
     .button-phone {
-        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+        top: auto;
+        margin-top: 20px;
     }
 
     .phone-error {
-        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        top: auto;
+        margin-top: 63px;
         max-width: 360px; /* Input ile uyumlu */
     }
 
@@ -2174,10 +2197,14 @@ body {
 
     .right-section {
         overflow-y: auto;
+        height: 100dvh; /* Dynamic viewport height ekle */
+        padding-bottom: 30dvh; /* Klavye için dinamik padding */
     }
 
     .input-wrapper {
-        top: 30vh; /* Input wrapper'ı 5vh daha aşağı taşıdık */
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 30vh; /* Top yerine margin */
         width: 100%;
         max-width: 340px; /* 360px'den 340px'e azalma */
     }
@@ -2222,35 +2249,41 @@ body {
     .phone-input-wrapper {
         width: 100%;
         max-width: 340px; /* 360px'den 340px'e azalma */
-        top: 30px; /* Telefon inputunu 5vh daha aşağı taşıdık */
+        top: auto;
+        margin-top: 30px; /* Top yerine margin */
     }
 
     .continue-button {
-        top: 30vh;
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 30vh;
         width: 90% !important; /* Daha geniş görünüm için artırıldı */
         max-width: 380px !important; /* 360px'den 380px'e artırıldı */
     }
 
     .continue-button.shifted {
-        top: 38vh !important;
+        margin-top: 38vh !important;
     }
 
     .continue-button.error-shifted {
-        top: 38vh !important;
+        margin-top: 38vh !important;
     }
 
     .continue-button.error-shifted.shifted {
-        top: 46vh !important;
+        margin-top: 46vh !important;
     }
 
     .button-phone {
-        top: 25vh; /* Doğrula butonunu 5vh daha aşağı taşıdık */
+        position: relative; /* Güncelleme */
+        top: auto;
+        margin-top: 25vh; /* Top yerine margin */
         width: 90% !important; /* Daha geniş görünüm için artırıldı */
         max-width: 380px !important; /* 360px'den 380px'e artırıldı */
     }
 
     .phone-error {
-        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        top: auto;
+        margin-top: 63px; /* Top yerine margin */
         max-width: 340px; /* Input ile uyumlu */
     }
 
