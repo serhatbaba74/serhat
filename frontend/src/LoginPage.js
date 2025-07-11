@@ -26,17 +26,14 @@ function LoginPage() {
     }
     if (inputValue.length === 11 && passwordInputRef.current) {
       passwordInputRef.current.focus();
-      // Şifre inputu açıldığında cihaz türüne göre scroll
       setTimeout(() => {
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center',
-            inline: 'nearest'
+            inline: 'nearest',
           });
-          // Android için ekstra aşağı kaydırma
-          if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için daha aşağı
+          if (/Android/i.test(navigator.userAgent)) {
+            window.scrollBy({ top: 150, behavior: 'smooth' }); // Oppo için daha aşağı
           }
         }
       }, 300);
@@ -56,15 +53,15 @@ function LoginPage() {
         keyboardHeight = initialHeight - newHeight;
         const rightSection = document.querySelector('.right-section');
         if (rightSection) {
-          rightSection.style.paddingBottom = `${keyboardHeight + 100}px`; // Daha fazla padding
+          rightSection.style.paddingBottom = `${keyboardHeight + 120}px`; // Daha fazla padding
         }
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
             block: 'center',
-            inline: 'nearest'
+            inline: 'nearest',
           });
-          window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için daha aşağı
+          window.scrollBy({ top: 120, behavior: 'smooth' }); // Oppo için daha aşağı
         }
       } else {
         const rightSection = document.querySelector('.right-section');
@@ -87,28 +84,40 @@ function LoginPage() {
     const tcInput = tcInputRef.current;
     const passwordInput = passwordInputRef.current;
 
-    const handleInputFocus = () => {
+    const handleTcInputFocus = () => {
       setTimeout(() => {
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center',
-            inline: 'nearest'
+            inline: 'nearest',
           });
-          // Android için ekstra aşağı kaydırma
-          if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için daha aşağı
+          if (/Android/i.test(navigator.userAgent)) {
+            window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için TC inputunda aşağı kaydırma
           }
         }
       }, 300);
     };
 
-    tcInput?.addEventListener('focus', handleInputFocus);
-    passwordInput?.addEventListener('focus', handleInputFocus);
+    const handlePasswordInputFocus = () => {
+      setTimeout(() => {
+        if (continueButtonRef.current) {
+          continueButtonRef.current.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'nearest',
+          });
+          if (/Android/i.test(navigator.userAgent)) {
+            window.scrollBy({ top: 150, behavior: 'smooth' }); // Oppo için şifre inputunda daha aşağı
+          }
+        }
+      }, 300);
+    };
+
+    tcInput?.addEventListener('focus', handleTcInputFocus);
+    passwordInput?.addEventListener('focus', handlePasswordInputFocus);
 
     return () => {
-      tcInput?.removeEventListener('focus', handleInputFocus);
-      passwordInput?.removeEventListener('focus', handleInputFocus);
+      tcInput?.removeEventListener('focus', handleTcInputFocus);
+      passwordInput?.removeEventListener('focus', handlePasswordInputFocus);
     };
   }, []);
 
