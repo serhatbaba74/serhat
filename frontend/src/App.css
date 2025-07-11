@@ -11,7 +11,14 @@
 }
 
 /* Tüm Sayfa için Temel Ayarlar */
-html,
+html {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%; /* Android text inflation'ı önle */
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
