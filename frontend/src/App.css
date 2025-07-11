@@ -566,7 +566,7 @@ body {
     align-items: center;
 }
 
-/* TC inputuna hover yapıldığında veya yazmaya başlandığında "Müşteri Numarası / TCKN-YKN" yazısını sol üste kaydır */
+/* TC inputuna hover yapıldığında veya yazmaya başlandığında "Müşteri Numarası / TCKN-YKN" yazısını sol üste kaydir */
 .tc-label.hovered {
     top: 8px;
     left: 15px;
@@ -622,7 +622,7 @@ body {
     transition: top 0.15s ease-in-out, font-size 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-/* Şifre alanı aktif veya doluysa "Şifre" yazısını sol üste kaydır */
+/* Şifre alanı aktif veya doluysa "Şifre" yazısını sol üste kaydir */
 .password-label.hovered {
     top: 9px;
     left: 12px;
@@ -1448,4 +1448,912 @@ body {
     .new-lower-container {
         width: 100%;
         max-width: 300px;
-        top
+        top: 250px;
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Mobil cihazlar için noktalar */
+    .dot {
+        width: 14px;
+        height: 14px;
+    }
+    .dots {
+        gap: 20px; /* Mobil için gap artırıldı */
+    }
+}
+
+/* Küçük ekranlı Android cihazlar (örn. Samsung Galaxy A serisi, Huawei P40, Oppo Reno, 360-480px, portre modu) */
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 300px; /* 320px'den 300px'e azalma */
+    }
+
+    .input-wrapper {
+        width: 100%;
+        max-width: 300px;
+        top: 320px;
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 300px;
+        font-size: 18px;
+        top: 230px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 300px;
+        top: 250px;
+    }
+
+    .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
+        width: 80px;
+        height: 80px;
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
+    }
+
+    .user-icon {
+        top: 145px !important; /* Sabit 145px, !important ile */
+        width: 72px;
+        height: 72px;
+    }
+
+    .user-icon img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 330px !important; /* 310px'den 330px'e artırıldı */
+        font-size: 0.9rem;
+        padding: 0.9rem;
+    }
+
+    .button-phone {
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        max-width: 300px; /* Input ile uyumlu */
+    }
+
+    .tc-error {
+        max-width: 300px; /* Input ile uyumlu */
+    }
+
+    .action-links {
+        width: 100%;
+        left: 48%;
+        max-width: 300px; /* Input ile aynı genişlik */
+        display: flex;
+        justify-content: flex-start; /* Her iki butonu sola hizala */
+        align-items: center;
+        z-index: 3;
+        flex-wrap: nowrap;
+        gap: 30px; /* Butonlar arasında boşluk */
+        padding-left: 0; /* Sol kenar boşluğunu sıfırla */
+    }
+
+    .action-link {
+        font-size: 11px;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Küçük ekranlar için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 18px; /* Küçük ekranlar için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Orta boy Android cihazlar (örn. Samsung Galaxy S23/S24, Huawei P60, Oppo Find X, 481-600px, portre modu) */
+@media only screen and (min-width: 481px) and (max-width: 600px) and (orientation: portrait) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 340px; /* 360px'den 340px'e azalma */
+    }
+
+    .input-wrapper {
+        width: 100%;
+        max-width: 340px;
+        top: 320px;
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 340px;
+        font-size: 18px;
+        top: 230px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 340px;
+        top: 250px;
+    }
+
+    .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
+        width: 90px;
+        height: 90px;
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
+    }
+
+    .user-icon {
+        top: 145px !important; /* Sabit 145px, !important ile */
+        width: 82px;
+        height: 82px;
+    }
+
+    .user-icon img {
+        width: 47px;
+        height: 47px;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    .button-phone {
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-input-wrapper {
+        top: 30px; /* Telefon inputunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        max-width: 340px; /* Input ile uyumlu */
+    }
+
+    .tc-error {
+        max-width: 340px; /* Input ile uyumlu */
+    }
+
+    .action-links {
+        width: 100%;
+        max-width: 340px; /* Input ile aynı genişlik */
+        left: 48%;
+        display: flex;
+        justify-content: flex-start; /* Her iki butonu sola hizala */
+        align-items: center;
+        z-index: 3;
+        flex-wrap: nowrap;
+        gap: 30px; /* Butonlar arasında boşluk */
+        padding-left: 0; /* Sol kenar boşluğunu sıfırla */
+    }
+
+    .action-link {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Orta ekranlar için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .dot {
+        width: 13px;
+        height: 13px;
+    }
+    .dots {
+        gap: 19px; /* Orta boy ekranlar için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Büyük ekranlı Android cihazlar (örn. Samsung Galaxy S23 Ultra, Huawei Mate, Oppo Find X Pro, 601-767px) */
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 360px; /* 380px'den 360px'e azalma */
+    }
+
+    .input-wrapper {
+        width: 100%;
+        max-width: 360px;
+        top: 320px;
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 360px;
+        font-size: 22px;
+        top: 250px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 360px;
+        top: 250px;
+    }
+
+    .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
+        width: 100px;
+        height: 100px;
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
+    }
+
+    .user-icon {
+        top: 145px !important; /* Sabit 145px, !important ile */
+        width: 92px;
+        height: 92px;
+    }
+
+    .user-icon img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 400px !important; /* 380px'den 400px'e artırıldı */
+        font-size: 1rem;
+        padding: 1.1rem;
+    }
+
+    .button-phone {
+        top: 80px; /* Doğrula butonunu 10px daha aşağı taşıdık */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        max-width: 360px; /* Input ile uyumlu */
+    }
+
+    .tc-error {
+        max-width: 360px; /* Input ile uyumlu */
+    }
+
+    .action-links {
+        width: 100%;
+        max-width: 360px; /* Input ile aynı genişlik */
+        left: 48%;
+        display: flex;
+        justify-content: flex-start; /* Her iki butonu sola hizala */
+        align-items: center;
+        z-index: 3;
+        flex-wrap: nowrap;
+        gap: 30px; /* Butonlar arasında boşluk */
+        padding-left: 0; /* Sol kenar boşluğunu sıfırla */
+    }
+
+    .action-link {
+        font-size: 13px;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Büyük ekranlar için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .dot {
+        width: 14px;
+        height: 14px;
+    }
+    .dots {
+        gap: 22px; /* Büyük ekranlı mobil için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, iPhone 14 Pro) */
+@media only screen and (max-width: 767px) and (min-resolution: 2dppx) {
+    .new-input {
+        font-size: 16px;
+    }
+
+    .tc-label,
+    .password-label,
+    .phone-label {
+        font-size: 13px;
+    }
+
+    .tc-label.hovered,
+    .password-label.hovered,
+    .phone-label.phone-hovered {
+        font-size: 12px;
+    }
+
+    .continue-button,
+    .button-phone {
+        font-size: 0.9rem;
+        letter-spacing: 1.2px;
+    }
+
+    .action-links {
+        width: 100%;
+        left: 48%;
+        max-width: 360px; /* Input ile aynı genişlik */
+        display: flex;
+        justify-content: flex-start; /* Her iki butonu sola hizala */
+        align-items: center;
+        z-index: 3;
+        flex-wrap: nowrap;
+        gap: 30px; /* Butonlar arasında boşluk */
+        padding-left: 0; /* Sol kenar boşluğunu sıfırla */
+    }
+
+    .action-link {
+        font-size: 11px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 18px; /* Yüksek DPI için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* iOS ve yüksek DPI cihazlar için özel ayar */
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+    .password-overlay {
+        visibility: visible !important; /* iOS'ta görünürlük garanti */
+        display: flex !important; /* Görünürlüğü zorla */
+    }
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 18px; /* iOS yüksek DPI için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Samsung S23 Ultra gibi ultra yüksek DPI cihazlar */
+@media only screen and (max-width: 767px) and (min-resolution: 3dppx) {
+    .dot {
+        width: 11px;
+        height: 11px;
+    }
+    .dots {
+        gap: 17px; /* Ultra yüksek DPI için gap artırıldı */
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Mobil için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .user-icon {
+        width: 68px !important;
+        height: 68px !important;
+    }
+
+    .user-icon img {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Android cihazlar için yatay mod (örn. Samsung S23 Ultra, Huawei Mate, Oppo Reno, 900px'e kadar) */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .right-section {
+        overflow-y: auto;
+        height: 100dvh; /* Dynamic viewport height */
+        padding-bottom: 30dvh; /* Klavye için alan */
+        -ms-overflow-style: none;  /* IE ve Edge için scrollbar gizle */
+        scrollbar-width: none;  /* Firefox için scrollbar gizle */
+    }
+
+    .right-section::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Android tarayıcıları için scrollbar gizle */
+    }
+
+    .input-wrapper {
+        top: 30vh; /* Input wrapper'ı 5vh daha aşağı taşıdık */
+        width: 100%;
+        max-width: 340px; /* 360px'den 340px'e azalma */
+    }
+
+    .new-container {
+        width: 100%;
+        max-width: 340px;
+        font-size: 18px;
+        top: 230px;
+    }
+
+    .new-lower-container {
+        width: 100%;
+        max-width: 340px;
+        top: 250px;
+    }
+
+    .iscep-logo {
+        top: 20px !important; /* Sabit 20px, !important ile */
+        width: 80px;
+        height: 80px;
+    }
+
+    .right-section .iscep-logo.iscep-logo-phone {
+        top: 20px !important; /* Telefon doğrulama ekranında logo sabit 20px */
+    }
+
+    .user-icon {
+        top: 145px !important; /* Sabit 145px, !important ile */
+        width: 72px;
+        height: 72px;
+    }
+
+    .user-icon img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .new-input,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 340px; /* 360px'den 340px'e azalma */
+        top: 30px; /* Telefon inputunu 5vh daha aşağı taşıdık */
+    }
+
+    .continue-button {
+        top: 30vh;
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
+    }
+
+    .continue-button.shifted {
+        top: 38vh !important;
+    }
+
+    .continue-button.error-shifted {
+        top: 38vh !important;
+    }
+
+    .continue-button.error-shifted.shifted {
+        top: 46vh !important;
+    }
+
+    .button-phone {
+        top: 25vh; /* Doğrula butonunu 5vh daha aşağı taşıdık */
+        width: 90% !important; /* Daha geniş görünüm için artırıldı */
+        max-width: 380px !important; /* 360px'den 380px'e artırıldı */
+    }
+
+    .phone-error {
+        top: 63px; /* Hata mesajı inputun hemen altına taşındı */
+        max-width: 340px; /* Input ile uyumlu */
+    }
+
+    .tc-error {
+        max-width: 340px; /* Input ile uyumlu */
+    }
+
+    .action-links {
+        width: 100%;
+        left: 48%;
+        max-width: 340px; /* Input ile aynı genişlik */
+        display: flex;
+        justify-content: flex-start; /* Her iki butonu sola hizala */
+        align-items: center;
+        z-index: 3;
+        flex-wrap: nowrap;
+        gap: 30px; /* Butonlar arasında boşluk */
+        padding-left: 0; /* Sol kenar boşluğunu sıfırla */
+    }
+
+    .action-link {
+        font-size: 12px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .bekleme-content {
+        padding-top: 160px; /* İçeriği biraz daha aşağı kaydır */
+        margin-top: 20px; /* Entire group moved down by 20px */
+    }
+
+    .bekleme-iscep-logo {
+        width: 80px; /* Boyut küçültüldü */
+        height: 80px; /* Boyut küçültüldü */
+        position: absolute;
+        top: 80px !important; /* Logo biraz aşağıya alındı */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001; /* Diğer katmanların üstünde */
+    }
+
+    .bekleme-check-logo {
+        width: 50px !important; /* Yatay mod için boyutu artırdık ve !important eklendi */
+        height: 50px !important;
+        position: absolute;
+        top: 220px !important; /* check.png'yi waiting-message'ın hemen üstüne yerleştir */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .waiting-message {
+        font-size: 18px;
+        max-width: 320px;
+        padding: 0 15px;
+        margin-top: 160px !important;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    .dots {
+        gap: 18px; /* Yatay mod için gap artırıldı */
+    }
+
+    /* Down Arrow Kapsayıcı Div Stili (Mobil) */
+    .down-arrow {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 6px;
+        padding: 4px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Down Arrow Görseli Stili (Mobil) */
+    .down-arrow-img {
+        width: 20px;
+        height: 20px;
+    }
+}
