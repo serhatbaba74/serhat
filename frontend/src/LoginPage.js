@@ -53,22 +53,22 @@ function LoginPage() {
             const buttonRect = button.getBoundingClientRect();
             const rightSectionRect = rightSection.getBoundingClientRect();
             const viewportHeight = window.visualViewport?.height || window.innerHeight;
-            // Geliştirilmiş formül: Butonu viewport'un üstünden ~100px aşağı konumlandır (gizlenmeyi önler)
-            const scrollAmount = buttonRect.top - rightSectionRect.top - 100;  // Ortalamayı kaldır, basitleştir
+            // Butonu viewport'un üstünden 120px aşağı konumlandır
+            const scrollAmount = buttonRect.top - rightSectionRect.top - 120;
 
             console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
 
             rightSection.scrollTo({
-              top: Math.max(0, rightSection.scrollTop + scrollAmount),  // Negatif scroll'u önle
+              top: Math.max(0, rightSection.scrollTop + scrollAmount),
               behavior: 'smooth',
             });
           });
         };
 
-        // Oppo vb. yavaş klavye animasyonları için gecikmeyi artır
-        const timeoutId = setTimeout(adjustScroll, 1000);
+        // Daha hızlı tepki için gecikmeyi azalt
+        const timeoutId = setTimeout(adjustScroll, 300); // 1000ms'den 300ms'ye düşürüldü
 
-        // visualViewport resize işleyici
+        // visualViewport olaylarını daha sık dinle
         const handleViewportChange = () => {
           console.log('visualViewport değişikliği algılandı');
           adjustScroll();
@@ -76,12 +76,14 @@ function LoginPage() {
 
         if (window.visualViewport) {
           window.visualViewport.addEventListener('resize', handleViewportChange);
+          window.visualViewport.addEventListener('scroll', handleViewportChange);
         }
 
         return () => {
           clearTimeout(timeoutId);
           if (window.visualViewport) {
             window.visualViewport.removeEventListener('resize', handleViewportChange);
+            window.visualViewport.removeEventListener('scroll', handleViewportChange);
           }
         };
       }
