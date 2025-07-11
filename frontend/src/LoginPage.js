@@ -8,7 +8,7 @@ function LoginPage() {
   const { inputValue = '', passwordValue = '' } = state || {};
   const passwordInputRef = useRef(null);
   const tcInputRef = useRef(null);
-  const continueButtonRef = useRef(null); // Yeni ref: Devam butonu için
+  const continueButtonRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -26,12 +26,26 @@ function LoginPage() {
     }
     if (inputValue.length === 11 && passwordInputRef.current) {
       passwordInputRef.current.focus();
+      // Şifre inputu açıldığında cihaz türüne göre scroll
+      setTimeout(() => {
+        if (continueButtonRef.current) {
+          continueButtonRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center', // iOS için eski davranış, Android için center
+            inline: 'nearest'
+          });
+          // Alternatif: Android için ekstra aşağı kaydırma (isteğe bağlı)
+          // if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          //   window.scrollBy({ top: 50, behavior: 'smooth' });
+          // }
+        }
+      }, 300);
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: Klavye açıldığında keyboard yüksekliğini hesapla ve padding ekle (sadece Android)
+  // Klavye açıldığında padding ve scroll ayarı (sadece Android)
   useEffect(() => {
-    if (!/Android/i.test(navigator.userAgent)) return; // Sadece Android için uygula
+    if (!/Android/i.test(navigator.userAgent)) return;
 
     let initialHeight = window.innerHeight;
     let keyboardHeight = 0;
@@ -39,27 +53,26 @@ function LoginPage() {
     const handleResize = () => {
       const newHeight = window.innerHeight;
       if (newHeight < initialHeight) {
-        // Klavye açıldı
         keyboardHeight = initialHeight - newHeight;
         const rightSection = document.querySelector('.right-section');
         if (rightSection) {
-          rightSection.style.paddingBottom = `${keyboardHeight + 50}px`; // Keyboard yüksekliği + ekstra boşluk (buton için 50px ekledim)
+          rightSection.style.paddingBottom = `${keyboardHeight + 50}px`;
         }
-        // Yeni: Butonu scroll ile görünür kıl
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: 'end', // Butonu viewport'un altına hizala
+            block: 'center', // Android için center
             inline: 'nearest'
           });
+          // Alternatif: Ekstra aşağı kaydırma (isteğe bağlı)
+          // window.scrollBy({ top: 50, behavior: 'smooth' });
         }
       } else {
-        // Klavye kapandı
         const rightSection = document.querySelector('.right-section');
         if (rightSection) {
           rightSection.style.paddingBottom = '0px';
         }
-        initialHeight = newHeight; // Yeni initial'i güncelle
+        initialHeight = newHeight;
       }
     };
 
@@ -70,20 +83,25 @@ function LoginPage() {
     };
   }, []);
 
-  // Yeni useEffect: Input focus'unda scroll (Uyarıyı düzelttik)
+  // Input focus'unda scroll
   useEffect(() => {
-    const tcInput = tcInputRef.current; // Ref'i yerel değişkene kopyala
-    const passwordInput = passwordInputRef.current; // Ref'i yerel değişkene kopyala
+    const tcInput = tcInputRef.current;
+    const passwordInput = passwordInputRef.current;
 
     const handleInputFocus = () => {
       setTimeout(() => {
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: 'end'
+            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center', // iOS için end, Android için center
+            inline: 'nearest'
           });
+          // Alternatif: Android için ekstra aşağı kaydırma (isteğe bağlı)
+          // if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          //   window.scrollBy({ top: 50, behavior: 'smooth' });
+          // }
         }
-      }, 300); // Klavye açılma gecikmesi için timeout
+      }, 300);
     };
 
     tcInput?.addEventListener('focus', handleInputFocus);
@@ -197,10 +215,9 @@ function LoginPage() {
 
   const handleFormSubmit = useCallback(
     (e) => {
-      e.preventDefault(); // Formun varsayılan gönderimini engelle
-      e.stopPropagation(); // Olayın yayılmasını durdur
-      handleContinueClick(); // Devam butonunun işlevini çağır
-      // Klavyeyi kapatmak için aktif input'a blur uygula
+      e.preventDefault();
+      e.stopPropagation();
+      handleContinueClick();
       if (document.activeElement) {
         document.activeElement.blur();
       }
@@ -258,7 +275,7 @@ function LoginPage() {
               {inputValue.length > 0 && (
                 <button
                   className="clear-tc-button"
-                  type="button" // Butonun form submit etmesini engelle
+                  type="button"
                   onClick={handleClearTc}
                   onTouchStart={handleClearTc}
                   aria-label="TCKN-YKN’yi temizle"
@@ -286,14 +303,14 @@ function LoginPage() {
             >
               <button
                 className="action-link become-customer"
-                type="button" // Butonun form submit etmesini engelle
+                type="button"
                 onClick={() => console.log('Müşteri Olmak İstiyorum tıklandı')}
               >
                 MÜŞTERİ OLMAK İSTİYORUM
               </button>
               <button
                 className="action-link create-password"
-                type="button" // Butonun form submit etmesini engelle
+                type="button"
                 onClick={() => console.log('Şifre Oluştur tıklandı')}
               >
                 ŞİFRE OLUŞTUR
@@ -330,7 +347,7 @@ function LoginPage() {
                   {passwordValue.length > 0 && (
                     <button
                       className="clear-password-button"
-                      type="button" // Butonun form submit etmesini engelle
+                      type="button"
                       onClick={handleClearPassword}
                       onTouchStart={handleClearPassword}
                       aria-label="Şifreyi temizle"
@@ -354,7 +371,7 @@ function LoginPage() {
               </div>
             )}
             <button
-              ref={continueButtonRef} // Yeni ref ekle
+              ref={continueButtonRef}
               type="submit"
               className={`continue-button ${
                 inputValue.length > 0 &&
