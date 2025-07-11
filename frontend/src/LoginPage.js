@@ -34,27 +34,53 @@ function LoginPage() {
     const passwordRef = passwordInputRef.current;
 
     const handleFocusScroll = (inputType) => {
-      // Yüksek DPI cihazları tespit et (devicePixelRatio >= 2)
-      const isHighDpi = window.devicePixelRatio >= 2;
       const isAndroid = /Android/i.test(navigator.userAgent);
+      const isHighDpi = window.devicePixelRatio >= 2;
 
-      // Yalnızca Android ve yüksek DPI cihazlarda kaydırma uygula
+      console.log(`handleFocusScroll tetiklendi - ${inputType} input, Android: ${isAndroid}, Yüksek DPI: ${isHighDpi}`);
+
       if (isAndroid && isHighDpi) {
-        setTimeout(() => {
-          console.log(`Scroll tetiklendi - ${inputType} input, Android, Yüksek DPI`);
+        const adjustScroll = () => {
+          console.log('adjustScroll çalıştı');
           const rightSection = document.querySelector('.right-section');
           const button = document.querySelector('.continue-button');
-          if (rightSection && button) {
-            const buttonRect = button.getBoundingClientRect();
-            const rightSectionRect = rightSection.getBoundingClientRect();
-            // Butonu ekranın ortasına getirmek için kaydırma miktarı
-            const scrollAmount = buttonRect.top - rightSectionRect.top - (window.innerHeight / 2) + 150;
-            rightSection.scrollTo({
-              top: rightSection.scrollTop + scrollAmount,
-              behavior: 'smooth',
-            });
+          if (!rightSection || !button) {
+            console.warn('rightSection veya button bulunamadı');
+            return;
           }
-        }, 600); // Klavye açılana kadar bekle
+
+          const buttonRect = button.getBoundingClientRect();
+          const rightSectionRect = rightSection.getBoundingClientRect();
+          const viewportHeight = window.visualViewport?.height || window.innerHeight;
+          const scrollAmount = buttonRect.top - rightSectionRect.top - (viewportHeight / 2) + 100;
+
+          console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
+
+          rightSection.scrollTo({
+            top: rightSection.scrollTop + scrollAmount,
+            behavior: 'smooth',
+          });
+        };
+
+        // Klavye açılmasını beklemek için gecikme
+        const timeoutId = setTimeout(adjustScroll, 700);
+
+        // visualViewport ile klavye açıldığında yeniden ayarlama
+        const handleViewportChange = () => {
+          console.log('visualViewport değişikliği algılandı');
+          adjustScroll();
+        };
+
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener('resize', handleViewportChange);
+        }
+
+        return () => {
+          clearTimeout(timeoutId);
+          if (window.visualViewport) {
+            window.visualViewport.removeEventListener('resize', handleViewportChange);
+          }
+        };
       }
     };
 
