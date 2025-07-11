@@ -59,13 +59,11 @@ function PhoneVerificationPage() {
 
   // Meta tag ve Virtual Keyboard API ekleme (klavye sorunu için)
   useEffect(() => {
-    // Meta tag ekle (viewport resize için)
     const meta = document.createElement('meta');
     meta.name = 'viewport';
     meta.content = 'width=device-width, initial-scale=1.0, interactive-widget=resizes-content, virtual-keyboard=overlays-content';
     document.head.appendChild(meta);
 
-    // Virtual Keyboard API etkinleştir
     if ("virtualKeyboard" in navigator) {
       navigator.virtualKeyboard.overlaysContent = true;
     }
@@ -75,7 +73,7 @@ function PhoneVerificationPage() {
     };
   }, []);
 
-  // Scroll optimizasyonu: Telefon inputuna focus olduğunda right-section'ı scroll ile aşağı kaydır
+  // Scroll optimizasyonu: Telefon inputuna focus olduğunda butonu görünür kıl
   useEffect(() => {
     const phoneRef = phoneInputRef.current;
 
@@ -84,10 +82,9 @@ function PhoneVerificationPage() {
       const isSamsung = /Samsung/i.test(navigator.userAgent);
       const isOppo = /OPPO/i.test(navigator.userAgent);
 
-      if (!isAndroid) return; // Sadece Android cihazlarda çalışsın
+      if (!isAndroid) return;
 
-      // Samsung ve Oppo için gecikme artır (klavye animasyonunu bekle)
-      const delay = (isSamsung || isOppo) ? 1200 : 800;
+      const delay = (isSamsung || isOppo) ? 1500 : 1000;
 
       const adjustScroll = debounce(() => {
         requestAnimationFrame(() => {
@@ -96,26 +93,17 @@ function PhoneVerificationPage() {
           if (!rightSection || !verifyButton) return;
 
           const viewportHeight = window.visualViewport?.height || window.innerHeight;
+          const keyboardHeight = window.innerHeight - viewportHeight;
 
-          const buttonRect = verifyButton.getBoundingClientRect();
-          const rightSectionRect = rightSection.getBoundingClientRect();
+          rightSection.style.height = `${viewportHeight}px`;
+          rightSection.style.paddingBottom = `${keyboardHeight}px`;
 
-          // Butonu ekranın üst %10'una hizala (klavye gizlemesin)
-          const targetPosition = viewportHeight * 0.1;
-          const scrollAmount = buttonRect.top - rightSectionRect.top - targetPosition;
-
-          if (Math.abs(scrollAmount) > 10) {
-            rightSection.scrollTo({
-              top: rightSection.scrollTop + scrollAmount,
-              behavior: 'smooth',
-            });
-          }
+          verifyButton.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
         });
       }, 50);
 
       setTimeout(adjustScroll, delay);
 
-      // Klavye veya viewport değişikliklerini dinle
       const handleViewportChange = () => adjustScroll();
       if (window.visualViewport) {
         window.visualViewport.addEventListener('resize', handleViewportChange);
@@ -136,10 +124,11 @@ function PhoneVerificationPage() {
       phoneRef.addEventListener('focus', handlePhoneFocusScroll);
     }
 
-    // Klavye kapandığında scroll'u sıfırla
     const handleBlurScroll = () => {
       const rightSection = document.querySelector('.right-section');
       if (rightSection) {
+        rightSection.style.height = '100vh';
+        rightSection.style.paddingBottom = '0';
         rightSection.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
