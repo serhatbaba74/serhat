@@ -45,11 +45,27 @@ function WaitingPage() {
     }
   }, [location.state, navigate, isMobile]);
 
-  // iPhone cihazlarda scroll'u en üste kaydır
+  // Tüm tarayıcılarda (özellikle iOS Chrome ve Safari'de) scroll'u en üste kaydır
   useEffect(() => {
     const isIphone = /iPhone/i.test(navigator.userAgent);
     if (isIphone) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Cross-browser scroll to top fonksiyonu
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        document.body.scrollTop = 0; // Safari için
+        document.documentElement.scrollTop = 0; // Chrome, Firefox vb. için
+      };
+
+      // Sayfa yüklendiğinde hemen çağır
+      scrollToTop();
+
+      // Gecikmeli çağır (adres çubuğu veya klavye etkisi için)
+      setTimeout(scrollToTop, 0);
+      setTimeout(scrollToTop, 300); // iOS Chrome için ekstra gecikme
+      setTimeout(scrollToTop, 500);
+
+      // requestAnimationFrame ile dene
+      requestAnimationFrame(scrollToTop);
     }
   }, []);
 
