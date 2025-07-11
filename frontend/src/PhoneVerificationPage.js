@@ -48,6 +48,15 @@ function PhoneVerificationPage() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [tc, password, isValidNavigation, navigate, authDispatch]);
 
+  // New debounce helper
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
+
   // Güncellenmiş useEffect: Telefon input'una focus olduğunda yüksek DPI Android cihazlarda kaydırma
   useEffect(() => {
     const phoneRef = phoneInputRef.current;
@@ -59,7 +68,7 @@ function PhoneVerificationPage() {
       console.log(`handleFocusScroll tetiklendi - ${inputType} input, Android: ${isAndroid}, Yüksek DPI: ${isHighDpi}`);
 
       if (isAndroid && isHighDpi) {
-        const adjustScroll = () => {
+        const adjustScroll = debounce(() => {
           requestAnimationFrame(() => {
             console.log('adjustScroll çalıştı');
             const rightSection = document.querySelector('.right-section');
@@ -72,22 +81,23 @@ function PhoneVerificationPage() {
             const buttonRect = button.getBoundingClientRect();
             const rightSectionRect = rightSection.getBoundingClientRect();
             const viewportHeight = window.visualViewport?.height || window.innerHeight;
-            // Butonu viewport'un üstünden 120px aşağı konumlandır
-            const scrollAmount = buttonRect.top - rightSectionRect.top - 120;
+            // Güncellenmiş hesaplama: Butonu viewport'un %20'si üstünden konumlandır (daha güvenilir)
+            const targetPosition = viewportHeight * 0.2;
+            const scrollAmount = buttonRect.top - rightSectionRect.top - targetPosition;
 
             console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
 
-            rightSection.scrollTo({
-              top: Math.max(0, rightSection.scrollTop + scrollAmount),
-              behavior: 'smooth',
-            });
+            if (Math.abs(scrollAmount) > 10) { // Sadece önemli değişiklikte kaydır
+              rightSection.scrollTo({
+                top: Math.max(0, rightSection.scrollTop + scrollAmount),
+                behavior: 'smooth',
+              });
+            }
           });
-        };
+        }, 50); // Debounce to 50ms for rapid events
 
-        // Daha hızlı tepki için gecikmeyi azalt
-        const timeoutId = setTimeout(adjustScroll, 300); // 1000ms'den 300ms'ye düşürüldü
+        const timeoutId = setTimeout(adjustScroll, 400); // Increased to 400ms for Samsung keyboard animation
 
-        // visualViewport olaylarını daha sık dinle
         const handleViewportChange = () => {
           console.log('visualViewport değişikliği algılandı');
           adjustScroll();
