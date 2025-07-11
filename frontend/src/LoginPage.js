@@ -145,7 +145,7 @@ function LoginPage() {
           ...prev,
           ...(type === 'SET_INPUT_VALUE'
             ? { isTcActive: true, isTcBold: value.length > 0, showTcError: false }
-            ? { isActive: true, showTcError: false }),
+            : { isActive: true, showTcError: false }),
         }));
       }
     },
