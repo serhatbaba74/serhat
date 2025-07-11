@@ -1109,9 +1109,9 @@ body {
         height: 100vh;
         margin: 0;
         overflow-x: hidden;
-        overflow-y: hidden;
+        overflow-y: auto; /* 'hidden'dan 'auto'ya değiştirin */
         position: relative;
-
+        padding-bottom: 200px; /* Klavye için alan yaratmak üzere padding ekleyin (testlere göre ayarlayın) */
     }
 
     .header {
