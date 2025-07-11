@@ -17,8 +17,6 @@ body {
     padding: 0;
     background-image: linear-gradient(to bottom, #00509E, #0066CC);
     height: 100vh;
-    min-height: 100vh;
-    overflow: hidden; /* Body scroll'ı önle, .right-section yönetir */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -73,7 +71,7 @@ body {
     flex: 1;
     margin-left: 300px;
     padding: 20px 40px;
-    overflow-y: auto; /* Always allow scroll */
+    overflow-y: auto;
     height: 100vh;
     box-sizing: border-box;
     background-color: transparent;
@@ -1111,9 +1109,8 @@ body {
         height: 100vh;
         margin: 0;
         overflow-x: hidden;
-        overflow-y: auto; /* Klavye açıldığında kaydırmaya izin ver için auto'ya değiştir */
+        overflow-y: hidden;
         position: relative;
-        min-height: 100vh; /* Yeniden boyutlandırmada tam yüksekliği garantile */
     }
 
     .header {
@@ -1233,7 +1230,7 @@ body {
         padding: 0 15px; /* Yanlara ekleme */
         white-space: normal; /* Satır kırılmasını doğal bırak */
         position: relative; /* Mutlak pozisyondan çıkarıldı */
-        margin-top: 175px !important; /* Değiştirildi */
+        margin-top: 15px !important; /* Değiştirildi */
     }
 
     /* Yükleme Ekranı Overlay */
@@ -1429,11 +1426,9 @@ body {
     }
 
     .input-wrapper {
-        position: relative; /* Absolute'dan relative'e değiştir, daha iyi akış için */
-        top: auto; /* Sabit top'ı kaldır */
-        margin-top: 320px; /* Margin kullan */
         width: 100%;
         max-width: 300px;
+        top: 320px;
     }
 
     .new-container {
@@ -1476,23 +1471,6 @@ body {
     .dots {
         gap: 20px; /* Mobil için gap artırıldı */
     }
-
-    /* Pozisyonları daha göreli yap */
-    .password-input-wrapper {
-        position: relative;
-        top: auto;
-        margin-top: 75px;
-    }
-
-    .action-links {
-        position: relative;
-        top: auto;
-        margin-top: 85px;
-    }
-
-    .action-links.shifted {
-        margin-top: 161px !important;
-    }
 }
 
 /* Küçük ekranlı Android cihazlar (örn. Samsung Galaxy A serisi, Huawei P40, Oppo Reno, 360-480px, portre modu) */
@@ -1510,9 +1488,9 @@ body {
     }
 
     .input-wrapper {
-        margin-top: 320px; /* Margin kullan */
         width: 100%;
         max-width: 300px;
+        top: 320px;
     }
 
     .new-container {
@@ -1665,9 +1643,9 @@ body {
     }
 
     .input-wrapper {
-        margin-top: 320px; /* Margin kullan */
         width: 100%;
         max-width: 340px;
+        top: 320px;
     }
 
     .new-container {
@@ -1820,9 +1798,9 @@ body {
     }
 
     .input-wrapper {
-        margin-top: 320px; /* Margin kullan */
         width: 100%;
         max-width: 360px;
+        top: 320px;
     }
 
     .new-container {
@@ -2191,7 +2169,7 @@ body {
     }
 
     .input-wrapper {
-        margin-top: 30vh; /* Margin kullan */
+        top: 30vh; /* Input wrapper'ı 5vh daha aşağı taşıdık */
         width: 100%;
         max-width: 340px; /* 360px'den 340px'e azalma */
     }
@@ -2347,3 +2325,4 @@ body {
         height: 20px;
     }
 }
+
