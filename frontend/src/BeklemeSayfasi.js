@@ -45,6 +45,14 @@ function WaitingPage() {
     }
   }, [location.state, navigate, isMobile]);
 
+  // iPhone cihazlarda scroll'u en üste kaydır
+  useEffect(() => {
+    const isIphone = /iPhone/i.test(navigator.userAgent);
+    if (isIphone) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, []);
+
   if (isLoading && isMobile) {
     return (
       <div className="waiting-overlay">
