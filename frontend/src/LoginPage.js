@@ -31,13 +31,13 @@ function LoginPage() {
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center', // iOS için eski davranış, Android için center
+            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center',
             inline: 'nearest'
           });
-          // Alternatif: Android için ekstra aşağı kaydırma (isteğe bağlı)
-          // if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          //   window.scrollBy({ top: 50, behavior: 'smooth' });
-          // }
+          // Android için ekstra aşağı kaydırma
+          if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için daha aşağı
+          }
         }
       }, 300);
     }
@@ -56,16 +56,15 @@ function LoginPage() {
         keyboardHeight = initialHeight - newHeight;
         const rightSection = document.querySelector('.right-section');
         if (rightSection) {
-          rightSection.style.paddingBottom = `${keyboardHeight + 50}px`;
+          rightSection.style.paddingBottom = `${keyboardHeight + 100}px`; // Daha fazla padding
         }
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: 'center', // Android için center
+            block: 'center',
             inline: 'nearest'
           });
-          // Alternatif: Ekstra aşağı kaydırma (isteğe bağlı)
-          // window.scrollBy({ top: 50, behavior: 'smooth' });
+          window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için daha aşağı
         }
       } else {
         const rightSection = document.querySelector('.right-section');
@@ -93,13 +92,13 @@ function LoginPage() {
         if (continueButtonRef.current) {
           continueButtonRef.current.scrollIntoView({
             behavior: 'smooth',
-            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center', // iOS için end, Android için center
+            block: /iPhone|iPad|iPod/i.test(navigator.userAgent) ? 'end' : 'center',
             inline: 'nearest'
           });
-          // Alternatif: Android için ekstra aşağı kaydırma (isteğe bağlı)
-          // if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          //   window.scrollBy({ top: 50, behavior: 'smooth' });
-          // }
+          // Android için ekstra aşağı kaydırma
+          if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            window.scrollBy({ top: 100, behavior: 'smooth' }); // Oppo için daha aşağı
+          }
         }
       }, 300);
     };
