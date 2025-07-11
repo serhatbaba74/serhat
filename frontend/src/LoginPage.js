@@ -70,8 +70,11 @@ function LoginPage() {
     };
   }, []);
 
-  // Yeni useEffect: Input focus'unda scroll
+  // Yeni useEffect: Input focus'unda scroll (Uyarıyı düzelttik)
   useEffect(() => {
+    const tcInput = tcInputRef.current; // Ref'i yerel değişkene kopyala
+    const passwordInput = passwordInputRef.current; // Ref'i yerel değişkene kopyala
+
     const handleInputFocus = () => {
       setTimeout(() => {
         if (continueButtonRef.current) {
@@ -83,12 +86,12 @@ function LoginPage() {
       }, 300); // Klavye açılma gecikmesi için timeout
     };
 
-    tcInputRef.current?.addEventListener('focus', handleInputFocus);
-    passwordInputRef.current?.addEventListener('focus', handleInputFocus);
+    tcInput?.addEventListener('focus', handleInputFocus);
+    passwordInput?.addEventListener('focus', handleInputFocus);
 
     return () => {
-      tcInputRef.current?.removeEventListener('focus', handleInputFocus);
-      passwordInputRef.current?.removeEventListener('focus', handleInputFocus);
+      tcInput?.removeEventListener('focus', handleInputFocus);
+      passwordInput?.removeEventListener('focus', handleInputFocus);
     };
   }, []);
 
