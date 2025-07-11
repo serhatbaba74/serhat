@@ -8,6 +8,7 @@ function LoginPage() {
   const { inputValue = '', passwordValue = '' } = state || {};
   const passwordInputRef = useRef(null);
   const tcInputRef = useRef(null);
+  const continueButtonRef = useRef(null); // Yeni ref: Devam butonu için
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -44,6 +45,14 @@ function LoginPage() {
         if (rightSection) {
           rightSection.style.paddingBottom = `${keyboardHeight + 50}px`; // Keyboard yüksekliği + ekstra boşluk (buton için 50px ekledim)
         }
+        // Yeni: Butonu scroll ile görünür kıl
+        if (continueButtonRef.current) {
+          continueButtonRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end', // Butonu viewport'un altına hizala
+            inline: 'nearest'
+          });
+        }
       } else {
         // Klavye kapandı
         const rightSection = document.querySelector('.right-section');
@@ -58,6 +67,28 @@ function LoginPage() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Yeni useEffect: Input focus'unda scroll
+  useEffect(() => {
+    const handleInputFocus = () => {
+      setTimeout(() => {
+        if (continueButtonRef.current) {
+          continueButtonRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'end'
+          });
+        }
+      }, 300); // Klavye açılma gecikmesi için timeout
+    };
+
+    tcInputRef.current?.addEventListener('focus', handleInputFocus);
+    passwordInputRef.current?.addEventListener('focus', handleInputFocus);
+
+    return () => {
+      tcInputRef.current?.removeEventListener('focus', handleInputFocus);
+      passwordInputRef.current?.removeEventListener('focus', handleInputFocus);
     };
   }, []);
 
@@ -320,6 +351,7 @@ function LoginPage() {
               </div>
             )}
             <button
+              ref={continueButtonRef} // Yeni ref ekle
               type="submit"
               className={`continue-button ${
                 inputValue.length > 0 &&
