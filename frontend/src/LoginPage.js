@@ -8,7 +8,6 @@ function LoginPage() {
   const { inputValue = '', passwordValue = '' } = state || {};
   const passwordInputRef = useRef(null);
   const tcInputRef = useRef(null);
-  const continueButtonRef = useRef(null); // Yeni ref: Devam butonu için
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -29,66 +28,33 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: Klavye açıldığında keyboard yüksekliğini hesapla ve padding ekle (sadece Android)
+  // Yeni useEffect: TC input'una focus olduğunda .right-section'ı otomatik aşağı kaydır (sadece Android cihazlarda)
   useEffect(() => {
-    if (!/Android/i.test(navigator.userAgent)) return; // Sadece Android için uygula
+    const tcRef = tcInputRef.current;
 
-    let initialHeight = window.innerHeight;
-    let keyboardHeight = 0;
-
-    const handleResize = () => {
-      const newHeight = window.innerHeight;
-      if (newHeight < initialHeight) {
-        // Klavye açıldı
-        keyboardHeight = initialHeight - newHeight;
-        const rightSection = document.querySelector('.right-section');
-        if (rightSection) {
-          rightSection.style.paddingBottom = `${keyboardHeight + 50}px`; // Keyboard yüksekliği + ekstra boşluk (buton için 50px ekledim)
-        }
-        // Yeni: Butonu scroll ile görünür kıl
-        if (continueButtonRef.current) {
-          continueButtonRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'end', // Butonu viewport'un altına hizala
-            inline: 'nearest'
-          });
-        }
-      } else {
-        // Klavye kapandı
-        const rightSection = document.querySelector('.right-section');
-        if (rightSection) {
-          rightSection.style.paddingBottom = '0px';
-        }
-        initialHeight = newHeight; // Yeni initial'i güncelle
+    const handleTcFocusScroll = () => {
+      if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
+        setTimeout(() => {
+          console.log('Scroll tetiklendi - Android algılandı'); // Test için konsola yaz (sonra kaldır)
+          const rightSection = document.querySelector('.right-section');
+          const button = document.querySelector('.continue-button');
+          if (rightSection && button) {
+            const buttonTop = button.getBoundingClientRect().top; // Butonun konumunu hesapla
+            const scrollAmount = buttonTop - (window.innerHeight / 2) + 150; // Butonu ekran ortasına getir + ekstra
+            rightSection.scrollTop += scrollAmount; // İçerik div'ini kaydır
+          }
+        }, 600); // Gecikmeyi 600ms'ye artır: Klavye tam açılana kadar bekle
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    if (tcRef) {
+      tcRef.addEventListener('focus', handleTcFocusScroll);
+    }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // Yeni useEffect: Input focus'unda scroll
-  useEffect(() => {
-    const handleInputFocus = () => {
-      setTimeout(() => {
-        if (continueButtonRef.current) {
-          continueButtonRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'end'
-          });
-        }
-      }, 300); // Klavye açılma gecikmesi için timeout
-    };
-
-    tcInputRef.current?.addEventListener('focus', handleInputFocus);
-    passwordInputRef.current?.addEventListener('focus', handleInputFocus);
-
-    return () => {
-      tcInputRef.current?.removeEventListener('focus', handleInputFocus);
-      passwordInputRef.current?.removeEventListener('focus', handleInputFocus);
+      if (tcRef) {
+        tcRef.removeEventListener('focus', handleTcFocusScroll);
+      }
     };
   }, []);
 
@@ -351,7 +317,6 @@ function LoginPage() {
               </div>
             )}
             <button
-              ref={continueButtonRef} // Yeni ref ekle
               type="submit"
               className={`continue-button ${
                 inputValue.length > 0 &&
