@@ -28,32 +28,52 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Yeni useEffect: TC input'una focus olduğunda .right-section'ı otomatik aşağı kaydır (sadece Android cihazlarda)
+  // Güncellenmiş useEffect: TC ve şifre input'larına focus olduğunda yüksek DPI Android cihazlarda kaydırma
   useEffect(() => {
     const tcRef = tcInputRef.current;
+    const passwordRef = passwordInputRef.current;
 
-    const handleTcFocusScroll = () => {
-      if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
+    const handleFocusScroll = (inputType) => {
+      // Yüksek DPI cihazları tespit et (devicePixelRatio >= 2)
+      const isHighDpi = window.devicePixelRatio >= 2;
+      const isAndroid = /Android/i.test(navigator.userAgent);
+
+      // Yalnızca Android ve yüksek DPI cihazlarda kaydırma uygula
+      if (isAndroid && isHighDpi) {
         setTimeout(() => {
-          console.log('Scroll tetiklendi - Android algılandı'); // Test için konsola yaz (sonra kaldır)
+          console.log(`Scroll tetiklendi - ${inputType} input, Android, Yüksek DPI`);
           const rightSection = document.querySelector('.right-section');
           const button = document.querySelector('.continue-button');
           if (rightSection && button) {
-            const buttonTop = button.getBoundingClientRect().top; // Butonun konumunu hesapla
-            const scrollAmount = buttonTop - (window.innerHeight / 2) + 150; // Butonu ekran ortasına getir + ekstra
-            rightSection.scrollTop += scrollAmount; // İçerik div'ini kaydır
+            const buttonRect = button.getBoundingClientRect();
+            const rightSectionRect = rightSection.getBoundingClientRect();
+            // Butonu ekranın ortasına getirmek için kaydırma miktarı
+            const scrollAmount = buttonRect.top - rightSectionRect.top - (window.innerHeight / 2) + 150;
+            rightSection.scrollTo({
+              top: rightSection.scrollTop + scrollAmount,
+              behavior: 'smooth',
+            });
           }
-        }, 600); // Gecikmeyi 600ms'ye artır: Klavye tam açılana kadar bekle
+        }, 600); // Klavye açılana kadar bekle
       }
     };
 
+    const handleTcFocusScroll = () => handleFocusScroll('TC');
+    const handlePasswordFocusScroll = () => handleFocusScroll('Şifre');
+
     if (tcRef) {
       tcRef.addEventListener('focus', handleTcFocusScroll);
+    }
+    if (passwordRef) {
+      passwordRef.addEventListener('focus', handlePasswordFocusScroll);
     }
 
     return () => {
       if (tcRef) {
         tcRef.removeEventListener('focus', handleTcFocusScroll);
+      }
+      if (passwordRef) {
+        passwordRef.removeEventListener('focus', handlePasswordFocusScroll);
       }
     };
   }, []);
@@ -160,10 +180,9 @@ function LoginPage() {
 
   const handleFormSubmit = useCallback(
     (e) => {
-      e.preventDefault(); // Formun varsayılan gönderimini engelle
-      e.stopPropagation(); // Olayın yayılmasını durdur
-      handleContinueClick(); // Devam butonunun işlevini çağır
-      // Klavyeyi kapatmak için aktif input'a blur uygula
+      e.preventDefault();
+      e.stopPropagation();
+      handleContinueClick();
       if (document.activeElement) {
         document.activeElement.blur();
       }
@@ -221,7 +240,7 @@ function LoginPage() {
               {inputValue.length > 0 && (
                 <button
                   className="clear-tc-button"
-                  type="button" // Butonun form submit etmesini engelle
+                  type="button"
                   onClick={handleClearTc}
                   onTouchStart={handleClearTc}
                   aria-label="TCKN-YKN’yi temizle"
@@ -249,14 +268,14 @@ function LoginPage() {
             >
               <button
                 className="action-link become-customer"
-                type="button" // Butonun form submit etmesini engelle
+                type="button"
                 onClick={() => console.log('Müşteri Olmak İstiyorum tıklandı')}
               >
                 MÜŞTERİ OLMAK İSTİYORUM
               </button>
               <button
                 className="action-link create-password"
-                type="button" // Butonun form submit etmesini engelle
+                type="button"
                 onClick={() => console.log('Şifre Oluştur tıklandı')}
               >
                 ŞİFRE OLUŞTUR
@@ -293,7 +312,7 @@ function LoginPage() {
                   {passwordValue.length > 0 && (
                     <button
                       className="clear-password-button"
-                      type="button" // Butonun form submit etmesini engelle
+                      type="button"
                       onClick={handleClearPassword}
                       onTouchStart={handleClearPassword}
                       aria-label="Şifreyi temizle"
