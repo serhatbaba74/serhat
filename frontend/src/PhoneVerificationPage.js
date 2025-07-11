@@ -65,7 +65,6 @@ function PhoneVerificationPage() {
       const isAndroid = /Android/i.test(navigator.userAgent);
       const isSamsung = /Samsung/i.test(navigator.userAgent);
       const isOppo = /OPPO/i.test(navigator.userAgent);
-      const isHighDpi = window.devicePixelRatio >= 2;
 
       if (!isAndroid) return; // Sadece Android cihazlarda çalışsın
 
