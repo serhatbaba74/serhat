@@ -51,7 +51,7 @@ function WaitingPage() {
     if (isIphone) {
       // Cross-browser scroll to top fonksiyonu
       const scrollToTop = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); // Smooth yerine auto kullan, sorunları önler
         document.body.scrollTop = 0; // Safari için
         document.documentElement.scrollTop = 0; // Chrome, Firefox vb. için
       };
