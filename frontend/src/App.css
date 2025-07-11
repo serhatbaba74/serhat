@@ -79,6 +79,11 @@ body {
     -webkit-overflow-scrolling: touch; /* Daha akıcı kaydırma için */
 }
 
+/* Görünmez scroll bar (sadece Android için scroll'ı gizle) */
+.right-section::-webkit-scrollbar {
+    display: none; /* Scroll bar'ı gizle */
+}
+
 /* Logo Stili - Sadece masaüstünde görünecek */
 .logo {
     margin-bottom: 5px;
@@ -1106,13 +1111,17 @@ body {
 
     .right-section {
         margin-left: 0;
-        padding: 0 10px; /* Daha dar padding */
+        padding: 0;
         height: 100vh;
-        margin: 0;
         overflow-x: hidden;
         overflow-y: auto;
         position: relative;
-        -webkit-overflow-scrolling: touch; /* Daha akıcı kaydırma */
+        -webkit-overflow-scrolling: touch; /* Daha akıcı kaydırma için */
+    }
+
+    /* Görünmez scroll bar (sadece Android için scroll'ı gizle) */
+    .right-section::-webkit-scrollbar {
+        display: none;
     }
 
     .header {
@@ -1188,41 +1197,6 @@ body {
     .verify-button-container {
         position: relative;
         margin-top: 10px;
-    }
-
-    /* Input ve Buton Kapsayıcıları */
-    .input-wrapper,
-    .tc-input-wrapper,
-    .password-input-wrapper,
-    .phone-input-wrapper {
-        width: 100%;
-        max-width: 300px; /* Samsung/Oppo için optimize */
-        margin: 0 auto;
-    }
-
-    .continue-button,
-    .button-phone {
-        width: 90% !important;
-        max-width: 300px !important; /* Samsung/Oppo için optimize */
-        margin: 0 auto;
-    }
-
-    /* Scrollbar Stili */
-    .right-section::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .right-section::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .right-section::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-        border-radius: 4px;
-    }
-
-    .right-section::-webkit-scrollbar-thumb:hover {
-        background: #a8a8a8;
     }
 
     .bekleme-content {
@@ -1357,6 +1331,7 @@ body {
         top: 80px;
     }
 
+    /* Telefon Inputu ve Hata Mesajı Ayarları */
     .phone-input-wrapper {
         top: 30px;
     }
@@ -1507,7 +1482,7 @@ body {
     .input-wrapper {
         width: 100%;
         max-width: 300px;
-        top: 300px; /* Inputları biraz yukarı çektik */
+        top: 320px;
     }
 
     .new-container {
@@ -1552,28 +1527,12 @@ body {
         padding: 0.9rem;
     }
 
-    .continue-button {
-        top: 140px;
-    }
-
-    .continue-button.shifted {
-        top: 200px !important;
-    }
-
-    .continue-button.error-shifted {
-        top: 200px !important;
-    }
-
-    .continue-button.error-shifted.shifted {
-        top: 270px !important;
-    }
-
     .button-phone {
         top: 80px;
     }
 
     .phone-input-wrapper {
-        top: 20px;
+        top: 30px;
     }
 
     .phone-error {
