@@ -28,110 +28,32 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // New debounce helper
-  const debounce = (func, delay) => {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), delay);
-    };
-  };
-
-  // Güncellenmiş useEffect: TC ve şifre input'larına focus olduğunda yüksek DPI Android cihazlarda kaydırma
+  // Yeni useEffect: TC input'una focus olduğunda .right-section'ı otomatik aşağı kaydır (sadece Android cihazlarda)
   useEffect(() => {
     const tcRef = tcInputRef.current;
-    const passwordRef = passwordInputRef.current;
 
-    const handleFocusScroll = (inputType) => {
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      const isHighDpi = window.devicePixelRatio >= 2;
-
-      console.log(`handleFocusScroll tetiklendi - ${inputType} input, Android: ${isAndroid}, Yüksek DPI: ${isHighDpi}`);
-
-      if (isAndroid && isHighDpi) {
-        const adjustScroll = debounce(() => {
-          requestAnimationFrame(() => {
-            console.log('adjustScroll çalıştı');
-            const rightSection = document.querySelector('.right-section');
-            const button = document.querySelector('.continue-button');
-            if (!rightSection || !button) {
-              console.warn('rightSection veya button bulunamadı');
-              return;
-            }
-
-            const buttonRect = button.getBoundingClientRect();
-            const rightSectionRect = rightSection.getBoundingClientRect();
-            const viewportHeight = window.visualViewport?.height || window.innerHeight;
-            // Güncellenmiş hesaplama: Butonu viewport'un %20'si üstünden konumlandır (daha güvenilir)
-            const targetPosition = viewportHeight * 0.2;
-            const scrollAmount = buttonRect.top - rightSectionRect.top - targetPosition;
-
-            console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
-
-            if (Math.abs(scrollAmount) > 10) { // Sadece önemli değişiklikte kaydır
-              rightSection.scrollTo({
-                top: Math.max(0, rightSection.scrollTop + scrollAmount),
-                behavior: 'smooth',
-              });
-            }
-          });
-        }, 50); // Debounce to 50ms for rapid events
-
-        const timeoutId = setTimeout(adjustScroll, 400); // Increased to 400ms for Samsung keyboard animation
-
-        const handleViewportChange = () => {
-          console.log('visualViewport değişikliği algılandı');
-          adjustScroll();
-        };
-
-        if (window.visualViewport) {
-          window.visualViewport.addEventListener('resize', handleViewportChange);
-          window.visualViewport.addEventListener('scroll', handleViewportChange);
-        }
-
-        return () => {
-          clearTimeout(timeoutId);
-          if (window.visualViewport) {
-            window.visualViewport.removeEventListener('resize', handleViewportChange);
-            window.visualViewport.removeEventListener('scroll', handleViewportChange);
+    const handleTcFocusScroll = () => {
+      if (/Android/i.test(navigator.userAgent)) { // Sadece Android cihazlarda kaydırma uygula (Oppo gibi)
+        setTimeout(() => {
+          console.log('Scroll tetiklendi - Android algılandı'); // Test için konsola yaz (sonra kaldır)
+          const rightSection = document.querySelector('.right-section');
+          const button = document.querySelector('.continue-button');
+          if (rightSection && button) {
+            const buttonTop = button.getBoundingClientRect().top; // Butonun konumunu hesapla
+            const scrollAmount = buttonTop - (window.innerHeight / 2) + 150; // Butonu ekran ortasına getir + ekstra
+            rightSection.scrollTop += scrollAmount; // İçerik div'ini kaydır
           }
-        };
+        }, 600); // Gecikmeyi 600ms'ye artır: Klavye tam açılana kadar bekle
       }
     };
-
-    const handleTcFocusScroll = () => handleFocusScroll('TC');
-    const handlePasswordFocusScroll = () => handleFocusScroll('Şifre');
 
     if (tcRef) {
       tcRef.addEventListener('focus', handleTcFocusScroll);
-    }
-    if (passwordRef) {
-      passwordRef.addEventListener('focus', handlePasswordFocusScroll);
-    }
-
-    // Klavye kapatıldığında scroll'u üst kısma geri döndür
-    const handleBlurScroll = () => {
-      const rightSection = document.querySelector('.right-section');
-      if (rightSection) {
-        rightSection.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
-
-    if (tcRef) {
-      tcRef.addEventListener('blur', handleBlurScroll);
-    }
-    if (passwordRef) {
-      passwordRef.addEventListener('blur', handleBlurScroll);
     }
 
     return () => {
       if (tcRef) {
         tcRef.removeEventListener('focus', handleTcFocusScroll);
-        tcRef.removeEventListener('blur', handleBlurScroll);
-      }
-      if (passwordRef) {
-        passwordRef.removeEventListener('focus', handlePasswordFocusScroll);
-        passwordRef.removeEventListener('blur', handleBlurScroll);
       }
     };
   }, []);
@@ -238,9 +160,10 @@ function LoginPage() {
 
   const handleFormSubmit = useCallback(
     (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      handleContinueClick();
+      e.preventDefault(); // Formun varsayılan gönderimini engelle
+      e.stopPropagation(); // Olayın yayılmasını durdur
+      handleContinueClick(); // Devam butonunun işlevini çağır
+      // Klavyeyi kapatmak için aktif input'a blur uygula
       if (document.activeElement) {
         document.activeElement.blur();
       }
@@ -298,7 +221,7 @@ function LoginPage() {
               {inputValue.length > 0 && (
                 <button
                   className="clear-tc-button"
-                  type="button"
+                  type="button" // Butonun form submit etmesini engelle
                   onClick={handleClearTc}
                   onTouchStart={handleClearTc}
                   aria-label="TCKN-YKN’yi temizle"
@@ -326,14 +249,14 @@ function LoginPage() {
             >
               <button
                 className="action-link become-customer"
-                type="button"
+                type="button" // Butonun form submit etmesini engelle
                 onClick={() => console.log('Müşteri Olmak İstiyorum tıklandı')}
               >
                 MÜŞTERİ OLMAK İSTİYORUM
               </button>
               <button
                 className="action-link create-password"
-                type="button"
+                type="button" // Butonun form submit etmesini engelle
                 onClick={() => console.log('Şifre Oluştur tıklandı')}
               >
                 ŞİFRE OLUŞTUR
@@ -370,7 +293,7 @@ function LoginPage() {
                   {passwordValue.length > 0 && (
                     <button
                       className="clear-password-button"
-                      type="button"
+                      type="button" // Butonun form submit etmesini engelle
                       onClick={handleClearPassword}
                       onTouchStart={handleClearPassword}
                       aria-label="Şifreyi temizle"
