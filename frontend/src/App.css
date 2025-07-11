@@ -79,9 +79,9 @@ body {
     -webkit-overflow-scrolling: touch; /* Daha akıcı kaydırma için */
 }
 
-/* Görünmez scroll bar (sadece Android için scroll'ı gizle) */
+/* Görünmez scroll bar */
 .right-section::-webkit-scrollbar {
-    display: none; /* Scroll bar'ı gizle */
+    display: none;
 }
 
 /* Logo Stili - Sadece masaüstünde görünecek */
@@ -1111,15 +1111,16 @@ body {
 
     .right-section {
         margin-left: 0;
-        padding: 0;
+        padding: 0 10px;
         height: 100vh;
         overflow-x: hidden;
         overflow-y: auto;
         position: relative;
-        -webkit-overflow-scrolling: touch; /* Daha akıcı kaydırma için */
+        -webkit-overflow-scrolling: touch;
+        transition: padding-bottom 0.3s ease;
     }
 
-    /* Görünmez scroll bar (sadece Android için scroll'ı gizle) */
+    /* Görünmez scroll bar */
     .right-section::-webkit-scrollbar {
         display: none;
     }
@@ -1197,6 +1198,23 @@ body {
     .verify-button-container {
         position: relative;
         margin-top: 10px;
+    }
+
+    /* Input ve Buton Kapsayıcıları */
+    .input-wrapper,
+    .tc-input-wrapper,
+    .password-input-wrapper,
+    .phone-input-wrapper {
+        width: 100%;
+        max-width: 300px; /* Samsung/Oppo için optimize */
+        margin: 0 auto;
+    }
+
+    .continue-button,
+    .button-phone {
+        width: 90% !important;
+        max-width: 300px !important; /* Samsung/Oppo için optimize */
+        margin: 0 auto;
     }
 
     .bekleme-content {
@@ -1331,7 +1349,6 @@ body {
         top: 80px;
     }
 
-    /* Telefon Inputu ve Hata Mesajı Ayarları */
     .phone-input-wrapper {
         top: 30px;
     }
@@ -1482,7 +1499,7 @@ body {
     .input-wrapper {
         width: 100%;
         max-width: 300px;
-        top: 320px;
+        top: 300px; /* Inputları biraz yukarı çektik */
     }
 
     .new-container {
@@ -1527,12 +1544,28 @@ body {
         padding: 0.9rem;
     }
 
+    .continue-button {
+        top: 140px;
+    }
+
+    .continue-button.shifted {
+        top: 200px !important;
+    }
+
+    .continue-button.error-shifted {
+        top: 200px !important;
+    }
+
+    .continue-button.error-shifted.shifted {
+        top: 270px !important;
+    }
+
     .button-phone {
         top: 80px;
     }
 
     .phone-input-wrapper {
-        top: 30px;
+        top: 20px;
     }
 
     .phone-error {
