@@ -1947,24 +1947,24 @@ body {
 /* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, iPhone 14 Pro) */
 @media only screen and (max-width: 767px) and (min-resolution: 2dppx) {
     .new-input {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .tc-label,
     .password-label,
     .phone-label {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .tc-label.hovered,
     .password-label.hovered,
     .phone-label.phone-hovered {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .continue-button,
     .button-phone {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         letter-spacing: 1.2px;
     }
 
@@ -1982,7 +1982,7 @@ body {
     }
 
     .action-link {
-        font-size: 12px;
+        font-size: 11px;
         padding: 0.3rem 0.5rem;
     }
 
@@ -2018,11 +2018,21 @@ body {
     }
 
     .dot {
-        width: 13px;
-        height: 13px;
+        width: 12px;
+        height: 12px;
     }
     .dots {
-        gap: 20px; /* Yüksek DPI için gap artırıldı */
+        gap: 18px; /* Yüksek DPI için gap artırıldı */
+    }
+
+    .user-icon {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .user-icon img {
+        width: 40px !important;
+        height: 40px !important;
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2083,11 +2093,21 @@ body {
     }
 
     .dot {
-        width: 13px;
-        height: 13px;
+        width: 12px;
+        height: 12px;
     }
     .dots {
-        gap: 20px; /* iOS yüksek DPI için gap artırıldı */
+        gap: 18px; /* iOS yüksek DPI için gap artırıldı */
+    }
+
+    .user-icon {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .user-icon img {
+        width: 40px !important;
+        height: 40px !important;
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2113,11 +2133,11 @@ body {
 /* Samsung S23 Ultra gibi ultra yüksek DPI cihazlar */
 @media only screen and (max-width: 767px) and (min-resolution: 3dppx) {
     .dot {
-        width: 12px;
-        height: 12px;
+        width: 11px;
+        height: 11px;
     }
     .dots {
-        gap: 18px; /* Ultra yüksek DPI için gap artırıldı */
+        gap: 17px; /* Ultra yüksek DPI için gap artırıldı */
     }
 
     .bekleme-content {
@@ -2149,6 +2169,16 @@ body {
         max-width: 320px;
         padding: 0 15px;
         margin-top: 160px !important;
+    }
+
+    .user-icon {
+        width: 68px !important;
+        height: 68px !important;
+    }
+
+    .user-icon img {
+        width: 38px !important;
+        height: 38px !important;
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2326,6 +2356,16 @@ body {
     }
     .dots {
         gap: 18px; /* Yatay mod için gap artırıldı */
+    }
+
+    .user-icon {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .user-icon img {
+        width: 40px !important;
+        height: 40px !important;
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
