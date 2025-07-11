@@ -21,6 +21,15 @@ function PhoneVerificationPage() {
   const { dispatch: authDispatch } = useAuth();
   const { tc, password, isValidNavigation } = location.state || {};
 
+  // Debounce yardımcı fonksiyonu
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
+
   // Navigasyon ve geri tuşu kontrolü
   useEffect(() => {
     if (!isValidNavigation || !tc || !password || tc.length !== 11 || password.length !== 6) {
@@ -48,83 +57,68 @@ function PhoneVerificationPage() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [tc, password, isValidNavigation, navigate, authDispatch]);
 
-  // New debounce helper
-  const debounce = (func, delay) => {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), delay);
-    };
-  };
-
-  // Güncellenmiş useEffect: Telefon input'una focus olduğunda yüksek DPI Android cihazlarda kaydırma
+  // Scroll optimizasyonu: Telefon inputuna focus olduğunda right-section'ı kaydır
   useEffect(() => {
     const phoneRef = phoneInputRef.current;
 
-    const handleFocusScroll = (inputType) => {
+    const handleFocusScroll = () => {
       const isAndroid = /Android/i.test(navigator.userAgent);
+      const isSamsung = /Samsung/i.test(navigator.userAgent);
+      const isOppo = /OPPO/i.test(navigator.userAgent);
       const isHighDpi = window.devicePixelRatio >= 2;
 
-      console.log(`handleFocusScroll tetiklendi - ${inputType} input, Android: ${isAndroid}, Yüksek DPI: ${isHighDpi}`);
+      if (!isAndroid) return; // Sadece Android cihazlarda çalışsın
 
-      if (isAndroid && isHighDpi) {
-        const adjustScroll = debounce(() => {
-          requestAnimationFrame(() => {
-            console.log('adjustScroll çalıştı');
-            const rightSection = document.querySelector('.right-section');
-            const button = document.querySelector('.button-phone');
-            if (!rightSection || !button) {
-              console.warn('rightSection veya button bulunamadı');
-              return;
-            }
+      // Samsung ve Oppo için daha uzun gecikme, diğer Android cihazlar için standart
+      const delay = (isSamsung || isOppo) ? 800 : 600;
 
-            const buttonRect = button.getBoundingClientRect();
-            const rightSectionRect = rightSection.getBoundingClientRect();
-            const viewportHeight = window.visualViewport?.height || window.innerHeight;
-            // Güncellenmiş hesaplama: Butonu viewport'un %20'si üstünden konumlandır (daha güvenilir)
-            const targetPosition = viewportHeight * 0.2;
-            const scrollAmount = buttonRect.top - rightSectionRect.top - targetPosition;
+      const adjustScroll = debounce(() => {
+        requestAnimationFrame(() => {
+          const rightSection = document.querySelector('.right-section');
+          const verifyButton = document.querySelector('.button-phone');
+          if (!rightSection || !verifyButton) return;
 
-            console.log(`Hesaplanan scrollAmount: ${scrollAmount}, viewportHeight: ${viewportHeight}`);
+          const buttonRect = verifyButton.getBoundingClientRect();
+          const rightSectionRect = rightSection.getBoundingClientRect();
+          const viewportHeight = window.visualViewport?.height || window.innerHeight;
 
-            if (Math.abs(scrollAmount) > 10) { // Sadece önemli değişiklikte kaydır
-              rightSection.scrollTo({
-                top: Math.max(0, rightSection.scrollTop + scrollAmount),
-                behavior: 'smooth',
-              });
-            }
-          });
-        }, 50); // Debounce to 50ms for rapid events
+          // Butonu ekranın üst %30'luk kısmına hizala
+          const targetPosition = viewportHeight * 0.3;
+          const scrollAmount = buttonRect.top - rightSectionRect.top - targetPosition;
 
-        const timeoutId = setTimeout(adjustScroll, 400); // Increased to 400ms for Samsung keyboard animation
-
-        const handleViewportChange = () => {
-          console.log('visualViewport değişikliği algılandı');
-          adjustScroll();
-        };
-
-        if (window.visualViewport) {
-          window.visualViewport.addEventListener('resize', handleViewportChange);
-          window.visualViewport.addEventListener('scroll', handleViewportChange);
-        }
-
-        return () => {
-          clearTimeout(timeoutId);
-          if (window.visualViewport) {
-            window.visualViewport.removeEventListener('resize', handleViewportChange);
-            window.visualViewport.removeEventListener('scroll', handleViewportChange);
+          if (Math.abs(scrollAmount) > 10) {
+            rightSection.scrollTo({
+              top: rightSection.scrollTop + scrollAmount,
+              behavior: 'smooth',
+            });
           }
-        };
+        });
+      }, 50);
+
+      setTimeout(adjustScroll, delay);
+
+      // Klavye veya viewport değişikliklerini dinle
+      const handleViewportChange = () => adjustScroll();
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', handleViewportChange);
+        window.visualViewport.addEventListener('scroll', handleViewportChange);
       }
+
+      return () => {
+        if (window.visualViewport) {
+          window.visualViewport.removeEventListener('resize', handleViewportChange);
+          window.visualViewport.removeEventListener('scroll', handleViewportChange);
+        }
+      };
     };
 
-    const handlePhoneFocusScroll = () => handleFocusScroll('Telefon');
+    const handlePhoneFocusScroll = () => handleFocusScroll();
 
     if (phoneRef) {
       phoneRef.addEventListener('focus', handlePhoneFocusScroll);
     }
 
-    // Klavye kapatıldığında scroll'u üst kısma geri döndür
+    // Klavye kapandığında scroll'u sıfırla
     const handleBlurScroll = () => {
       const rightSection = document.querySelector('.right-section');
       if (rightSection) {
