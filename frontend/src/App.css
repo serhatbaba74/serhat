@@ -11,14 +11,7 @@
 }
 
 /* Tüm Sayfa için Temel Ayarlar */
-html {
-    margin: 0;
-    padding: 0;
-    -webkit-text-size-adjust: 100%; /* Android text inflation'ı önle */
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
+html,
 body {
     margin: 0;
     padding: 0;
@@ -79,7 +72,7 @@ body {
     margin-left: 300px;
     padding: 20px 40px;
     overflow-y: auto;
-    min-height: 100vh; /* Klavye açıldığında düzeni koru */
+    height: 100vh;
     box-sizing: border-box;
     background-color: transparent;
     position: relative; /* Alt elemanlar için referans */
@@ -566,7 +559,7 @@ body {
     align-items: center;
 }
 
-/* TC inputuna hover yapıldığında veya yazmaya başlandığında "Müşteri Numarası / TCKN-YKN" yazısını sol üste kaydir */
+/* TC inputuna hover yapıldığında veya yazmaya başlandığında "Müşteri Numarası / TCKN-YKN" yazısını sol üste kaydır */
 .tc-label.hovered {
     top: 8px;
     left: 15px;
@@ -622,7 +615,7 @@ body {
     transition: top 0.15s ease-in-out, font-size 0.15s ease-in-out, color 0.15s ease-in-out;
 }
 
-/* Şifre alanı aktif veya doluysa "Şifre" yazısını sol üste kaydir */
+/* Şifre alanı aktif veya doluysa "Şifre" yazısını sol üste kaydır */
 .password-label.hovered {
     top: 9px;
     left: 12px;
@@ -1118,13 +1111,7 @@ body {
         overflow-x: hidden;
         overflow-y: auto; /* 'hidden'dan 'auto'ya değiştirin */
         position: relative;
-        padding-bottom: 50vh; /* Klavye için daha fazla alan */
-        -ms-overflow-style: none;  /* IE ve Edge için scrollbar gizle */
-        scrollbar-width: none;  /* Firefox için scrollbar gizle */
-    }
-
-    .right-section::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Android tarayıcıları için scrollbar gizle */
+        padding-bottom: 30dvh; /* Klavye için alan yaratmak üzere dinamik padding ekleyin (testlere göre ayarlayın) */
     }
 
     .header {
@@ -1311,14 +1298,22 @@ body {
         text-align: center;
     }
 
-    /* Scrollbar Stili (Mevcut, ama gizleme için override edeceğiz) */
+    /* Scrollbar Stili */
     .right-section::-webkit-scrollbar {
-        display: none; /* Scrollbar'ı gizle */
+        width: 6px;
     }
 
-    .right-section {
-        -ms-overflow-style: none;  /* IE ve Edge */
-        scrollbar-width: none;  /* Firefox */
+    .right-section::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .right-section::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    .right-section::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
     }
 
     /* Mobil için Devam Butonu ve Doğrula Butonu Ayarları */
@@ -1947,24 +1942,24 @@ body {
 /* Android cihazlar için yüksek DPI ekranlar (2x veya 3x, ör. Samsung S23 Ultra, iPhone 14 Pro) */
 @media only screen and (max-width: 767px) and (min-resolution: 2dppx) {
     .new-input {
-        font-size: 16px;
+        font-size: 17px;
     }
 
     .tc-label,
     .password-label,
     .phone-label {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .tc-label.hovered,
     .password-label.hovered,
     .phone-label.phone-hovered {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .continue-button,
     .button-phone {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         letter-spacing: 1.2px;
     }
 
@@ -1982,7 +1977,7 @@ body {
     }
 
     .action-link {
-        font-size: 11px;
+        font-size: 12px;
         padding: 0.3rem 0.5rem;
     }
 
@@ -2018,11 +2013,11 @@ body {
     }
 
     .dot {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
     }
     .dots {
-        gap: 18px; /* Yüksek DPI için gap artırıldı */
+        gap: 20px; /* Yüksek DPI için gap artırıldı */
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2083,11 +2078,11 @@ body {
     }
 
     .dot {
-        width: 12px;
-        height: 12px;
+        width: 13px;
+        height: 13px;
     }
     .dots {
-        gap: 18px; /* iOS yüksek DPI için gap artırıldı */
+        gap: 20px; /* iOS yüksek DPI için gap artırıldı */
     }
 
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
@@ -2113,11 +2108,11 @@ body {
 /* Samsung S23 Ultra gibi ultra yüksek DPI cihazlar */
 @media only screen and (max-width: 767px) and (min-resolution: 3dppx) {
     .dot {
-        width: 11px;
-        height: 11px;
+        width: 12px;
+        height: 12px;
     }
     .dots {
-        gap: 17px; /* Ultra yüksek DPI için gap artırıldı */
+        gap: 18px; /* Ultra yüksek DPI için gap artırıldı */
     }
 
     .bekleme-content {
@@ -2151,16 +2146,6 @@ body {
         margin-top: 160px !important;
     }
 
-    .user-icon {
-        width: 68px !important;
-        height: 68px !important;
-    }
-
-    .user-icon img {
-        width: 38px !important;
-        height: 38px !important;
-    }
-
     /* Down Arrow Kapsayıcı Div Stili (Mobil) */
     .down-arrow {
         width: 20px;
@@ -2191,12 +2176,6 @@ body {
         overflow-y: auto;
         height: 100dvh; /* Dynamic viewport height */
         padding-bottom: 30dvh; /* Klavye için alan */
-        -ms-overflow-style: none;  /* IE ve Edge için scrollbar gizle */
-        scrollbar-width: none;  /* Firefox için scrollbar gizle */
-    }
-
-    .right-section::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Android tarayıcıları için scrollbar gizle */
     }
 
     .input-wrapper {
