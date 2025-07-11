@@ -37,7 +37,25 @@ function LoginPage() {
     }
   }, [inputValue, location.state, navigate]);
 
-  // Scroll optimizasyonu: TC ve şifre inputlarına focus olduğunda right-section'ı kaydır
+  // Meta tag ve Virtual Keyboard API ekleme (klavye sorunu için)
+  useEffect(() => {
+    // Meta tag ekle (viewport resize için)
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0, interactive-widget=resizes-content, virtual-keyboard=overlays-content';
+    document.head.appendChild(meta);
+
+    // Virtual Keyboard API etkinleştir
+    if ("virtualKeyboard" in navigator) {
+      navigator.virtualKeyboard.overlaysContent = true;
+    }
+
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
+  // Scroll optimizasyonu: TC ve şifre inputlarına focus olduğunda right-section'ı scroll ile aşağı kaydır
   useEffect(() => {
     const tcRef = tcInputRef.current;
     const passwordRef = passwordInputRef.current;
@@ -49,8 +67,8 @@ function LoginPage() {
 
       if (!isAndroid) return; // Sadece Android cihazlarda çalışsın
 
-      // Samsung ve Oppo için daha uzun gecikme, diğer Android cihazlar için standart
-      const delay = (isSamsung || isOppo) ? 800 : 600;
+      // Samsung ve Oppo için gecikme artır (klavye animasyonunu bekle)
+      const delay = (isSamsung || isOppo) ? 1200 : 800;
 
       const adjustScroll = debounce(() => {
         requestAnimationFrame(() => {
@@ -58,12 +76,13 @@ function LoginPage() {
           const continueButton = document.querySelector('.continue-button');
           if (!rightSection || !continueButton) return;
 
-          const buttonRect = continueButton.getBoundingClientRect();
-          const rightSectionRect = rightSection.getBoundingClientRect();
           const viewportHeight = window.visualViewport?.height || window.innerHeight;
 
-          // Butonu ekranın üst %30'luk kısmına hizala (Samsung/Oppo için optimize)
-          const targetPosition = viewportHeight * 0.3;
+          const buttonRect = continueButton.getBoundingClientRect();
+          const rightSectionRect = rightSection.getBoundingClientRect();
+
+          // Butonu ekranın üst %10'una hizala (klavye gizlemesin)
+          const targetPosition = viewportHeight * 0.1;
           const scrollAmount = buttonRect.top - rightSectionRect.top - targetPosition;
 
           if (Math.abs(scrollAmount) > 10) {
